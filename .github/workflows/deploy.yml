@@ -1,4 +1,4 @@
-# filepath: .github/workflows/deploy.yml
+# .github/workflows/deploy.yml
 name: Deploy static site
 
 on:
@@ -27,9 +27,6 @@ jobs:
 
       - name: Build static site
         run: pnpm build
-
-      - name: Export static site
-        run: pnpm run export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
