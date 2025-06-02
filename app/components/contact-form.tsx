@@ -1,21 +1,39 @@
 "use client"
 
+import type React from "react"
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
-import { submitContactForm } from "../actions"
 
 export default function ContactForm() {
   const [pending, setPending] = useState(false)
   const [message, setMessage] = useState("")
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
 
-  async function handleSubmit(formData: FormData) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
     setPending(true)
+
     try {
-      const response = await submitContactForm(formData)
-      setMessage(response.message)
+      // For demonstration purposes, we'll just simulate a successful submission
+      // In a real implementation, you would use a service like EmailJS, Formspree, etc.
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      // Clear the form
+      setFormData({ name: "", email: "", message: "" })
+      setMessage("Thanks for your message! I'll get back to you soon.")
     } catch (error) {
       setMessage("Something went wrong. Please try again.")
     } finally {
@@ -25,24 +43,24 @@ export default function ContactForm() {
 
   return (
     <Card className="p-6">
-      <form action={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2">
             Name
           </label>
-          <Input id="name" name="name" required />
+          <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium mb-2">
             Email
           </label>
-          <Input id="email" name="email" type="email" required />
+          <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required />
         </div>
         <div>
           <label htmlFor="message" className="block text-sm font-medium mb-2">
             Message
           </label>
-          <Textarea id="message" name="message" required />
+          <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
         </div>
         <Button type="submit" className="w-full" disabled={pending}>
           {pending ? "Sending..." : "Send Message"}

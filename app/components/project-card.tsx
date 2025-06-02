@@ -1,6 +1,5 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Github } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 
 interface ProjectCardProps {
@@ -15,11 +14,10 @@ export default function ProjectCard({ title, description, image, link, tags }: P
   return (
     <Card className="overflow-hidden">
       <div className="relative aspect-video">
-        <Image
+        <img
           src={image || "/placeholder.svg"}
           alt={title}
-          fill
-          className="object-cover transition-transform hover:scale-105"
+          className="object-cover w-full h-full transition-transform hover:scale-105"
         />
       </div>
       <CardContent className="p-4">
