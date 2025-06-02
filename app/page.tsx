@@ -130,7 +130,7 @@ export default function Page() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 md:py-32">
+        <section id="contact" className="py-20 md:py-32 px-4 md:px-8">
           <div className="mx-auto max-w-2xl">
             <h2 className="text-4xl font-bold mb-12 text-center text-gradient bg-gradient-to-r from-purple-400 via-teal-400 to-pink-400 bg-clip-text text-transparent">Get in Touch</h2>
             <ContactForm />

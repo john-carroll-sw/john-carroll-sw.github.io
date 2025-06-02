@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="circle-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0e7ef"/>
+      <stop offset="100%" stop-color="#a3a3a3"/>
+    </radialGradient>
+    <linearGradient id="leg1" x1="32" y1="16" x2="48" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#222"/>
+      <stop offset="100%" stop-color="#222"/>
+    </linearGradient>
+    <linearGradient id="leg2" x1="48" y1="44" x2="16" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#134e4a"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+    <linearGradient id="leg3" x1="16" y1="44" x2="32" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#000"/>
+      <stop offset="100%" stop-color="#000"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#circle-bg)" />
+  <!-- Outer equilateral triangle with flat ends -->
+  <g stroke-width="6" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+    <polygon points="32,16 48,44 16,44" stroke="#000" />
+    <polyline points="32,16 48,44" stroke="url(#leg1)" />
+    <polyline points="48,44 16,44" stroke="url(#leg2)" />
+    <polyline points="16,44 32,16" stroke="url(#leg3)" />
+  </g>
+  <!-- Inner equilateral triangle, scaled and centered, flat ends -->
+  <g stroke-width="3" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+    <polygon points="32,24 42,40 22,40" stroke="#444" />
+  </g>
+</svg>
