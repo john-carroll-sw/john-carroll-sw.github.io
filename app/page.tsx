@@ -38,7 +38,7 @@ export default function Page() {
       <header className={`sticky top-0 z-50 w-full border-b transition-colors duration-500 ${navTransparent ? "bg-transparent border-transparent" : "bg-background/80 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60"}`}>
         <div className="container flex h-16 items-center">
           <Link className="mr-6 flex items-center space-x-2" href="/">
-            <span className="hidden font-bold sm:inline-block">John.dev</span>
+            <span className="hidden font-bold sm:inline-block">John Carroll</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
             <Link href="#about" className="transition-colors hover:text-purple-400">About</Link>
