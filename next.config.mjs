@@ -10,8 +10,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Since your repo is john-carroll-sw.github.io, it should serve from root
-  // Remove basePath and assetPrefix for root domain
   trailingSlash: true,
 }
 
