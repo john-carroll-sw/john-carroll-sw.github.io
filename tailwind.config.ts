@@ -20,6 +20,15 @@ const config: Config = {
     },
     extend: {
       colors: {
+        dark: {
+          100: "#2A2A2A",
+          200: "#252525",
+          300: "#202020",
+          400: "#1A1A1A",
+          500: "#151515",
+          600: "#101010",
+          900: "#0A0A0A",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -68,10 +77,20 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "matrix-fade": {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "1" },
+        },
+        click: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(0.95)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        matrix: "matrix-fade 0.5s ease-in-out infinite",
+        click: "click 0.3s ease-in-out",
       },
     },
   },

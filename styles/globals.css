@@ -2,8 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Shimmer animation for logo */
+@keyframes shimmer {
+  0% {
+    background-position: -700px 0;
+  }
+  100% {
+    background-position: 700px 0;
+  }
+}
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.text-coral-400 {
+  color: #FF6F61;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.fixed-hero-video {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -20;
+  transition: opacity 0.7s;
+  pointer-events: none;
 }
 
 @layer utilities {
