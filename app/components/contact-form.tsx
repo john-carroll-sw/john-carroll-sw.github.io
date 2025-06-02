@@ -26,19 +26,10 @@ export default function ContactForm() {
     e.preventDefault()
     setPending(true)
 
-    try {
-      // For demonstration purposes, we'll just simulate a successful submission
-      // In a real implementation, you would use a service like EmailJS, Formspree, etc.
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      // Clear the form
-      setFormData({ name: "", email: "", message: "" })
-      setMessage("Thanks for your message! I'll get back to you soon.")
-    } catch (error) {
-      setMessage("Something went wrong. Please try again.")
-    } finally {
-      setPending(false)
-    }
+    // Construct mailto link
+    const mailto = `mailto:YOUR_EMAIL_HERE?subject=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
+    window.location.href = mailto
+    setPending(false)
   }
 
   return (
