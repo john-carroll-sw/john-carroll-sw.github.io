@@ -3,7 +3,7 @@
 import ContactForm from "../components/contact-form"
 import TechStack from "../components/tech-stack"
 import { AutoSliderBanner } from "@/components/auto-slider-banner"
-import { useRef, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useSplashComplete } from "./layout"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"

@@ -9,6 +9,7 @@ import {
 import { useState, useRef, useEffect } from "react"
 import type { CarouselApi } from "@/components/ui/carousel"
 import { useIsMobile } from "@/components/ui/use-mobile"
+import projectsData from "@/data/projects.json"
 
 export interface Project {
   title: string
@@ -18,78 +19,8 @@ export interface Project {
   tags: string[]
 }
 
-const projects: Project[] = [
-  {
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration for seamless payments.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["Next.js", "Prisma", "Stripe", "TypeScript"],
-  },
-  {
-    title: "Task Management App",
-    description: "A real-time task management application with team collaboration features and notification systems.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-  },
-  {
-    title: "AI Chat Interface",
-    description: "An AI-powered chat interface with natural language processing capabilities and sentiment analysis.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["OpenAI", "Next.js", "TailwindCSS", "WebSockets"],
-  },
-  {
-    title: "Portfolio Generator",
-    description: "A tool that helps developers create beautiful portfolios with minimal configuration and maximum impact.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["React", "GraphQL", "Firebase", "Netlify"],
-  },
-  {
-    title: "Health Monitoring Dashboard",
-    description: "A comprehensive health metrics dashboard for tracking fitness goals, nutrition, and wellness metrics.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
-  },
-  {
-    title: "Smart Home Control Center",
-    description: "An IoT hub for managing connected home devices with voice commands and automated routines.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["IoT", "React Native", "MQTT", "Node.js"],
-  },
-  {
-    title: "Educational Content Platform",
-    description: "A learning management system with interactive lessons, quizzes, and progress tracking for students.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["Angular", "Node.js", "MongoDB", "AWS"],
-  },
-  {
-    title: "Crypto Portfolio Tracker",
-    description: "Real-time cryptocurrency portfolio tracker with price alerts, market analysis, and trading history.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["React", "Redux", "CoinGecko API", "Chart.js"],
-  },
-  {
-    title: "Augmented Reality Shopping",
-    description: "AR application allowing users to visualize products in their space before purchasing.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["AR.js", "Three.js", "WebXR", "React"],
-  },
-  {
-    title: "Recipe Recommendation Engine",
-    description: "AI-powered recipe suggestion app based on available ingredients, dietary preferences, and past choices.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com",
-    tags: ["Python", "TensorFlow", "Flask", "React"],
-  },
-]
+// Remove the hardcoded projects array and use the imported data
+const projects: Project[] = projectsData as Project[]
 
 export function ProjectStack() {
   const [activeIndex, setActiveIndex] = useState(0)
