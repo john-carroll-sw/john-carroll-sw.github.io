@@ -25,10 +25,26 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setPending(true)
+    setMessage("")
 
-    // Construct mailto link
-    const mailto = `mailto:YOUR_EMAIL_HERE?subject=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
-    window.location.href = mailto
+    try {
+      const res = await fetch("https://formspree.io/f/mldnekaw", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      if (res.ok) {
+        setMessage("Message sent! Thank you for reaching out.")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        setMessage("Sorry, there was a problem sending your message.")
+      }
+    } catch {
+      setMessage("Sorry, there was a problem sending your message.")
+    }
     setPending(false)
   }
 
