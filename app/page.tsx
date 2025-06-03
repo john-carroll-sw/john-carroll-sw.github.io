@@ -8,6 +8,7 @@ import { useSplashComplete } from "./layout"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ProjectStack } from "@/components/project-stack"
+import { AboutSection } from "../components/about-section"
 
 
 export default function Page() {
@@ -50,6 +51,8 @@ export default function Page() {
         <section>
           <AutoSliderBanner />
         </section>
+        {/* About Section */}
+        <AboutSection />
         {/* Projects Section */}
         <section id="projects" ref={projectsRef} className="w-full py-20 md:py-32 relative px-4 md:px-8">
           <h2 className="text-4xl font-bold mb-12 text-center text-gradient bg-gradient-to-r from-purple-400 via-teal-400 to-pink-400 bg-clip-text text-transparent">Projects</h2>
