@@ -3,7 +3,7 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { Inter } from "next/font/google"
-import { SplashScreen } from "@/app/components/splash-screen"
+import { SplashScreen } from "@/components/splash-screen"
 import "../styles/globals.css"
 import type React from "react"
 import { useState, createContext, useContext } from "react"

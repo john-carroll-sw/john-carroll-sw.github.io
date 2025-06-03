@@ -20,13 +20,41 @@ const roles = [
 	"Lifelong Learner",
 ]
 
-function RotatingTitle({ interval = 5000 }) {
+const LIGHTNING_ROLE = "Full-Stack Developer";
+
+function RotatingTitle({ interval = 5000, glitchActive = false }) {
 	const [index, setIndex] = useState(0)
 	const [prevIndex, setPrevIndex] = useState(0)
 	const [isAnimating, setIsAnimating] = useState(false)
 	const containerRef = useRef<HTMLSpanElement>(null)
 	const prevTitleRef = useRef<HTMLSpanElement>(null)
 	const nextTitleRef = useRef<HTMLSpanElement>(null)
+	const glitchRef = useRef<HTMLSpanElement>(null)
+
+	// Glitch effect for any role if glitchActive is true
+	useEffect(() => {
+		if (!glitchActive || !glitchRef.current) return;
+		const el = glitchRef.current;
+		let frame = 0;
+		let raf: number;
+		const chars = "█▓▒░<>|/\\!@#$%^&*_-+=~";
+		const original = roles[index];
+		const glitch = () => {
+			if (frame < 24) {
+				let glitched = original.split("").map((c, i) => {
+					if (Math.random() < 0.5) return chars[Math.floor(Math.random() * chars.length)];
+					return c;
+				}).join("");
+				el.textContent = glitched;
+				frame++;
+				raf = requestAnimationFrame(glitch);
+			} else {
+				el.textContent = original;
+			}
+		};
+		glitch();
+		return () => cancelAnimationFrame(raf);
+	}, [index, glitchActive]);
 
 	useEffect(() => {
 		if (!containerRef.current || !prevTitleRef.current || !nextTitleRef.current) return;
@@ -71,6 +99,22 @@ function RotatingTitle({ interval = 5000 }) {
 		return () => clearTimeout(timeout)
 	}, [index, isAnimating, interval])
 
+	const isCoffeeLover = roles[index] === "Coffee Lover";
+	const isLightning = roles[index] === LIGHTNING_ROLE;
+	const [lightningActive, setLightningActive] = useState(false);
+
+	// Lightning effect trigger
+	useEffect(() => {
+		if (!isLightning) return;
+		setLightningActive(false);
+		const timeout = setTimeout(() => setLightningActive(true), 400); // delay for effect
+		const offTimeout = setTimeout(() => setLightningActive(false), 900); // effect duration
+		return () => {
+			clearTimeout(timeout);
+			clearTimeout(offTimeout);
+		};
+	}, [index, isLightning]);
+
 	return (
 		<span
 			ref={containerRef}
@@ -78,7 +122,7 @@ function RotatingTitle({ interval = 5000 }) {
 			style={{
 				minWidth: 260,
 				width: 'auto',
-				height: '50px', // mobile default
+				height: '50px',
 				display: 'flex',
 				alignItems: 'center',
 				justifyContent: 'center',
@@ -98,7 +142,36 @@ function RotatingTitle({ interval = 5000 }) {
 				className="absolute left-1/2 top-1/2 w-auto h-full flex items-center justify-center font-extrabold text-3xl md:text-6xl text-white whitespace-nowrap"
 				style={{ willChange: 'transform', zIndex: 1, transform: 'translate(-50%, -50%)', padding: '0 16px' }}
 			>
-				{roles[index]}
+				{glitchActive ? (
+					<span ref={glitchRef} className="glitch-text glitch-purple" style={{ position: 'relative', display: 'inline-block' }}>
+						{roles[index]}
+					</span>
+				) : isLightning ? (
+					<span className="inline-block relative">
+						<span>
+							Full-Stack{' '}
+							<span className={`relative lightning-word${lightningActive ? ' lightning-strike' : ''}`}>Developer
+								{lightningActive && (
+									<span className="lightning-emoji absolute -top-8 left-1/2 -translate-x-1/2 text-yellow-300 text-4xl pointer-events-none select-none" style={{ filter: 'drop-shadow(0 0 8px #fff700)' }}>
+										⚡
+									</span>
+								)}
+							</span>
+						</span>
+					</span>
+				) : isCoffeeLover ? (
+					<span className="coffee-lover-title inline-flex flex-row items-center justify-center gap-2 w-full h-full font-extrabold text-3xl md:text-6xl text-white" style={{ position: 'static', transform: 'none', padding: 0 }}>
+						<span>Coffee Lover</span>
+						<span className="relative flex flex-col items-center justify-center" style={{ width: '2.5rem', height: '2.5rem' }}>
+							<span className="coffee-steam absolute -top-10 left-1/2 -translate-x-1/2" aria-hidden="true" style={{ display: 'block', height: 24, marginBottom: -8, zIndex: 2 }}>
+								<span className="steam steam-1" />
+								<span className="steam steam-2" />
+								<span className="steam steam-3" />
+							</span>
+							<span style={{ fontSize: '2.5rem', lineHeight: 1, zIndex: 1 }} role="img" aria-label="coffee">☕</span>
+						</span>
+					</span>
+				) : roles[index]}
 			</span>
 		</span>
 	)
@@ -115,13 +188,74 @@ const videos = [
 
 export function AutoSliderBanner() {
 	const [currentIndex, setCurrentIndex] = useState(0)
+	const getInTouchBtnRef = useRef(null);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length)
-		}, 15000)
+		}, 10000)
 		return () => clearInterval(interval)
 	}, [])
+
+	const glitchActive = videos[currentIndex] === "/videos/4990242-hd_1920_1080_30fps.mp4"
+
+	// --- Glitch Jump Animation: Dynamic Keyframes by JS ---
+	// Call triggerRandomGlitchJump(buttonEl) to animate the button with 5 random keyframes
+	function triggerRandomGlitchJump(buttonEl: HTMLElement | null) {
+		if (!buttonEl) return;
+		// Helper for random value in range, rounded to nearest 10
+		const rand = (min: number, max: number) => Math.round((Math.random() * (max - min) + min) / 10) * 10;
+		// 5 keyframes: 0%, 15%, 35%, 60%, 100%
+		const keyframes = [
+			{ percent: 0,    x: 0,    y: 0,    scale: 1,    rotate: 0 },
+			{ percent: 15,   x: rand(-600, 600), y: rand(-600, 600), scale: 1.12, rotate: rand(-15, 15) },
+			{ percent: 35,   x: rand(-600, 600), y: rand(-600, 600), scale: 1.08, rotate: rand(-12, 12) },
+			{ percent: 60,   x: rand(-600, 600), y: rand(-600, 600), scale: 1.12, rotate: rand(-15, 15) },
+			{ percent: 100,  x: 0,    y: 0,    scale: 1,    rotate: 0 }
+		];
+		let css = '';
+		for (const kf of keyframes) {
+			css += `\n      ${kf.percent}% { transform: translate(${kf.x}px, ${kf.y}px) scale(${kf.scale}) rotate(${kf.rotate}deg); }`;
+		}
+		const animName = `glitch-jump-${Date.now()}-${Math.floor(Math.random()*10000)}`;
+		const keyframesCSS = `@keyframes ${animName} {${css}\n}`;
+		let styleTag = document.getElementById('glitch-jump-style') as HTMLStyleElement | null;
+		if (!styleTag) {
+			styleTag = document.createElement('style');
+			styleTag.id = 'glitch-jump-style';
+			document.head.appendChild(styleTag);
+		}
+		styleTag.appendChild(document.createTextNode(keyframesCSS));
+		buttonEl.style.animation = 'none';
+		void buttonEl.offsetWidth;
+		buttonEl.style.animation = `${animName} 0.32s cubic-bezier(.25,1.7,.5,1.1) 1`;
+	}
+	// --- End Glitch Jump Animation ---
+
+
+	// Make the button jump repeatedly during glitch mode
+	useEffect(() => {
+		let intervalId: NodeJS.Timeout | null = null;
+		function randomInterval() {
+			// Random ms between 350 and 5000
+			return Math.floor(Math.random() * (5000 - 350 + 1)) + 350;
+		}
+		let active = true;
+		function jumpLoop() {
+			if (!active) return;
+			if (getInTouchBtnRef.current) {
+				triggerRandomGlitchJump(getInTouchBtnRef.current);
+			}
+			intervalId = setTimeout(jumpLoop, randomInterval());
+		}
+		if (glitchActive) {
+			jumpLoop();
+		}
+		return () => {
+			active = false;
+			if (intervalId) clearTimeout(intervalId as any);
+		};
+	}, [glitchActive]);
 
 	return (
 		<div className="relative top-0 left-0 w-screen h-screen z-0 overflow-hidden">
@@ -152,7 +286,7 @@ export function AutoSliderBanner() {
 					<h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-2 text-white text-center w-full flex flex-col items-center justify-center">
 						<span className="block mb-2 text-3xl md:text-5xl font-bold text-white">John Carroll</span>
 						<span style={{ display: 'inline-block', width: 560, minWidth: 260, textAlign: 'center' }}>
-							<RotatingTitle />
+							<RotatingTitle glitchActive={glitchActive} />
 						</span>
 					</h1>
 				</div>
@@ -172,9 +306,10 @@ export function AutoSliderBanner() {
 					</a>
 					<a href="#contact">
 						<Button
+							ref={getInTouchBtnRef}
 							size="lg"
 							variant="outline"
-							className="border-pink-400 text-pink-400 hover:bg-pink-400/10"
+							className={`border-pink-400 text-pink-400 hover:bg-pink-400/10 transition-all duration-200${glitchActive ? ' get-in-touch-btn' : ''}`}
 						>
 							Get in Touch
 						</Button>
@@ -222,3 +357,4 @@ export function AutoSliderBanner() {
 		</div>
 	)
 }
+

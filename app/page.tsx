@@ -3,22 +3,14 @@
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import Link from "next/link"
-import ContactForm from "./components/contact-form"
-import ProjectCard from "./components/project-card"
-import TechStack from "./components/tech-stack"
+import ContactForm from "../components/contact-form"
+import ProjectCard from "../components/project-card"
+import TechStack from "../components/tech-stack"
 import { AutoSliderBanner } from "@/components/auto-slider-banner"
 import { useRef, useEffect, useState } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useSplashComplete } from "./layout"
 
-// Eye-catching geometric background (simple version)
-const GeometricBackground = () => (
-  <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-    <div className="absolute top-10 left-10 w-72 h-72 bg-purple-600 opacity-20 rounded-full blur-3xl animate-pulse" />
-    <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-400 opacity-20 rounded-full blur-3xl animate-pulse" />
-    <div className="absolute top-1/2 left-1/3 w-60 h-60 bg-pink-400 opacity-10 rounded-full blur-2xl animate-pulse" />
-  </div>
-)
 
 export default function Page() {
   const projectsRef = useRef<HTMLDivElement>(null)
@@ -39,7 +31,7 @@ export default function Page() {
     let timer: NodeJS.Timeout | null = null
     // Only start fade-in timer after splash is complete
     requestAnimationFrame(() => {
-      timer = setTimeout(() => setHeaderVisible(true), 3000)
+      timer = setTimeout(() => setHeaderVisible(true), 1500)
     })
     return () => {
       window.removeEventListener("scroll", onScroll)
@@ -49,7 +41,6 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <GeometricBackground />
       <header
         className={`sticky top-0 z-50 w-full border-b transition-colors duration-500 ${navTransparent ? "bg-transparent border-transparent" : "bg-background/80 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60"} transition-opacity duration-1000`}
         style={{
