@@ -4,10 +4,11 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
-export function SplashScreen() {
+export function SplashScreen({ onComplete }: { onComplete?: () => void }) {
   const [progress, setProgress] = useState(0)
   const [matrixText, setMatrixText] = useState("")
   const [isComplete, setIsComplete] = useState(false)
+  const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
     // Include English letters, numbers, symbols and Japanese characters
@@ -41,6 +42,19 @@ export function SplashScreen() {
       clearInterval(matrixInterval)
     }
   }, [])
+
+  // When fade-out is done, call onComplete and hide
+  useEffect(() => {
+    if (isComplete) {
+      const timeout = setTimeout(() => {
+        setHidden(true)
+        if (onComplete) onComplete()
+      }, 500) // match transition-opacity duration
+      return () => clearTimeout(timeout)
+    }
+  }, [isComplete, onComplete])
+
+  if (hidden) return null
 
   return (
     <div

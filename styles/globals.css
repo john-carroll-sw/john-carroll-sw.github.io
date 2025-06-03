@@ -121,3 +121,13 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Responsive height for rotating title container */
+.rotating-title-container {
+  height: 50px !important;
+}
+@media (min-width: 768px) {
+  .rotating-title-container {
+    height: 90px !important;
+  }
+}

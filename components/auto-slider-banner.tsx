@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Github, Linkedin, Mail } from "lucide-react"
 import gsap from "gsap"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 
 // RotatingTitle component for headline
 const roles = [
@@ -73,19 +74,28 @@ function RotatingTitle({ interval = 5000 }) {
 	return (
 		<span
 			ref={containerRef}
-			className="relative inline-block align-middle overflow-visible w-full"
-			style={{ minWidth: 260, width: 'auto', height: 90, display: 'flex', alignItems: 'center', justifyContent: 'center', perspective: 600, padding: '0 32px' }}
+			className="relative inline-block align-middle overflow-visible w-full rotating-title-container"
+			style={{
+				minWidth: 260,
+				width: 'auto',
+				height: '50px', // mobile default
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+				perspective: 600,
+				padding: '0 32px'
+			}}
 		>
 			<span
 				ref={prevTitleRef}
-				className="absolute left-1/2 top-1/2 w-auto h-full flex items-center justify-center font-extrabold text-4xl md:text-6xl text-white whitespace-nowrap"
+				className="absolute left-1/2 top-1/2 w-auto h-full flex items-center justify-center font-extrabold text-3xl md:text-6xl text-white whitespace-nowrap"
 				style={{ willChange: 'transform', zIndex: 2, transform: 'translate(-50%, -50%)', padding: '0 16px' }}
 			>
 				{roles[prevIndex]}
 			</span>
 			<span
 				ref={nextTitleRef}
-				className="absolute left-1/2 top-1/2 w-auto h-full flex items-center justify-center font-extrabold text-4xl md:text-6xl text-white whitespace-nowrap"
+				className="absolute left-1/2 top-1/2 w-auto h-full flex items-center justify-center font-extrabold text-3xl md:text-6xl text-white whitespace-nowrap"
 				style={{ willChange: 'transform', zIndex: 1, transform: 'translate(-50%, -50%)', padding: '0 16px' }}
 			>
 				{roles[index]}
@@ -95,10 +105,10 @@ function RotatingTitle({ interval = 5000 }) {
 }
 
 const videos = [
+	"/videos/3163534-hd_1920_1080_30fps.mp4", // Sci Wave
 	"/videos/2675508-hd_1920_1080_24fps.mp4", // Night City
 	"/videos/3129671-hd_1920_1080_30fps.mp4", // Network Data Center
 	"/videos/3141210-hd_1920_1080_25fps.mp4", // Digital Planet
-	"/videos/3163534-hd_1920_1080_30fps.mp4", // Sci Wave
 	"/videos/4990242-hd_1920_1080_30fps.mp4", // Glitch
 	"/videos/4990245-hd_1920_1080_30fps.mp4", // Sound Waves
 ]
@@ -109,7 +119,7 @@ export function AutoSliderBanner() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length)
-		}, 10000) // Change video every 10 seconds
+		}, 15000)
 		return () => clearInterval(interval)
 	}, [])
 
@@ -131,18 +141,24 @@ export function AutoSliderBanner() {
 					Your browser does not support the video tag.
 				</video>
 			))}
-			<div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
-				{/* Main Name Header */}
-				<h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-2 text-white text-center w-full flex flex-col items-center justify-center">
-					{/* <span className="block mb-2 text-3xl md:text-5xl font-bold text-white">John Carroll</span> */}
-					<span style={{ display: 'inline-block', width: 560, minWidth: 260, textAlign: 'left' }}>
-						<RotatingTitle />
-					</span>
-				</h1>
+			<div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center w-full h-full">
+				{/* Responsive avatar/name/rotating title layout */}
+				<div className="flex flex-col items-center justify-center w-full gap-2 md:gap-6">
+					{/* Avatar */}
+					<Avatar className="w-32 h-32 shadow-xl border-4 border-white dark:border-gray-800 flex-shrink-0" >
+						<AvatarImage src="/JohnCarrollProfilePic.png" alt="John Carroll" />
+					</Avatar>
+					{/* Name and Rotating Title */}
+					<h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-2 text-white text-center w-full flex flex-col items-center justify-center">
+						<span className="block mb-2 text-3xl md:text-5xl font-bold text-white">John Carroll</span>
+						<span style={{ display: 'inline-block', width: 560, minWidth: 260, textAlign: 'center' }}>
+							<RotatingTitle />
+						</span>
+					</h1>
+				</div>
+				{/* Subtitle/description */}
 				<p className="mx-auto max-w-2xl text-xl text-gray-300 mb-8 text-center">
-					{/* Building scalable, intelligent products that turn ideas into impact. */}
 					Building full-stack experiences and agentic AI systems that tame messy problems and delight users.
-					{/* <br /> */}
 					Fueled by curiosity, strong coffee, and dad-level perseverence.
 				</p>
 				<div className="flex justify-center gap-4 mb-8 px-4 md:px-0">

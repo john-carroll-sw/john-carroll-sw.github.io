@@ -1,15 +1,15 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, ExternalLink, ArrowDown, Menu } from "lucide-react"
+import { Menu } from "lucide-react"
 import Link from "next/link"
 import ContactForm from "./components/contact-form"
 import ProjectCard from "./components/project-card"
 import TechStack from "./components/tech-stack"
-import HeroMotion from "./components/hero-motion"
 import { AutoSliderBanner } from "@/components/auto-slider-banner"
 import { useRef, useEffect, useState } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useSplashComplete } from "./layout"
 
 // Eye-catching geometric background (simple version)
 const GeometricBackground = () => (
@@ -26,20 +26,37 @@ export default function Page() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [showTOS, setShowTOS] = useState(false)
   const [showPrivacy, setShowPrivacy] = useState(false)
+  const [headerVisible, setHeaderVisible] = useState(false)
+  const splashComplete = useSplashComplete()
 
   useEffect(() => {
+    if (!splashComplete) return;
     const onScroll = () => {
       setNavTransparent(window.scrollY < 10)
     }
     window.addEventListener("scroll", onScroll)
     onScroll()
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    let timer: NodeJS.Timeout | null = null
+    // Only start fade-in timer after splash is complete
+    requestAnimationFrame(() => {
+      timer = setTimeout(() => setHeaderVisible(true), 3000)
+    })
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      if (timer) clearTimeout(timer)
+    }
+  }, [splashComplete])
 
   return (
     <div className="min-h-screen bg-background relative">
       <GeometricBackground />
-      <header className={`sticky top-0 z-50 w-full border-b transition-colors duration-500 ${navTransparent ? "bg-transparent border-transparent" : "bg-background/80 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60"}`}>
+      <header
+        className={`sticky top-0 z-50 w-full border-b transition-colors duration-500 ${navTransparent ? "bg-transparent border-transparent" : "bg-background/80 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60"} transition-opacity duration-1000`}
+        style={{
+          opacity: headerVisible ? 1 : 0,
+          transition: 'opacity 1.2s cubic-bezier(0.4,0,0.2,1)'
+        }}
+      >
         <div className="container flex h-16 items-center px-4 md:px-2">
           <Link className="ml-2 mr-6 flex items-center space-x-2" href="/">
             <span className="hidden font-bold sm:inline-block">John Carroll</span>
