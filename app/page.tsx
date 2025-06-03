@@ -9,26 +9,27 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ProjectStack } from "@/components/project-stack"
 import { AboutSection } from "../components/about-section"
+import { ChevronUp } from "lucide-react"
 
 
 export default function Page() {
-  const projectsRef = useRef<HTMLDivElement>(null)
   const [navTransparent, setNavTransparent] = useState(true)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [showTOS, setShowTOS] = useState(false)
   const [showPrivacy, setShowPrivacy] = useState(false)
   const [headerVisible, setHeaderVisible] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
   const splashComplete = useSplashComplete()
 
   useEffect(() => {
     if (!splashComplete) return;
     const onScroll = () => {
       setNavTransparent(window.scrollY < 10)
+      setShowBackToTop(window.scrollY > 3000)
     }
     window.addEventListener("scroll", onScroll)
     onScroll()
     let timer: NodeJS.Timeout | null = null
-    // Only start fade-in timer after splash is complete
     requestAnimationFrame(() => {
       timer = setTimeout(() => setHeaderVisible(true), 1500)
     })
@@ -54,7 +55,7 @@ export default function Page() {
         {/* About Section */}
         <AboutSection />
         {/* Projects Section */}
-        <section id="projects" ref={projectsRef} className="w-full py-20 md:py-32 relative px-4 md:px-8">
+        <section id="projects" className="w-full py-20 md:py-32 relative px-4 md:px-8">
           <h2 className="text-4xl font-bold mb-12 text-center text-gradient bg-gradient-to-r from-purple-400 via-teal-400 to-pink-400 bg-clip-text text-transparent">Projects</h2>
           {/* Work in Progress Banner */}
           <div className="flex justify-center mb-8">
@@ -67,7 +68,7 @@ export default function Page() {
 
         {/* Tech Stack Section */}
         <section id="tech" className="py-20 md:py-32 bg-gradient-to-b from-background to-purple-950/30 rounded-xl my-12 px-4 md:px-8">
-          <h2 className="text-4xl font-bold mb-12 text-center text-gradient bg-gradient-to-r from-purple-400 via-teal-400 to-pink-400 bg-clip-text text-transparent">Tech Stack</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-gradient bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 bg-clip-text text-transparent">Tech Stack</h2>
           <TechStack />
         </section>
 
@@ -119,6 +120,16 @@ export default function Page() {
           </div>
         </section>
       </main>
+      {/* Back to Top Button (desktop only) */}
+      {showBackToTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="hidden md:flex fixed bottom-8 right-8 z-50 bg-black/80 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg border-2 border-purple-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400"
+          aria-label="Back to top"
+        >
+          <ChevronUp className="h-7 w-7" />
+        </button>
+      )}
       <Footer
         setShowTOS={setShowTOS}
         setShowPrivacy={setShowPrivacy}

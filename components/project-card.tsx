@@ -12,15 +12,16 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, description, image, link, tags }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden">
-      <div className="relative aspect-video">
+    <Card className="overflow-hidden h-full flex flex-col">
+      <div className="relative">
         <img
           src={image || "/placeholder.svg"}
           alt={title}
           className="object-cover w-full h-full transition-transform hover:scale-105"
+          style={{ aspectRatio: '16/9', height: '100%', width: '100%' }}
         />
       </div>
-      <CardContent className="p-4">
+      <CardContent className="p-4 flex-1 flex flex-col">
         <h3 className="font-semibold text-xl mb-2">{title}</h3>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
         <div className="flex flex-wrap gap-2">
@@ -34,7 +35,7 @@ export default function ProjectCard({ title, description, image, link, tags }: P
           ))}
         </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-4 pt-0 mt-auto">
         <Link href={link} target="_blank" className="inline-flex items-center gap-2 text-sm hover:underline">
           <Github className="h-4 w-4" />
           View on GitHub

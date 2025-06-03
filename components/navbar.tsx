@@ -50,20 +50,32 @@ export function Navbar({ navTransparent, headerVisible, setMobileNavOpen, mobile
         >
           <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10 w-full md:w-auto">Resume</Button>
         </Link>
-        <div className="ml-2 flex items-center">
+        <div className="ml-2 hidden md:flex items-center">
           <ThemeToggle />
         </div>
       </div>
       {/* Mobile Nav Overlay */}
       {mobileNavOpen && (
         <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-background/95 flex flex-col items-center justify-center gap-8 text-2xl font-bold overflow-y-auto">
-          <button
-            className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
-            aria-label="Close navigation menu"
+          <div className="absolute top-4 right-4 flex items-center gap-3">
+            <div className="mt-1">
+              <ThemeToggle />
+            </div>
+            <button
+              className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
+              aria-label="Close navigation menu"
+              onClick={() => setMobileNavOpen(false)}
+            >
+              <span className="text-3xl">×</span>
+            </button>
+          </div>
+          <Link
+            href="/"
             onClick={() => setMobileNavOpen(false)}
+            className="text-3xl font-extrabold mb-2 mt-2 tracking-tight text-white bg-clip-text text-transparent"
           >
-            <span className="text-3xl">×</span>
-          </button>
+            John Carroll
+          </Link>
           <Link href="#about" onClick={() => setMobileNavOpen(false)} className="hover:text-purple-400">About</Link>
           <Link href="#projects" onClick={() => setMobileNavOpen(false)} className="hover:text-teal-400">Projects</Link>
           <Link href="#contact" onClick={() => setMobileNavOpen(false)} className="hover:text-pink-400">Contact</Link>
