@@ -9,6 +9,7 @@ import TechStack from "./components/tech-stack"
 import HeroMotion from "./components/hero-motion"
 import { AutoSliderBanner } from "@/components/auto-slider-banner"
 import { useRef, useEffect, useState } from "react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 // Eye-catching geometric background (simple version)
 const GeometricBackground = () => (
@@ -66,6 +67,9 @@ export default function Page() {
           >
             <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10 w-full md:w-auto">Resume</Button>
           </Link>
+          <div className="ml-2 flex items-center">
+            <ThemeToggle />
+          </div>
         </div>
         {/* Mobile Nav Overlay */}
         {mobileNavOpen && (
@@ -137,6 +141,46 @@ export default function Page() {
           <TechStack />
         </section>
 
+        {/* Career Timeline Placeholder */}
+        <section id="career-timeline" className="py-16 md:py-24 px-4 md:px-8">
+          <h2 className="text-3xl font-bold mb-6 text-center text-gradient bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Career Timeline</h2>
+          <div className="max-w-2xl mx-auto text-center text-muted-foreground">
+            <p className="mb-4">Coming soon: A visual timeline of my career journey, roles, and key milestones.</p>
+            <div className="h-24 bg-muted rounded-xl flex items-center justify-center text-lg font-semibold text-muted-foreground/70">[Timeline Placeholder]</div>
+          </div>
+        </section>
+
+        {/* Speaking Engagements Placeholder */}
+        <section id="speaking" className="py-16 md:py-24 px-4 md:px-8">
+          <h2 className="text-3xl font-bold mb-6 text-center text-gradient bg-gradient-to-r from-pink-400 via-teal-400 to-purple-400 bg-clip-text text-transparent">Speaking Engagements</h2>
+          <div className="max-w-2xl mx-auto text-center text-muted-foreground">
+            <p className="mb-4">Talks, workshops, and panels at conferences and meetups will be listed here.</p>
+            <ul className="space-y-2">
+              <li className="bg-muted rounded px-4 py-2 text-muted-foreground/70">[Conference/Workshop Placeholder]</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Blogs Published Placeholder */}
+        <section id="blogs" className="py-16 md:py-24 px-4 md:px-8">
+          <h2 className="text-3xl font-bold mb-6 text-center text-gradient bg-gradient-to-r from-purple-400 via-pink-400 to-teal-400 bg-clip-text text-transparent">Blogs Published</h2>
+          <div className="max-w-2xl mx-auto text-center text-muted-foreground">
+            <p className="mb-4">A curated list of my published blog posts and articles will appear here.</p>
+            <ul className="space-y-2">
+              <li className="bg-muted rounded px-4 py-2 text-muted-foreground/70">[Blog Post Placeholder]</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Stealth Startup Work Placeholder */}
+        <section id="stealth" className="py-16 md:py-24 px-4 md:px-8">
+          <h2 className="text-3xl font-bold mb-6 text-center text-gradient bg-gradient-to-r from-teal-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Stealth Startup Work</h2>
+          <div className="max-w-2xl mx-auto text-center text-muted-foreground">
+            <p className="mb-4">Details about my work on stealth and early-stage startups will be shared here (as much as I can reveal!).</p>
+            <div className="h-20 bg-muted rounded-xl flex items-center justify-center text-lg font-semibold text-muted-foreground/70">[Stealth Startup Placeholder]</div>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="py-20 md:py-32 px-4 md:px-8">
           <div className="mx-auto max-w-2xl">
@@ -148,7 +192,7 @@ export default function Page() {
 
       <footer className="border-t bg-background/80">
         <div className="container flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
-          <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 John.dev. All rights reserved.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 John Carroll. All rights reserved.</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <button
               className="text-xs hover:underline underline-offset-4 bg-transparent border-0 p-0 m-0 cursor-pointer"
