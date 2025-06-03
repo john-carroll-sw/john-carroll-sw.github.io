@@ -56,7 +56,7 @@ export function Navbar({ navTransparent, headerVisible, setMobileNavOpen, mobile
       </div>
       {/* Mobile Nav Overlay */}
       {mobileNavOpen && (
-        <div className="fixed inset-0 z-50 bg-background/95 flex flex-col items-center justify-center gap-8 text-2xl font-bold">
+        <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-background/95 flex flex-col items-center justify-center gap-8 text-2xl font-bold overflow-y-auto">
           <button
             className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
             aria-label="Close navigation menu"
