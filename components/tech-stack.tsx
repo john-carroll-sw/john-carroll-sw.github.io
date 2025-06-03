@@ -199,7 +199,12 @@ export default function TechStack() {
 						{card.items.map((item) => (
 							<span
 								key={item}
-								className={`inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium whitespace-nowrap bg-black/30 backdrop-blur-sm ${cardColors[cardIdx % cardColors.length]}`}
+								className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium whitespace-nowrap border transition-colors
+      bg-white text-gray-900 ${cardColors[cardIdx % cardColors.length]}
+      dark:bg-black/30 dark:text-inherit dark:${cardColors[cardIdx % cardColors.length]}
+      dark:backdrop-blur-sm
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-${cardColors[cardIdx % cardColors.length].split(' ')[0].replace('border-', '')}
+    `}
 							>
 								{item}
 							</span>

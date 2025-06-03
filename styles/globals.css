@@ -134,40 +134,40 @@ body {
 
 /* Glitch effect for RotatingTitle (Full-Stack Developer) */
 .glitch-text {
-  color: #fff;
+  color: var(--glitch-text, #fff);
   text-shadow:
-    2px 0 #f0f,
-    -2px 0 #0ff,
-    0 2px #0f0,
-    0 -2px #ff0;
+    2px 0 var(--glitch-shadow1, #f0f),
+    -2px 0 var(--glitch-shadow2, #0ff),
+    0 2px var(--glitch-shadow3, #0f0),
+    0 -2px var(--glitch-shadow4, #ff0);
   animation: glitch-colors 1.2s infinite linear alternate;
 }
 @keyframes glitch-colors {
-  0% { text-shadow: 2px 0 #f0f, -2px 0 #0ff, 0 2px #0f0, 0 -2px #ff0; }
-  20% { text-shadow: -2px 0 #0ff, 2px 0 #f0f, 0 -2px #ff0, 0 2px #0f0; }
-  40% { text-shadow: 2px 2px #0ff, -2px -2px #f0f, 2px -2px #ff0, -2px 2px #0f0; }
-  60% { text-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff; }
-  100% { text-shadow: 2px 0 #f0f, -2px 0 #0ff, 0 2px #0f0, 0 -2px #ff0; }
+  0% { text-shadow: 2px 0 var(--glitch-shadow1, #f0f), -2px 0 var(--glitch-shadow2, #0ff), 0 2px var(--glitch-shadow3, #0f0), 0 -2px var(--glitch-shadow4, #ff0); }
+  20% { text-shadow: -2px 0 var(--glitch-shadow2, #0ff), 2px 0 var(--glitch-shadow1, #f0f), 0 -2px var(--glitch-shadow4, #ff0), 0 2px var(--glitch-shadow3, #0f0); }
+  40% { text-shadow: 2px 2px var(--glitch-shadow2, #0ff), -2px -2px var(--glitch-shadow1, #f0f), 2px -2px var(--glitch-shadow4, #ff0), -2px 2px var(--glitch-shadow3, #0f0); }
+  60% { text-shadow: 0 0 var(--glitch-text, #fff), 0 0 var(--glitch-text, #fff), 0 0 var(--glitch-text, #fff), 0 0 var(--glitch-text, #fff); }
+  100% { text-shadow: 2px 0 var(--glitch-shadow1, #f0f), -2px 0 var(--glitch-shadow2, #0ff), 0 2px var(--glitch-shadow3, #0f0), 0 -2px var(--glitch-shadow4, #ff0); }
 }
 
 /* Glitch effect for RotatingTitle (Full-Stack Developer, or when Glitch video is active) */
 .glitch-text.glitch-purple {
-  color: #fff;
+  color: var(--glitch-text, #fff);
   text-shadow:
-    0 0 8px #a855f7,
-    0 0 16px #a855f7,
-    2px 0 #f0f,
-    -2px 0 #0ff,
-    0 2px #0f0,
-    0 -2px #ff0;
+    0 0 8px var(--glitch-purple, #a855f7),
+    0 0 16px var(--glitch-purple, #a855f7),
+    2px 0 var(--glitch-shadow1, #f0f),
+    -2px 0 var(--glitch-shadow2, #0ff),
+    0 2px var(--glitch-shadow3, #0f0),
+    0 -2px var(--glitch-shadow4, #ff0);
   animation: glitch-purple-colors 1.2s infinite linear alternate;
 }
 @keyframes glitch-purple-colors {
-  0% { text-shadow: 0 0 8px #a855f7, 0 0 16px #a855f7, 2px 0 #f0f, -2px 0 #0ff, 0 2px #0f0, 0 -2px #ff0; }
-  20% { text-shadow: 0 0 16px #a855f7, 0 0 8px #a855f7, -2px 0 #0ff, 2px 0 #f0f, 0 -2px #ff0, 0 2px #0f0; }
-  40% { text-shadow: 0 0 24px #a855f7, 2px 2px #0ff, -2px -2px #f0f, 2px -2px #ff0, -2px 2px #0f0; }
-  60% { text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff; }
-  100% { text-shadow: 0 0 8px #a855f7, 0 0 16px #a855f7, 2px 0 #f0f, -2px 0 #0ff, 0 2px #0f0, 0 -2px #ff0; }
+  0% { text-shadow: 0 0 8px var(--glitch-purple, #a855f7), 0 0 16px var(--glitch-purple, #a855f7), 2px 0 var(--glitch-shadow1, #f0f), -2px 0 var(--glitch-shadow2, #0ff), 0 2px var(--glitch-shadow3, #0f0), 0 -2px var(--glitch-shadow4, #ff0); }
+  20% { text-shadow: 0 0 16px var(--glitch-purple, #a855f7), 0 0 8px var(--glitch-purple, #a855f7), -2px 0 var(--glitch-shadow2, #0ff), 2px 0 var(--glitch-shadow1, #f0f), 0 -2px var(--glitch-shadow4, #ff0), 0 2px var(--glitch-shadow3, #0f0); }
+  40% { text-shadow: 0 0 24px var(--glitch-purple, #a855f7), 2px 2px var(--glitch-shadow2, #0ff), -2px -2px var(--glitch-shadow1, #f0f), 2px -2px var(--glitch-shadow4, #ff0), -2px 2px var(--glitch-shadow3, #0f0); }
+  60% { text-shadow: 0 0 0 var(--glitch-text, #fff), 0 0 0 var(--glitch-text, #fff), 0 0 0 var(--glitch-text, #fff), 0 0 0 var(--glitch-text, #fff); }
+  100% { text-shadow: 0 0 8px var(--glitch-purple, #a855f7), 0 0 16px var(--glitch-purple, #a855f7), 2px 0 var(--glitch-shadow1, #f0f), -2px 0 var(--glitch-shadow2, #0ff), 0 2px var(--glitch-shadow3, #0f0), 0 -2px var(--glitch-shadow4, #ff0); }
 }
 
 /* Coffee steam animation for Coffee Lover title */
@@ -185,7 +185,7 @@ body {
   width: 6px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 100%);
+  background: linear-gradient(180deg, rgba(var(--steam-rgb,255,255,255),0.7) 0%, rgba(var(--steam-rgb,255,255,255),0.1) 100%);
   opacity: 0.7;
   margin: 0 1px;
   animation: steam-rise 2.2s infinite ease-in-out;
@@ -224,20 +224,20 @@ body {
   position: relative;
 }
 .lightning-strike {
-  color: #fff700;
+  color: var(--lightning, #fff700);
   text-shadow:
-    0 0 8px #fff700,
-    0 0 16px #fff700,
-    0 0 32px #fff700,
-    0 0 48px #fff700;
+    0 0 8px var(--lightning, #fff700),
+    0 0 16px var(--lightning, #fff700),
+    0 0 32px var(--lightning, #fff700),
+    0 0 48px var(--lightning, #fff700);
   animation: lightning-flash 0.4s linear;
 }
 @keyframes lightning-flash {
-  0% { color: #fff; text-shadow: none; }
-  10% { color: #fff700; text-shadow: 0 0 16px #fff700, 0 0 32px #fff700; }
-  30% { color: #fff; text-shadow: none; }
-  50% { color: #fff700; text-shadow: 0 0 32px #fff700, 0 0 48px #fff700; }
-  100% { color: #fff; text-shadow: none; }
+  0% { color: var(--foreground); text-shadow: none; }
+  10% { color: var(--lightning, #fff700); text-shadow: 0 0 16px var(--lightning, #fff700), 0 0 32px var(--lightning, #fff700); }
+  30% { color: var(--foreground); text-shadow: none; }
+  50% { color: var(--lightning, #fff700); text-shadow: 0 0 32px var(--lightning, #fff700), 0 0 48px var(--lightning, #fff700); }
+  100% { color: var(--foreground); text-shadow: none; }
 }
 .lightning-emoji {
   pointer-events: none;
@@ -254,16 +254,51 @@ body {
 }
 
 .get-in-touch-btn {
-  box-shadow: 0 0 0 0 #f472b6, 0 0 0 0 #fff;
+  box-shadow: 0 0 0 0 var(--btn-shadow1, #f472b6), 0 0 0 0 var(--btn-shadow2, #fff);
   border-width: 2px;
-  border-color: #f472b6;
-  background: linear-gradient(90deg, rgba(236,72,153,0.12) 0%, rgba(255,255,255,0.04) 100%);
+  border-color: var(--btn-border, #f472b6);
+  background: linear-gradient(90deg, rgba(var(--btn-bg1,236,72,153),0.12) 0%, rgba(var(--btn-bg2,255,255,255),0.04) 100%);
   transition: box-shadow 0.2s, border-color 0.2s, background 0.2s, transform 0.2s, filter 0.2s;
-  filter: drop-shadow(0 0 8px #a855f7) drop-shadow(0 0 2px #fff);
+  filter: drop-shadow(0 0 8px var(--btn-shadow3, #a855f7)) drop-shadow(0 0 2px var(--btn-shadow2, #fff));
 }
 .get-in-touch-btn:hover, .get-in-touch-btn:focus {
-  box-shadow: 0 0 16px 2px #f472b6, 0 0 4px 1px #fff;
-  border-color: #fff;
-  background: linear-gradient(90deg, rgba(236,72,153,0.25) 0%, rgba(255,255,255,0.08) 100%);
+  box-shadow: 0 0 16px 2px var(--btn-shadow1, #f472b6), 0 0 4px 1px var(--btn-shadow2, #fff);
+  border-color: var(--btn-hover-border, #fff);
+  background: linear-gradient(90deg, rgba(var(--btn-bg1,236,72,153),0.25) 0%, rgba(var(--btn-bg2,255,255,255),0.08) 100%);
   transform: scale(1.06) rotate(-1deg);
+}
+
+:root {
+  --glitch-text: #222;
+  --glitch-shadow1: #d946ef;
+  --glitch-shadow2: #06b6d4;
+  --glitch-shadow3: #22d3ee;
+  --glitch-shadow4: #fde68a;
+  --glitch-purple: #a855f7;
+  --lightning: #facc15;
+  --steam-rgb: 120,120,120;
+  --btn-shadow1: #f472b6;
+  --btn-shadow2: #fff;
+  --btn-shadow3: #a855f7;
+  --btn-border: #f472b6;
+  --btn-bg1: 236,72,153;
+  --btn-bg2: 255,255,255;
+  --btn-hover-border: #222;
+}
+.dark {
+  --glitch-text: #fff;
+  --glitch-shadow1: #f0f;
+  --glitch-shadow2: #0ff;
+  --glitch-shadow3: #0f0;
+  --glitch-shadow4: #ff0;
+  --glitch-purple: #a855f7;
+  --lightning: #fff700;
+  --steam-rgb: 255,255,255;
+  --btn-shadow1: #f472b6;
+  --btn-shadow2: #fff;
+  --btn-shadow3: #a855f7;
+  --btn-border: #f472b6;
+  --btn-bg1: 236,72,153;
+  --btn-bg2: 255,255,255;
+  --btn-hover-border: #fff;
 }

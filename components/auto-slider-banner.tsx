@@ -71,7 +71,8 @@ export function AutoSliderBanner() {
 					Your browser does not support the video tag.
 				</video>
 			))}
-			<div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center w-full h-full">
+			<div className="absolute inset-0 bg-gradient-to-b from-black/60 via-white/10 to-white/80 dark:from-black/80 dark:via-black/10 dark:to-black/80 z-10" />
+			<div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full z-20">
 				{/* Navbar (avatar, name, rotating title) */}
 				<ProfileHeader glitchActive={glitchActive} />
 				{/* Subtitle/description */}
