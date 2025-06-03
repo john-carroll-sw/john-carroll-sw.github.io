@@ -10,12 +10,13 @@ export function SplashScreen() {
   const [isComplete, setIsComplete] = useState(false)
 
   useEffect(() => {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%"
+    // Include English letters, numbers, symbols and Japanese characters
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%あいうえおかきくけこさしすせそたちつてとなにぬねの"
     let interval: NodeJS.Timeout
 
     // Matrix text effect
     const matrixInterval = setInterval(() => {
-      const randomText = Array(8)
+      const randomText = Array(16)
         .fill(0)
         .map(() => characters.charAt(Math.floor(Math.random() * characters.length)))
         .join("")
@@ -59,7 +60,10 @@ export function SplashScreen() {
       </div> */}
 
       {/* Matrix-style loading text */}
-      <div className="font-mono text-white mb-4 h-6">{`LOADING_SYSTEM: ${matrixText}`}</div>
+      <div className="font-mono text-white mb-4 h-6 flex items-center">
+        <span className="whitespace-nowrap">LOADING_SYSTEM:</span>
+        <span className="ml-2 w-[20ch] inline-block overflow-hidden align-middle whitespace-nowrap" style={{letterSpacing: '0.08em'}}>{matrixText}</span>
+      </div>
 
       {/* Progress bar container */}
       <div className="w-64 h-1 bg-dark-400 rounded-full overflow-hidden">
