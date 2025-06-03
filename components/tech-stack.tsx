@@ -1,172 +1,297 @@
+import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 
 const techStack = [
-	// Core programming and UI
 	{
-		title: "Languages & Scripting",
+		title: "Languages",
 		items: [
-			"Bash",
 			"C#",
+			"C++",
 			"Go",
 			"Java",
 			"JavaScript / TypeScript",
-			"PowerShell",
+			"PHP",
 			"Python",
 			"Rust",
-			"Zsh",
-		],
+			"Swift",
+		].sort(),
 	},
 	{
-		title: "Frontend / Mobile",
+		title: "Front-End / Mobile",
 		items: [
 			"Angular",
-			"Bootstrap",
-			"Material UI",
+			"CSS",
+			"Electron",
+			"Flutter",
+			"HTML",
+			"JavaScript",
+			"jQuery",
+			"Less",
 			"Next.js",
 			"React",
 			"React Native",
-			"Swift",
+			"Sass",
+			"Scss",
 			"Tailwind CSS",
-			"Unity (XR)",
-			"Unreal Engine",
-			"Vue 3",
-		],
+			"TypeScript",
+			"Vue",
+			"Xamarin",
+		].sort(),
 	},
 	{
-		title: "Backend & APIs",
+		title: "Back-End Frameworks",
 		items: [
 			".NET Core",
-			"Chainlit",
+			"ASP.NET",
+			"Azure Functions",
 			"Django",
+			"Express.js",
 			"FastAPI",
 			"Flask",
+			"gRPC",
 			"GraphQL",
 			"Java Spring",
+			"Logic Apps",
 			"Node.js / Express",
+			"OpenAPI",
 			"Quart",
-			"REST",
-			"Streamlit",
-			"Stripe SDK",
-		],
+		].sort(),
 	},
-	// Data, search, messaging
 	{
-		title: "Data",
+		title: "Data & Storage",
 		items: [
+			"Azure SQL",
+			"Azure Storage",
+			"Cassandra",
 			"Cosmos DB",
+			"DynamoDB",
+			"Firebase Firestore",
+			"Milvus",
 			"MongoDB",
 			"MySQL",
 			"Neo4j",
+			"Oracle",
+			"Pinecone",
 			"PostgreSQL",
 			"Redis",
 			"SQL",
-			"Vector DB",
-		],
-	},
-	{
-		title: "Search",
-		items: [
-			"Azure AI Search",
-			"Azure Maps",
-			"Bing API",
-			"Google API",
-			"Lucene Index",
-			"OpenSearch",
-			"OpenStreetMap",
-			"RAG patterns",
-		],
+			"SQL Server",
+			"SQLite",
+		].sort(),
 	},
 	{
 		title: "Messaging & Streaming",
 		items: [
+			"APIM",
 			"AWS SNS/SQS",
 			"Azure Event Grid",
 			"Azure Event Hubs",
+			"Azure Service Bus",
+			"gRPC",
 			"IoT Telemetry",
 			"Kafka",
+			"MQTT",
+			"OpenTelemetry",
 			"RabbitMQ",
-			"Service Bus",
-		],
+		].sort(),
 	},
-	// AI/ML
 	{
-		title: "AI Technologies",
+		title: "Search & Geo",
 		items: [
+			"Azure AI Search",
+			"Azure Maps",
+			"Bing Maps",
+			"Elasticsearch",
+			"Google Maps",
+			"Leaflet",
+			"Lucene",
+			"MapBox",
+			"OpenSearch",
+			"OpenStreetMap",
+			"Solr",
+		].sort(),
+	},
+	{
+		title: "AI Stacks",
+		items: [
+			"A2A (Google)",
 			"Anthropic Claude",
-			"A2A",
+			"AutoGen",
+			"Azure ML",
 			"Azure OpenAI",
+			"Cohere",
+			"Copilot",
+			"CrewAI",
+			"DALL-E",
 			"Gemini",
+			"GitHub Copilot",
+			"Gradio",
 			"Grok",
+			"Hugging Face",
 			"LangChain",
-			"MCP",
-			"PromptFlow",
+			"LangGraph",
+			"Llama Index",
+			"MCP (Anthropic)",
+			"Mistral AI",
+			"ONNX Runtime",
+			"OpenAI",
 			"Qwen",
 			"Semantic Kernel",
-			"AutoGen",
-		],
+			"Stable Diffusion",
+		].sort(),
 	},
 	{
 		title: "ML Frameworks",
 		items: [
-			"JAX",
 			"Keras",
-			"LightGBM",
-			"MXNet",
+			"NumPy",
 			"ONNX",
+			"OpenCV",
+			"OpenML",
+			"Pandas",
 			"PyTorch",
 			"Scikit-learn",
+			"SciPy",
+			"Tesseract",
 			"TensorFlow",
+			"Transformers",
 			"XGBoost",
-		],
-	},
-	// Cloud, DevOps, tools, visualization
-	{
-		title: "Cloud & Hosting",
-		items: [
-			"AWS",
-			"Firebase",
-			"GCP",
-			"Microsoft Azure",
-			"Service Fabric",
-			"Vercel",
-		],
+		].sort(),
 	},
 	{
 		title: "DevOps & IaC",
 		items: [
-			"ARM Templates",
+			"Ansible",
 			"Azure DevOps",
-			"Bicep",
+			"Bicep / ARM",
+			"CircleCI",
 			"Docker",
 			"GitHub Actions",
+			"GitLab CI/CD",
+			"Helm",
+			"Jenkins",
 			"Kubernetes",
+			"Log Analytics",
 			"Terraform",
-		],
+			"Travis CI",
+		].sort(),
 	},
 	{
-		title: "Dev Tools",
+		title: "Cloud & Hosting",
 		items: [
-			"Cursor.ai",
-			"GitHub Copilot",
-			"npm",
-			"yarn",
-			"pnpm",
-			"Vite",
-			"Cargo",
-			"v0.dev",
-		],
+			"AWS",
+			"Azure App Service",
+			"Azure Container Apps",
+			"Firebase",
+			"GCP",
+			"Microsoft Azure",
+			"Netlify",
+			"Render",
+			"Service Fabric",
+			"Vercel",
+			"VMWare Tanzu",
+		].sort(),
 	},
 	{
 		title: "Design & Visualization",
 		items: [
+			"Chainlit",
+			"Chart.js",
 			"D3.js",
 			"Figma",
+			"Highcharts",
+			"Kibana",
+			"Leaflet",
+			"Lucidchart",
 			"Mapbox GL",
+			"Material UI",
+			"Matplotlib",
+			"Plotly",
 			"Power BI",
 			"React Flow",
-			"Unity 3-D",
+			"Storybook",
+			"Streamlit",
+			"Three.js",
 			"WordPress",
-		],
+		].sort(),
+	},
+	{
+		title: "XR & Game Engines",
+		items: [
+			"A-Frame",
+			"Babylon.js",
+			"Godot",
+			"OpenGL",
+			"Three.js",
+			"Unity",
+			"Unreal Engine",
+			"WebGL",
+			"WebXR",
+		].sort(),
+	},
+	{
+		title: "Dev Tools",
+		items: [
+			"Cargo",
+			"Cypress",
+			"Docker Compose",
+			"Entra ID",
+			"ESLint",
+			"Git",
+			"GitHub Copilot",
+			"GitLab",
+			"Jest",
+			"JetBrains IDEA",
+			"Jira",
+			"JUnit",
+			"Maven",
+			"OAuth 2.0",
+			"OIDC",
+			"Playwright",
+			"Postman",
+			"Prettier",
+			"PyTest",
+			"SonarQube",
+			"Swagger",
+			"Vite",
+			"VSCode",
+			"Webpack",
+		].sort(),
+	},
+	{
+		title: "Shell & CLI",
+		items: [
+			"azd",
+			"Azure CLI",
+			"AWS CLI",
+			"Bash",
+			"curl",
+			"GNU tools",
+			"npx",
+			"npm",
+			"Oh My Zsh",
+			"pnpm",
+			"PowerShell",
+			"scp",
+			"ssh",
+			"tmux",
+			"wget",
+			"Yarn",
+			"Zsh",
+		].sort(),
+	},
+	{
+		title: "Operating Systems",
+		items: [
+			"Android",
+			"CentOS",
+			"iOS",
+			"Linux",
+			"macOS",
+			"Ubuntu",
+			"Windows",
+			"Windows Server",
+		].sort(),
 	},
 ]
 
@@ -188,30 +313,53 @@ const cardColors = [
 ]
 
 export default function TechStack() {
+	const [openIdx, setOpenIdx] = useState<number | null>(null)
+	const [isMobile, setIsMobile] = useState(false)
+
+	useEffect(() => {
+		const mq = window.matchMedia("(max-width: 639px)")
+		const handleResize = () => setIsMobile(mq.matches)
+		handleResize()
+		mq.addEventListener("change", handleResize)
+		return () => mq.removeEventListener("change", handleResize)
+	}, [])
+
 	return (
 		<div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-			{techStack.map((card, cardIdx) => (
-				<Card key={card.title} className="p-6 flex flex-col h-full">
-					<h3 className="text-lg font-semibold mb-4 text-balance">
-						{card.title}
-					</h3>
-					<div className="flex flex-wrap gap-2">
-						{card.items.map((item) => (
-							<span
-								key={item}
-								className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium whitespace-nowrap border transition-colors
+			{techStack.map((card, cardIdx) => {
+				const expanded = !isMobile || openIdx === cardIdx
+				return (
+					<Card key={card.title} className="p-6 flex flex-col h-full">
+						<button
+							type="button"
+							className={`text-lg font-semibold text-balance flex justify-between items-center w-full sm:cursor-default sm:pointer-events-none focus:outline-none ${expanded ? "mb-4" : ""}`}
+							onClick={() => isMobile ? setOpenIdx(openIdx === cardIdx ? null : cardIdx) : undefined}
+							aria-expanded={expanded}
+							aria-controls={`card-content-${cardIdx}`}
+						>
+							{card.title}
+							<span className="sm:hidden ml-2">{expanded ? "▲" : "▼"}</span>
+						</button>
+						<div
+							id={`card-content-${cardIdx}`}
+							className={`transition-all duration-200 ${expanded ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"} sm:max-h-full sm:opacity-100 sm:overflow-visible flex flex-wrap gap-2`}
+						>
+							{card.items.map((item) => (
+								<span
+									key={item}
+									className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium whitespace-nowrap border transition-colors
       bg-white text-gray-900 ${cardColors[cardIdx % cardColors.length]}
       dark:bg-black/30 dark:text-inherit dark:${cardColors[cardIdx % cardColors.length]}
       dark:backdrop-blur-sm
-      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-${cardColors[cardIdx % cardColors.length].split(' ')[0].replace('border-', '')}
     `}
-							>
-								{item}
-							</span>
-						))}
-					</div>
-				</Card>
-			))}
+								>
+									{item}
+								</span>
+							))}
+						</div>
+					</Card>
+				)
+			})}
 		</div>
 	)
 }
