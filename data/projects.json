@@ -1,149 +1,159 @@
 [
-  {
-    "title": "Computer Use Agent",
-    "description": "Business Use case, private coming soon.",
-    "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "",
-    "tags": ["Agent", "Business"]
-  },
-  {
-    "title": "MultiAgent Network and registration",
-    "description": "MultiAgent Network and registration, private coming soon.",
-    "image": "https://images.unsplash.com/photo-1593505681742-8cbb6f44de25?q=80&w=3555&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "",
-    "tags": ["MultiAgent", "Network"]
-  },
-  {
-    "title": "Azure OpenAI Search Demo",
-    "description": "A RAG chat app that uses Azure OpenAI Service and Azure AI Search to create ChatGPT-like experiences over your own data. Features multi-turn chat, Q&A, citations, and support for many document formats.",
-    "image": "https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/images/chatscreen.png?raw=true",
-    "link": "https://github.com/Azure-Samples/azure-search-openai-demo",
-    "tags": ["Azure", "OpenAI", "Python", "TypeScript", "Bicep", "AI Search", "RAG"]
-  },
-  {
-    "title": "Speech I/O Agent",
-    "description": "Reusable agent for speech input/output, supporting Google A2A, agent registration, and discoverability. (Repo not public or not found, so details limited.)",
-    "image": "/SpeechIOagent.png",
-    "link": "https://github.com/john-carroll-sw/voice-switch",
-    "tags": ["Speech", "Agent", "Google A2A"]
-  },
-  {
-    "title": "AI Tutor",
-    "description": "AI Tutor POC that identifies the source of student misunderstanding, using quizzes and targeted review to help students master difficult concepts.",
-    "image": "https://images.unsplash.com/photo-1623458696277-a6f4bcd06c2f?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/mgboot/ai-tutor",
-    "tags": ["Python", "Jupyter Notebook", "AI", "Education"]
-  },
-  {
-    "title": "Supply Chain Reasoning Engine",
-    "description": "Adaptive Supply Chain Optimization System using AI reasoning models for real-time disruption response and resilience.",
-    "image": "https://plus.unsplash.com/premium_photo-1721830791498-ec809d9d94ec?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/john-carroll-sw/supply-chain-reasoning-engine",
-    "tags": ["TypeScript", "JavaScript", "Python", "AI", "Supply Chain"]
-  },
-  {
-    "title": "Extract Content from Documents",
-    "description": "Implements field extractors that convert PDF documents to JSON using OpenAI’s GPT-4 Vision Preview. Supports scanned and digital PDFs, batch processing, and schema-based extraction.",
-    "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/john-carroll-sw/pdf_to_json_extractor_gpt4vision",
-    "tags": ["Python", "GPT-4 Vision", "OCR", "Document Extraction"]
-  },
-  {
-    "title": "Write Customer Success Stories",
-    "description": "RAPID: Real AI-Powered Insights on Demand. Centralizes and automates the creation of customer success stories using data pipelines and GPT-4 AI, with AI-powered insights and end-to-end automation.",
-    "image": "https://images.unsplash.com/photo-1593505681742-8cbb6f44de25?q=80&w=3555&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/john-carroll-sw/Transformed-By-AIGBB",
-    "tags": ["Python", "TypeScript", "Bicep", "Jupyter Notebook", "AI", "Automation"]
-  },
-  {
-    "title": "OpenAI Chat Completions Function Calling Examples",
-    "description": "A collection of Python scripts demonstrating the power and flexibility of the Chat Completions API, focusing on function calling, prompt suggestions, conversation summarization, and streaming responses.",
-    "image": "https://raw.githubusercontent.com/john-carroll-sw/chat-completions-function-calling-examples/refs/heads/master/images/get_weather_flow_diagram.png",
-    "link": "https://github.com/john-carroll-sw/chat-completions-function-calling-examples",
-    "tags": ["Python", "OpenAI", "Function Calling", "API"]
-  },
-  {
-    "title": "Gpt-4o Video Analysis",
-    "description": "A Streamlit app leveraging AI vision to analyze video content, extract insights, and enable interactive conversations about visual content. Supports video upload, segmentation, and chat about results.",
-    "image": "https://raw.githubusercontent.com/john-carroll-sw/video-analysis-with-gpt-4o/main/media/VideoAnalysisWithLLMs.gif",
-    "link": "https://github.com/john-carroll-sw/video-analysis-with-gpt-4o",
-    "tags": ["Python", "Streamlit", "OpenAI", "Video Analysis", "AI"]
-  },
-  {
-    "title": "Coffee Chat Voice Assistant",
-    "description": "Voice-driven ordering system powered by Azure OpenAI GPT-4o Realtime API. Simulates a café barista experience with natural conversations, live order updates, and real-time transcription. Showcases AI for seamless customer interactions.",
-    "image": "https://github.com/john-carroll-sw/coffee-chat-voice-assistant/blob/main/docs/Demo/Desktop4MinuteInteractionBigOrder_preview.gif?raw=true",
-    "link": "https://github.com/john-carroll-sw/coffee-chat-voice-assistant",
-    "tags": ["React", "Python", "TypeScript", "Jupyter Notebook", "Voice", "Azure OpenAI", "RAG", "AI"]
-  },
-  {
-    "title": "Image2Csv",
-    "description": "A Streamlit app that leverages Azure OpenAI's vision capabilities to convert images containing tables or structured data into CSV format for easy use in spreadsheets and data analysis.",
-    "image": "https://github.com/john-carroll-sw/image_to_csv/raw/master/UI.png",
-    "link": "https://github.com/john-carroll-sw/image_to_csv",
-    "tags": ["Python", "Streamlit", "OpenAI", "CSV", "Vision AI"]
-  },
-  {
-    "title": "Extract Image from Product URL",
-    "description": "Demonstrates how to use OpenAI's Response API (with GPT-4.1 and tool calling) to extract the main product image URL from an e-commerce product page. Provides both Python and TypeScript implementations.",
-    "image": "https://github.com/john-carroll-sw/get-item-image/raw/master/demo.gif",
-    "link": "https://github.com/john-carroll-sw/get-item-image",
-    "tags": ["Python", "TypeScript", "OpenAI", "Web Scraping", "Tool Calling"]
-  },
-  {
-    "title": "Field Technician Assistant",
-    "description": "Multimodal RAG with voice interface for field technicians. Uses Azure AI Search & OpenAI for hands-free access to technical documentation through speech and image analysis.",
-    "image": "https://github.com/john-carroll-sw/field-service-assistant/blob/master/docs/images/demo.gif?raw=true",
-    "link": "https://github.com/john-carroll-sw/field-service-assistant",
-    "tags": ["JavaScript", "Python", "TypeScript", "Azure AI Search", "OpenAI", "Voice", "RAG"]
-  },
-  {
-    "title": "Product Categorization / Classification",
-    "description": "Automates product categorization using Generative AI models. Leverages Azure AI Search and OpenAI's GPT-4 to classify products based on their descriptions and other attributes.",
-    "image": "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=3544&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/szetinglau/GenAI-Product-Categorization",
-    "tags": ["Python", "Azure AI Search", "OpenAI", "GPT-4", "Product Classification"]
-  },
-  {
-    "title": "Planogram Analysis",
-    "description": "Uses Azure OpenAI GPT-4o to audit retail planograms and product assortments. The AI auditor inspects each shelf of a cooler photo, determining if it complies with the planogram rules.",
-    "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/SidneyPhoon/azure-openai-planogram-analysis",
-    "tags": ["Python", "Jupyter Notebook", "Azure OpenAI", "Planogram", "AI"]
-  },
-  {
-    "title": "Portfolio",
-    "description": "Started with a Vercel template and made it my own! Personal portfolio site showcasing projects and skills.",
-    "image": "https://github.com/john-carroll-sw/john-carroll-sw.github.io/raw/main/portfolio_demo.gif",
-    "link": "https://john-carroll-sw.github.io/",
-    "tags": ["Portfolio", "Vercel", "Next.js", "React"]
-  },
-  {
-    "title": "Job Description Match to Resumes",
-    "description": "JobFit AI Matchmaker is a proof of concept that reimagines resume-to-job matching using advanced Azure AI services. Matches resumes to a user-provided job description with high accuracy and relevance.",
-    "image": "https://github.com/john-carroll-sw/jobfit-ai-matchmaker/blob/master/media/JobfitAIMatchMaker_Demo.gif?raw=true",
-    "link": "https://github.com/john-carroll-sw/jobfit-ai-matchmaker",
-    "tags": ["Python", "TypeScript", "Azure AI", "OpenAI", "Resume Matching", "AI"]
-  },
-  {
-    "title": "Voice Assistant using GPT-4o Realtime",
-    "description": "Voice Assistant using GPT-4o Realtime. Provides a hands-free, voice-driven experience for various use cases.",
-    "image": "https://plus.unsplash.com/premium_photo-1721830791498-ec809d9d94ec?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/john-carroll-sw/voice-assistant",
-    "tags": ["TypeScript", "Python", "OpenAI", "Voice", "AI"]
-  },
-  {
-    "title": "Multi Agent Example: Semantic Kernel and LLM's to Execute Python Code",
-    "description": "Demonstrates using Semantic Kernel and LLMs to execute Python code in a sandboxed environment. Features safe code execution, logging, and agent group chat.",
-    "image": "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=3544&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/john-carroll-sw/semantic-kernel-agent-code-execution",
-    "tags": ["Python", "Semantic Kernel", "OpenAI", "Code Execution", "AI"]
-  },
-  {
-    "title": "OpenAI Console App with Logging per Image Processed",
-    "description": "A console app that uses GPT-4o for object detection in images, logging each image processed, its response, and end-to-end request time.",
-    "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "link": "https://github.com/john-carroll-sw/gpt-4o-object-detection-in-image-folder",
-    "tags": ["Python", "OpenAI", "Object Detection", "Logging", "AI"]
-  }
+    {
+        "title": "Portfolio",
+        "description": "Started with a Vercel template and made it my own! Personal portfolio site showcasing projects and skills.",
+        "image": "https://github.com/john-carroll-sw/john-carroll-sw.github.io/raw/main/portfolio_demo.gif",
+        "link": "https://john-carroll-sw.github.io/",
+        "tags": ["Portfolio", "Vercel", "Next.js", "React"]
+    },
+        {
+        "title": "Extract Image from Product URL",
+        "description": "Demonstrates how to use OpenAI's Response API (with GPT-4.1 and tool calling) to extract the main product image URL from an e-commerce product page. Provides both Python and TypeScript implementations.",
+        "image": "https://github.com/john-carroll-sw/get-item-image/raw/master/demo.gif",
+        "link": "https://github.com/john-carroll-sw/get-item-image",
+        "tags": ["Python", "TypeScript", "OpenAI", "Web Scraping", "Tool Calling"]
+    },
+
+    {
+        "title": "Supply Chain Reasoning Engine",
+        "description": "Adaptive Supply Chain Optimization System using AI reasoning models for real-time disruption response and resilience.",
+        "image": "https://github.com/john-carroll-sw/supply-chain-reasoning-engine/raw/master/demo.gif",
+        "link": "https://github.com/john-carroll-sw/supply-chain-reasoning-engine",
+        "tags": ["TypeScript", "JavaScript", "Python", "AI", "Supply Chain"]
+    },
+        {
+        "title": "Field Technician Assistant",
+        "description": "Multimodal RAG with voice interface for field technicians. Uses Azure AI Search & OpenAI for hands-free access to technical documentation through speech and image analysis.",
+        "image": "https://github.com/john-carroll-sw/field-service-assistant/blob/master/docs/images/demo.gif?raw=true",
+        "link": "https://github.com/john-carroll-sw/field-service-assistant",
+        "tags": ["JavaScript", "Python", "TypeScript", "Azure AI Search", "OpenAI", "Voice", "RAG"]
+    },
+    {
+        "title": "Write Customer Success Stories",
+        "description": "RAPID: Real AI-Powered Insights on Demand. Centralizes and automates the creation of customer success stories using data pipelines and GPT-4 AI, with AI-powered insights and end-to-end automation.",
+        "image": "https://github.com/john-carroll-sw/Transformed-By-AIGBB/raw/master/demo.gif",
+        "link": "https://github.com/john-carroll-sw/Transformed-By-AIGBB",
+        "tags": ["Python", "TypeScript", "Bicep", "Jupyter Notebook", "AI", "Automation"]
+    },
+    {
+        "title": "OpenAI Chat Completions Function Calling Examples",
+        "description": "A collection of Python scripts demonstrating the power and flexibility of the Chat Completions API, focusing on function calling, prompt suggestions, conversation summarization, and streaming responses.",
+        "image": "https://raw.githubusercontent.com/john-carroll-sw/chat-completions-function-calling-examples/refs/heads/master/images/get_weather_flow_diagram.png",
+        "link": "https://github.com/john-carroll-sw/chat-completions-function-calling-examples",
+        "tags": ["Python", "OpenAI", "Function Calling", "API"]
+    },
+    {
+        "title": "Coffee Chat Voice Assistant",
+        "description": "Voice-driven ordering system powered by Azure OpenAI GPT-4o Realtime API. Simulates a café barista experience with natural conversations, live order updates, and real-time transcription. Showcases AI for seamless customer interactions.",
+        "image": "https://github.com/john-carroll-sw/coffee-chat-voice-assistant/blob/main/docs/Demo/Desktop4MinuteInteractionBigOrder_preview.gif?raw=true",
+        "link": "https://github.com/john-carroll-sw/coffee-chat-voice-assistant",
+        "tags": [
+            "React",
+            "Python",
+            "TypeScript",
+            "Jupyter Notebook",
+            "Voice",
+            "Azure OpenAI",
+            "RAG",
+            "AI"
+        ]
+    },
+    {
+        "title": "Video Analysis with LLMs",
+        "description": "A Streamlit app leveraging AI vision to analyze video content, extract insights, and enable interactive conversations about visual content. Supports video upload, segmentation, and chat about results.",
+        "image": "https://github.com/john-carroll-sw/video-analysis-with-gpt-4o/blob/main/media/VideoAnalysisWithLLMs.gif?raw=true",
+        "link": "https://github.com/john-carroll-sw/video-analysis-with-gpt-4o",
+        "tags": ["Python", "Streamlit", "OpenAI", "Video Analysis", "AI"]
+    },
+    {
+        "title": "Image2Csv",
+        "description": "A Streamlit app that leverages Azure OpenAI's vision capabilities to convert images containing tables or structured data into CSV format for easy use in spreadsheets and data analysis.",
+        "image": "https://github.com/john-carroll-sw/image_to_csv/raw/master/UI.png",
+        "link": "https://github.com/john-carroll-sw/image_to_csv",
+        "tags": ["Python", "Streamlit", "OpenAI", "CSV", "Vision AI"]
+    },
+    {
+        "title": "Extract Content from Documents",
+        "description": "Implements field extractors that convert PDF documents to JSON using OpenAI’s GPT-4 Vision Preview. Supports scanned and digital PDFs, batch processing, and schema-based extraction.",
+        "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "https://github.com/john-carroll-sw/pdf_to_json_extractor_gpt4vision",
+        "tags": ["Python", "GPT-4 Vision", "OCR", "Document Extraction"]
+    },
+    {
+        "title": "Product Categorization / Classification",
+        "description": "Automates product categorization using Generative AI models. Leverages Azure AI Search and OpenAI's GPT-4 to classify products based on their descriptions and other attributes.",
+        "image": "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=3544&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "https://github.com/szetinglau/GenAI-Product-Categorization",
+        "tags": ["Python", "Azure AI Search", "OpenAI", "GPT-4", "Product Classification"]
+    },
+        {
+        "title": "Azure OpenAI Search Demo",
+        "description": "A RAG chat app that uses Azure OpenAI Service and Azure AI Search to create ChatGPT-like experiences over your own data. Features multi-turn chat, Q&A, citations, and support for many document formats.",
+        "image": "/AOAISearchDemo.gif",
+        "link": "https://github.com/Azure-Samples/azure-search-openai-demo",
+        "tags": ["Azure", "OpenAI", "Python", "TypeScript", "Bicep", "AI Search", "RAG"]
+    },
+    {
+        "title": "AI Tutor",
+        "description": "AI Tutor POC that identifies the source of student misunderstanding, using quizzes and targeted review to help students master difficult concepts.",
+        "image": "https://images.unsplash.com/photo-1623458696277-a6f4bcd06c2f?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "https://github.com/mgboot/ai-tutor",
+        "tags": ["Python", "Jupyter Notebook", "AI", "Education"]
+    },
+    {
+        "title": "Planogram Analysis",
+        "description": "Uses Azure OpenAI GPT-4o to audit retail planograms and product assortments. The AI auditor inspects each shelf of a cooler photo, determining if it complies with the planogram rules.",
+        "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "https://github.com/SidneyPhoon/azure-openai-planogram-analysis",
+        "tags": ["Python", "Jupyter Notebook", "Azure OpenAI", "Planogram", "AI"]
+    },
+    {
+        "title": "Job Description Match to Resumes",
+        "description": "JobFit AI Matchmaker is a proof of concept that reimagines resume-to-job matching using advanced Azure AI services. Matches resumes to a user-provided job description with high accuracy and relevance.",
+        "image": "https://github.com/john-carroll-sw/jobfit-ai-matchmaker/blob/master/media/JobfitAIMatchMaker_Demo.gif?raw=true",
+        "link": "https://github.com/john-carroll-sw/jobfit-ai-matchmaker",
+        "tags": ["Python", "TypeScript", "Azure AI", "OpenAI", "Resume Matching", "AI"]
+    },
+    {
+        "title": "Voice Assistant using GPT-4o Realtime",
+        "description": "Voice Assistant using GPT-4o Realtime. Provides a hands-free, voice-driven experience for various use cases.",
+        "image": "https://plus.unsplash.com/premium_photo-1721830791498-ec809d9d94ec?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "https://github.com/john-carroll-sw/voice-assistant",
+        "tags": ["TypeScript", "Python", "OpenAI", "Voice", "AI"]
+    },
+    {
+        "title": "OpenAI Console App with Logging per Image Processed",
+        "description": "A console app that uses GPT-4o for object detection in images, logging each image processed, its response, and end-to-end request time.",
+        "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "https://github.com/john-carroll-sw/gpt-4o-object-detection-in-image-folder",
+        "tags": ["Python", "OpenAI", "Object Detection", "Logging", "AI"]
+    },
+    {
+        "title": "Multi-Agent Example: Semantic Kernel and LLM's to Execute Python Code",
+        "description": "Demonstrates using Semantic Kernel and LLMs to execute Python code in a sandboxed environment. Features safe code execution, logging, and agent group chat.",
+        "image": "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=3544&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "https://github.com/john-carroll-sw/semantic-kernel-agent-code-execution",
+        "tags": ["Python", "Semantic Kernel", "OpenAI", "Code Execution", "AI"]
+    },
+{
+        "title": "Computer Use Agent",
+        "description": "An intelligent agent designed to automate and optimize business computer usage workflows. Features include task automation, user activity monitoring, and integration with enterprise systems. (Private project, details coming soon.)",
+        "image": "https://private-user-images.githubusercontent.com/118837112/442961777-a0ffd23d-9a11-4368-8893-b092703abc14.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDkwNDk0MzYsIm5iZiI6MTc0OTA0OTEzNiwicGF0aCI6Ii8xMTg4MzcxMTIvNDQyOTYxNzc3LWEwZmZkMjNkLTlhMTEtNDM2OC04ODkzLWIwOTI3MDNhYmMxNC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNjA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDYwNFQxNDU4NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNTUwYTk3NWEyOTgzNmUyNGUyMmQ4ZTQ4OTk3OGU1Mjc5Zjc5NTg4MjkzYTZmMmZhMzI0MjhmY2RkMWJmMmFlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VF3cmAmpt-BRxrrcl3YAdbwK64PmFp3FUbwcArVx-Zc",
+        "link": "",
+        "tags": ["Agent", "Business", "RPA"]
+    },
+    {
+        "title": "Multi-Agent Network and registration",
+        "description": "A platform for registering, managing, and orchestrating multiple AI agents in a networked environment. Enables agent discovery, communication, and collaboration for complex workflows. (Private project, details coming soon.)",
+        "image": "https://images.unsplash.com/photo-1593505681742-8cbb6f44de25?q=80&w=3555&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "link": "",
+        "tags": ["MultiAgent", "Network"]
+    },
+    {
+        "title": "Speech I/O Agent",
+        "description": "A reusable agent for speech input and output, supporting Google A2A, agent registration, and discoverability. Enables natural language voice interactions and seamless integration with other AI agents. (Private project, details coming soon.)",
+        "image": "/SpeechIOagent.png",
+        "link": "",
+        "tags": ["Speech", "Agent", "Google A2A", "Voice Interaction", "gpt-4o-realtime", "Open Source STT and TTS", "WebSpeech API"]
+    }
 ]

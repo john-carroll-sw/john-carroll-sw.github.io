@@ -37,10 +37,17 @@ export default function ProjectCard({ title, description, image, link, tags }: P
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0 mt-auto">
-        <Link href={link} target="_blank" className="inline-flex items-center gap-2 text-sm hover:underline">
-          <Github className="h-4 w-4" />
-          View on GitHub
-        </Link>
+        {link ? (
+          <Link href={link} target="_blank" className="inline-flex items-center gap-2 text-sm hover:underline">
+            <Github className="h-4 w-4" />
+            View on GitHub
+          </Link>
+        ) : (
+          <span className="inline-flex items-center gap-2 text-sm text-muted-foreground line-through cursor-not-allowed select-none">
+            <Github className="h-4 w-4" />
+            View on GitHub
+          </span>
+        )}
       </CardFooter>
     </Card>
   )

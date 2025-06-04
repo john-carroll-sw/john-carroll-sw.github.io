@@ -40,12 +40,12 @@ export function ProjectStack() {
     }
   }, [api])
 
-  // Auto-rotate carousel every 30 seconds (desktop only)
+  // Auto-rotate carousel every 60 seconds (desktop only)
   useEffect(() => {
     if (!api || isMobile) return
     const interval = setInterval(() => {
       api.scrollNext()
-    }, 30000)
+    }, 60000)
     return () => clearInterval(interval)
   }, [api, isMobile])
 
@@ -84,7 +84,7 @@ export function ProjectStack() {
         <CarouselNext className="hidden md:flex absolute right-[-2.5rem] top-1/2 -translate-y-1/2 z-30 bg-black/80 hover:bg-purple-500/10 text-white rounded-full p-3 shadow-lg border-2 border-purple-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 w-12 h-12 items-center justify-center" />
         <CarouselContent>
           {projects.map((project, index) => (
-            <CarouselItem key={project.title} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+            <CarouselItem key={project.title} className="md:basis-1/2 lg:basis-1/3">
               <ProjectCard {...project} />
             </CarouselItem>
           ))}
