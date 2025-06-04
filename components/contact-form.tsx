@@ -28,7 +28,7 @@ export default function ContactForm() {
     setMessage("")
 
     try {
-      const res = await fetch("https://formspree.io/f/mldnekaw", {
+      const res = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT!, {
         method: "POST",
         headers: {
           "Accept": "application/json",

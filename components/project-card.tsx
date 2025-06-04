@@ -24,7 +24,8 @@ export default function ProjectCard({ title, description, image, link, tags }: P
       <CardContent className="p-4 flex-1 flex flex-col">
         <h3 className="font-semibold text-xl mb-2">{title}</h3>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex-1" />
+        <div className="flex flex-wrap gap-2 mt-2">
           {tags.map((tag) => (
             <span
               key={tag}

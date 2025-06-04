@@ -124,11 +124,12 @@ export default function Page() {
       {showBackToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="hidden md:flex fixed bottom-8 right-8 z-50 bg-black/80 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg border-2 border-purple-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="hidden md:flex fixed bottom-8 right-8 z-50 bg-black/80 hover:bg-purple-500/10 text-white rounded-full p-3 shadow-lg border-2 border-purple-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400"
           aria-label="Back to top"
         >
           <ChevronUp className="h-7 w-7" />
         </button>
+        
       )}
       <Footer
         setShowTOS={setShowTOS}
