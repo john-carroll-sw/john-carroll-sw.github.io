@@ -43,10 +43,11 @@ export function Navbar({ navTransparent, headerVisible, setMobileNavOpen, mobile
         </button>
         {/* Resume button always right-aligned */}
         <Link
-          href="https://docs.google.com/document/d/10wnAlU0SgN2C0a-o_qfcBXXa85YzXG7tOV_Vkp1fmwE/edit?usp=sharing"
+          href="/John_Carroll_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="ml-2 md:ml-auto"
+          download
         >
           <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10 w-full md:w-auto">Resume</Button>
         </Link>
@@ -72,7 +73,7 @@ export function Navbar({ navTransparent, headerVisible, setMobileNavOpen, mobile
           <Link
             href="/"
             onClick={() => setMobileNavOpen(false)}
-            className="text-3xl font-extrabold mb-2 mt-2 tracking-tight text-white bg-clip-text text-transparent"
+            className="text-3xl font-extrabold mb-2 mt-2 tracking-tight bg-clip-text"
           >
             John Carroll
           </Link>
@@ -80,10 +81,11 @@ export function Navbar({ navTransparent, headerVisible, setMobileNavOpen, mobile
           <Link href="#projects" onClick={() => setMobileNavOpen(false)} className="hover:text-teal-400">Projects</Link>
           <Link href="#contact" onClick={() => setMobileNavOpen(false)} className="hover:text-pink-400">Contact</Link>
           <Link
-            href="https://docs.google.com/document/d/10wnAlU0SgN2C0a-o_qfcBXXa85YzXG7tOV_Vkp1fmwE/edit?usp=sharing"
+            href="/John_Carroll_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full max-w-xs mt-8"
+            download
           >
             <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10 w-full">Resume</Button>
           </Link>
