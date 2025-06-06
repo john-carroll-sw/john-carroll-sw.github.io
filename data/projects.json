@@ -3,7 +3,7 @@
         "title": "Portfolio",
         "description": "Started with a Vercel template and made it my own! Personal portfolio site showcasing projects and skills.",
         "image": "https://github.com/john-carroll-sw/john-carroll-sw.github.io/raw/main/portfolio_demo.gif",
-        "link": "https://john-carroll-sw.github.io/",
+        "link": "https://github.com/john-carroll-sw/john-carroll-sw.github.io",
         "tags": ["Portfolio", "Vercel", "Next.js", "React"]
     },
         {
@@ -26,7 +26,7 @@
         "description": "Multimodal RAG with voice interface for field technicians. Uses Azure AI Search & OpenAI for hands-free access to technical documentation through speech and image analysis.",
         "image": "https://github.com/john-carroll-sw/field-service-assistant/blob/master/docs/images/demo.gif?raw=true",
         "link": "https://github.com/john-carroll-sw/field-service-assistant",
-        "tags": ["JavaScript", "Python", "TypeScript", "Azure AI Search", "OpenAI", "Voice", "RAG"]
+        "tags": [ "Python", "JavaScript", "TypeScript", "Azure AI Search", "OpenAI", "Voice", "Multimodal RAG"]
     },
     {
         "title": "Write Customer Success Stories",
@@ -63,7 +63,7 @@
         "description": "A Streamlit app leveraging AI vision to analyze video content, extract insights, and enable interactive conversations about visual content. Supports video upload, segmentation, and chat about results.",
         "image": "https://github.com/john-carroll-sw/video-analysis-with-gpt-4o/blob/main/media/VideoAnalysisWithLLMs.gif?raw=true",
         "link": "https://github.com/john-carroll-sw/video-analysis-with-gpt-4o",
-        "tags": ["Python", "Streamlit", "OpenAI", "Video Analysis", "AI"]
+        "tags": ["Python", "Streamlit", "OpenAI", "Video Analysis", "AI", "FFmpeg"]
     },
     {
         "title": "Image2Csv",
@@ -84,7 +84,7 @@
         "description": "Automates product categorization using Generative AI models. Leverages Azure AI Search and OpenAI's GPT-4 to classify products based on their descriptions and other attributes.",
         "image": "/ProductClassification.png",
         "link": "https://github.com/szetinglau/GenAI-Product-Categorization",
-        "tags": ["Python", "Azure AI Search", "OpenAI", "GPT-4", "Product Classification"]
+        "tags": ["Python", "Azure AI Search", "OpenAI", "Product Classification", "Excel"]
     },
         {
         "title": "Azure OpenAI Search Demo",
@@ -105,14 +105,14 @@
         "description": "Uses Azure OpenAI GPT-4o to audit retail planograms and product assortments. The AI auditor inspects each shelf of a cooler photo, determining if it complies with the planogram rules.",
         "image": "/PlanogramCompliance.png",
         "link": "https://github.com/SidneyPhoon/azure-openai-planogram-analysis",
-        "tags": ["Python", "Jupyter Notebook", "Azure OpenAI", "Planogram", "AI"]
+        "tags": ["Python", "Jupyter Notebook", "AzureOpenAI", "Planogram", "AI"]
     },
     {
         "title": "Job Description Match to Resumes",
         "description": "JobFit AI Matchmaker is a proof of concept that reimagines resume-to-job matching using advanced Azure AI services. Matches resumes to a user-provided job description with high accuracy and relevance.",
         "image": "https://github.com/john-carroll-sw/jobfit-ai-matchmaker/blob/master/media/JobfitAIMatchMaker_Demo.gif?raw=true",
         "link": "https://github.com/john-carroll-sw/jobfit-ai-matchmaker",
-        "tags": ["Python", "TypeScript", "Azure AI", "OpenAI", "Resume Matching", "AI"]
+        "tags": ["Python", "TypeScript", "Azure AI", "OpenAI", "Resume Matching", "AI", "Reasoning Models"]
     },
     {
         "title": "Voice Assistant using GPT-4o Realtime",
