@@ -142,6 +142,16 @@ export function ProjectStack() {
           ))}
         </div>
       )}
+      {/* Always preload the first project's image so it's ready for immediate display */}
+      {projects[0] && (
+        <img
+          src={projects[0].image}
+          alt=""
+          style={{ display: 'none' }}
+          aria-hidden="true"
+          tabIndex={-1}
+        />
+      )}
     </div>
   )
 }
