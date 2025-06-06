@@ -33,7 +33,7 @@ export default function ProjectCard({ title, description, image, link, tags }: P
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative">
         {loading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/10 dark:bg-white/10 z-10">
+          <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="w-10 h-10 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
           </div>
         )}
