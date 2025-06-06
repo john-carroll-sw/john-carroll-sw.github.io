@@ -14,6 +14,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ title, description, image, link, tags }: ProjectCardProps) {
   const [imgSrc, setImgSrc] = useState(image || "/placeholder.svg")
   const [retries, setRetries] = useState(0)
+  const [loading, setLoading] = useState(true)
   const maxRetries = 2
 
   const handleError = () => {
@@ -22,18 +23,27 @@ export default function ProjectCard({ title, description, image, link, tags }: P
       setImgSrc(`${image}?retry=${retries + 1}`)
     } else {
       setImgSrc("/placeholder.svg")
+      setLoading(false)
     }
   }
+
+  const handleLoad = () => setLoading(false)
 
   return (
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative">
+        {loading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/10 dark:bg-white/10 z-10">
+            <div className="w-10 h-10 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        )}
         <img
           src={imgSrc}
           alt={title}
           loading="lazy"
           onError={handleError}
-          className="object-cover w-full h-full transition-transform hover:scale-105"
+          onLoad={handleLoad}
+          className={`object-cover w-full h-full transition-transform hover:scale-105 ${loading ? "opacity-0" : "opacity-100"}`}
           style={{ aspectRatio: '16/9', height: '100%', width: '100%' }}
         />
       </div>
