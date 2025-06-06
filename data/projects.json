@@ -82,7 +82,7 @@
     {
         "title": "Product Categorization / Classification",
         "description": "Automates product categorization using Generative AI models. Leverages Azure AI Search and OpenAI's GPT-4 to classify products based on their descriptions and other attributes.",
-        "image": "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=3544&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/ProductClassification.png",
         "link": "https://github.com/szetinglau/GenAI-Product-Categorization",
         "tags": ["Python", "Azure AI Search", "OpenAI", "GPT-4", "Product Classification"]
     },
@@ -103,7 +103,7 @@
     {
         "title": "Planogram Analysis",
         "description": "Uses Azure OpenAI GPT-4o to audit retail planograms and product assortments. The AI auditor inspects each shelf of a cooler photo, determining if it complies with the planogram rules.",
-        "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/PlanogramCompliance.png",
         "link": "https://github.com/SidneyPhoon/azure-openai-planogram-analysis",
         "tags": ["Python", "Jupyter Notebook", "Azure OpenAI", "Planogram", "AI"]
     },
