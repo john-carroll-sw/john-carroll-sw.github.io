@@ -69,8 +69,20 @@ export function ProjectStack() {
     )
   }
 
+  // Preload the next (right) project's image in the carousel
+  const nextIndex = (activeIndex + 1) % projects.length
+  const nextProject = projects[nextIndex]
+
   return (
     <div className="w-full relative">
+      {/* Preload the next project's image, hidden from view */}
+      <img
+        src={nextProject.image}
+        alt=""
+        style={{ display: 'none' }}
+        aria-hidden="true"
+        tabIndex={-1}
+      />
       <Carousel
         opts={{
           align: "start",

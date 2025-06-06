@@ -1,6 +1,7 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Github } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 interface ProjectCardProps {
   title: string
@@ -11,12 +12,27 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ title, description, image, link, tags }: ProjectCardProps) {
+  const [imgSrc, setImgSrc] = useState(image || "/placeholder.svg")
+  const [retries, setRetries] = useState(0)
+  const maxRetries = 2
+
+  const handleError = () => {
+    if (retries < maxRetries) {
+      setRetries(retries + 1)
+      setImgSrc(`${image}?retry=${retries + 1}`)
+    } else {
+      setImgSrc("/placeholder.svg")
+    }
+  }
+
   return (
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative">
         <img
-          src={image || "/placeholder.svg"}
+          src={imgSrc}
           alt={title}
+          loading="lazy"
+          onError={handleError}
           className="object-cover w-full h-full transition-transform hover:scale-105"
           style={{ aspectRatio: '16/9', height: '100%', width: '100%' }}
         />
