@@ -57,12 +57,6 @@ export default function Page() {
         {/* Projects Section */}
         <section id="projects" className="w-full py-20 md:py-32 relative px-4 md:px-8">
           <h2 className="text-4xl font-bold mb-12 text-center text-gradient bg-gradient-to-r from-purple-400 via-teal-400 to-pink-400 bg-clip-text text-transparent">Projects</h2>
-          {/* Work in Progress Banner */}
-          <div className="flex justify-center mb-8">
-            <span className="inline-block rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-4 py-2 text-sm font-semibold shadow-md animate-pulse">
-              🚧 Work in Progress 🚧
-            </span>
-          </div>
           <ProjectStack />
         </section>
 

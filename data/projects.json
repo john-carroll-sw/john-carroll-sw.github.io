@@ -138,7 +138,7 @@
 {
         "title": "Computer Use Agent",
         "description": "An intelligent agent designed to automate and optimize business computer usage workflows. Features include task automation, user activity monitoring, and integration with enterprise systems. (Private project, details coming soon.)",
-        "image": "https://private-user-images.githubusercontent.com/118837112/442961777-a0ffd23d-9a11-4368-8893-b092703abc14.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDkwNDk0MzYsIm5iZiI6MTc0OTA0OTEzNiwicGF0aCI6Ii8xMTg4MzcxMTIvNDQyOTYxNzc3LWEwZmZkMjNkLTlhMTEtNDM2OC04ODkzLWIwOTI3MDNhYmMxNC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNjA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDYwNFQxNDU4NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNTUwYTk3NWEyOTgzNmUyNGUyMmQ4ZTQ4OTk3OGU1Mjc5Zjc5NTg4MjkzYTZmMmZhMzI0MjhmY2RkMWJmMmFlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VF3cmAmpt-BRxrrcl3YAdbwK64PmFp3FUbwcArVx-Zc",
+        "image": "/computer-use-agent.png",
         "link": "",
         "tags": ["Agent", "Business", "RPA"]
     },
