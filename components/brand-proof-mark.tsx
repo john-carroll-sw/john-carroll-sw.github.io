@@ -16,16 +16,16 @@ const logoLinks = {
 const logoAssets: Record<string, { alt: string; className: string; href: string; largeClassName: string; src: string }> = {
   "Auburn University": {
     alt: "Auburn University",
-    className: "max-h-[1.55rem] max-w-[9.75rem]",
+    className: "max-h-[1.8rem] max-w-[11rem] contrast-125",
     href: logoLinks.auburn,
-    largeClassName: "max-h-[1.8rem] max-w-[13.5rem]",
+    largeClassName: "max-h-[2.15rem] max-w-[15rem] contrast-125",
     src: "/logos/auburn-white-orange.png",
   },
   Boeing: {
     alt: "Boeing",
-    className: "max-h-[2.05rem] max-w-[10rem]",
+    className: "max-h-[2.2rem] max-w-[10.75rem]",
     href: logoLinks.boeing,
-    largeClassName: "max-h-[2.35rem] max-w-[13rem]",
+    largeClassName: "max-h-[2.6rem] max-w-[14rem]",
     src: "/logos/boeing-white.svg",
   },
   Hexagon: {
@@ -37,16 +37,16 @@ const logoAssets: Record<string, { alt: string; className: string; href: string;
   },
   Microsoft: {
     alt: "Microsoft",
-    className: "max-h-[1.65rem] max-w-[9.5rem] brightness-125 contrast-125",
+    className: "max-h-[1.85rem] max-w-[10.25rem] brightness-125 contrast-125",
     href: logoLinks.microsoft,
-    largeClassName: "max-h-[1.95rem] max-w-[12rem] brightness-125 contrast-125",
+    largeClassName: "max-h-[2.2rem] max-w-[13.25rem] brightness-125 contrast-125",
     src: "/logos/microsoft.png",
   },
   "Neptune Technology Group": {
     alt: "Neptune Technology Group",
-    className: "max-h-[2rem] max-w-[10rem]",
+    className: "max-h-[2.25rem] max-w-[11rem] brightness-110 contrast-125",
     href: logoLinks.neptune,
-    largeClassName: "max-h-[2.4rem] max-w-[13.25rem]",
+    largeClassName: "max-h-[2.75rem] max-w-[15rem] brightness-110 contrast-125",
     src: "/logos/neptune.png",
   },
 }
@@ -112,7 +112,7 @@ export function BrandProofMark({
           <img
             src="/logos/evernorth-white-trimmed.png"
             alt="Evernorth Health Services"
-            className={cn("w-auto min-w-0 object-contain", large ? "h-[1.75rem]" : "h-[1.6rem]")}
+            className={cn("w-auto min-w-0 object-contain", large ? "h-[1.58rem]" : "h-[1.45rem]")}
           />
         </LogoLink>
       </div>
@@ -132,7 +132,7 @@ export function BrandProofMark({
           <img
             src="/logos/hexagon.svg"
             alt="Hexagon"
-            className={cn("min-w-0 object-contain brightness-0 invert", large ? "max-h-[2.45rem] max-w-[6.3rem]" : "max-h-[2rem] max-w-[4.8rem]")}
+            className={cn("min-w-0 object-contain brightness-0 invert", large ? "max-h-[2.55rem] max-w-[6.6rem]" : "max-h-[2.1rem] max-w-[5.1rem]")}
           />
         </LogoLink>
         <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-cyan-100/60">x</span>
@@ -140,7 +140,7 @@ export function BrandProofMark({
           <img
             src="/logos/intergraph.svg"
             alt="Intergraph"
-            className={cn("min-w-0 object-contain brightness-0 invert", large ? "max-h-[2.15rem] max-w-[8.4rem]" : "max-h-[1.7rem] max-w-[6rem]")}
+            className={cn("min-w-0 object-contain brightness-0 invert", large ? "max-h-[2.25rem] max-w-[8.8rem]" : "max-h-[1.85rem] max-w-[6.4rem]")}
           />
         </LogoLink>
       </div>

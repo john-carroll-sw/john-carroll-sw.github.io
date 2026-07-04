@@ -15,9 +15,9 @@ type ProofSignalItem =
     }
 
 const fullProofItems: ProofSignalItem[] = [
-  { type: "logo", label: "Cigna / Evernorth" },
   { type: "logo", label: "Microsoft" },
   { type: "logo", label: "Boeing" },
+  { type: "logo", label: "Cigna / Evernorth" },
   { type: "logo", label: "Hexagon / Intergraph" },
   { type: "logo", label: "Neptune Technology Group" },
   { type: "logo", label: "Auburn University" },
