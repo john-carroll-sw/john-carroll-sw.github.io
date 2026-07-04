@@ -372,15 +372,17 @@ export function AutoSliderBanner() {
 					</div>
 
 					<div className="relative hidden min-h-[36.5rem] lg:block xl:min-h-[37.5rem]">
-						<div className="absolute right-2 top-0 h-72 w-72 overflow-hidden rounded-full border border-cyan-200/25 bg-slate-950/35 shadow-[0_32px_110px_rgba(0,0,0,0.55)]">
-							<img
-								src="/JohnCarrollProfilePic.png"
-								alt="John Carroll"
-								data-hero-portrait
-								className="h-full w-full object-cover"
-							/>
+						<div data-hero-portrait-shell className="absolute right-2 top-0 h-72 w-72">
+							<div data-hero-portrait-orbit className="pointer-events-none absolute -inset-16 rounded-full border border-cyan-300/10" aria-hidden="true" />
+							<div className="relative h-full w-full overflow-hidden rounded-full border border-cyan-200/25 bg-slate-950/35 shadow-[0_32px_110px_rgba(0,0,0,0.55)]">
+								<img
+									src="/JohnCarrollProfilePic.png"
+									alt="John Carroll"
+									data-hero-portrait
+									className="h-full w-full object-cover"
+								/>
+							</div>
 						</div>
-						<div className="absolute right-20 top-16 h-72 w-72 rounded-full border border-cyan-300/10" aria-hidden="true" />
 						<div ref={terminalRef} data-hero-terminal className="absolute bottom-0 left-0 right-5 border border-cyan-200/20 bg-slate-950/58 shadow-[0_28px_100px_rgba(0,0,0,0.5)] backdrop-blur-md">
 							<div className="flex items-center gap-2 border-b border-white/10 px-4 py-3 font-mono text-xs text-slate-400">
 								<Terminal className="h-4 w-4 text-cyan-300" />
