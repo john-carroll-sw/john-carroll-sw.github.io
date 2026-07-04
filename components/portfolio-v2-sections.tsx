@@ -60,6 +60,12 @@ const profileModes = [
   "Full-stack delivery",
 ]
 
+const aboutNarrative = [
+  "Over the past decade, I've designed and delivered AI and software systems across healthcare, retail, manufacturing, aerospace, and public safety. My work focuses on agentic AI, RAG, enterprise search, AI platforms, cloud architecture, and modern software engineering, with an emphasis on secure, governed, reliable systems at scale.",
+  "My background started in software and electrical engineering, from embedded systems and industrial technology to cloud platforms and enterprise software. That foundation shapes how I approach AI today: as an engineering discipline grounded in reliability, scalability, and measurable business outcomes.",
+  "I like operating at the intersection of strategy and execution: shaping technical direction, building platforms, mentoring engineers, and helping teams turn emerging AI capabilities into useful products.",
+]
+
 const experienceLogoLabels: Record<string, string> = {
   "Auburn University": "Auburn University",
   Boeing: "Boeing",
@@ -96,9 +102,9 @@ export function ProfileDossier() {
             </div>
           </div>
           <p className="mt-6 text-sm leading-6 text-slate-300">
-            I architect and ship enterprise AI systems that create measurable business
-            value. My edge is bridging deep technical execution with real-world
-            operating models.
+            I bridge strategy and execution for production-minded AI systems: practical
+            architecture, grounded delivery, and software that creates measurable
+            business value.
           </p>
           <div className="mt-6 grid grid-cols-2 gap-px border border-cyan-200/10 bg-cyan-200/10">
             <div className="bg-slate-950/45 p-4">
@@ -141,11 +147,18 @@ export function ProfileDossier() {
         </aside>
 
         <div className="min-w-0">
-          <SectionHeading kicker="Operating Profile" title="From ambiguous workflow to production-minded AI system.">
-            I work best where business ambiguity meets technical complexity: forward
-            deployed engineering, enterprise RAG, agentic orchestration, multimodal
-            assistants, and full-stack delivery.
+          <SectionHeading kicker="Operating Profile" title="I help organizations turn AI from experimentation into production.">
+            I work best where business ambiguity meets technical complexity, turning
+            workflows, data, and messy constraints into reliable software.
           </SectionHeading>
+
+          <div className="mb-8 border border-cyan-200/10 bg-white/[0.025] p-5 md:p-6">
+            <div className="space-y-4 text-sm leading-7 text-slate-300 md:text-base">
+              {aboutNarrative.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
 
           <div className="mb-8 grid gap-3 md:grid-cols-3">
             {operatingPrinciples.map(({ icon: Icon, title, description }) => (
