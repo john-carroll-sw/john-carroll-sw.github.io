@@ -66,6 +66,25 @@
   background: rgb(7 17 29 / 0.88);
 }
 
+.hero-portrait-handoff,
+.about-portrait-handoff {
+  transform-origin: center;
+  transition: opacity 160ms ease-out, transform 160ms ease-out;
+  will-change: opacity, transform;
+}
+
+.hero-portrait-handoff {
+  opacity: var(--hero-portrait-opacity, 1);
+  transform: translate3d(var(--hero-portrait-x, 0), var(--hero-portrait-y, 0), 0)
+    scale(var(--hero-portrait-scale, 1));
+}
+
+.about-portrait-handoff {
+  opacity: var(--about-portrait-opacity, 1);
+  transform: translate3d(0, var(--about-portrait-y, 0), 0)
+    scale(var(--about-portrait-scale, 1));
+}
+
 @keyframes customer-footprint-scroll-left {
   from {
     transform: translateX(0);
@@ -160,6 +179,13 @@
   .back-to-top-control,
   .back-to-top-control::before {
     animation: none;
+  }
+
+  .hero-portrait-handoff,
+  .about-portrait-handoff {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .customer-footprint-viewport {

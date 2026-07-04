@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils"
 const portraitSizes = {
   fill: "h-full w-full",
   hero: "h-20 w-20 md:h-24 md:w-24 xl:h-28 xl:w-28",
+  heroFeature: "h-28 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 xl:h-44 xl:w-44",
+  dossier: "h-20 w-20 xl:h-24 xl:w-24",
   profile: "h-24 w-24 xl:h-28 xl:w-28",
   small: "h-24 w-24",
 }

@@ -99,19 +99,25 @@ export function ProfileDossier() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent" />
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-start xl:grid-cols-[0.82fr_1.42fr]">
         <aside className="border border-cyan-200/15 bg-[#0b111d]/82 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur md:sticky md:top-24 md:max-h-[calc(100vh-7rem)] md:overflow-y-auto">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center md:flex-col md:items-start xl:flex-row xl:items-center">
-            <ProfilePortrait />
-            <div>
-              <h2 className="text-2xl font-semibold text-white xl:text-3xl">John Carroll</h2>
-              <p className="mt-2 font-mono text-sm text-cyan-300">
-                // AI systems architect and builder
+          <div className="flex items-center gap-4">
+            <ProfilePortrait
+              size="dossier"
+              className="about-portrait-handoff"
+              imageClassName="object-[54%_43%]"
+            />
+            <div className="min-w-0">
+              <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-cyan-300/80">
+                Operator dossier
+              </p>
+              <h2 className="mt-2 text-xl font-semibold text-white xl:text-2xl">John Carroll</h2>
+              <p className="mt-2 font-mono text-xs leading-5 text-cyan-300">
+                // builder / architect / operator
               </p>
             </div>
           </div>
           <p className="mt-6 text-sm leading-6 text-slate-300">
-            I bridge strategy and execution for production-minded AI systems: practical
-            architecture, grounded delivery, and software that creates measurable
-            business value.
+            A compact read on how I operate: scope the workflow, align the people,
+            prototype against real constraints, and harden what proves useful.
           </p>
           <div className="mt-6 grid grid-cols-2 gap-px border border-cyan-200/10 bg-cyan-200/10">
             <div className="bg-slate-950/45 p-4">

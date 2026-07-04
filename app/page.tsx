@@ -28,9 +28,23 @@ function PortfolioPage() {
 
   useEffect(() => {
     if (!splashComplete) return;
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
     const syncScrollState = () => {
       const heroExitPoint = Math.max(420, window.innerHeight * 0.72)
       const pastHero = window.scrollY > heroExitPoint
+      const handoffStart = window.innerHeight * 0.18
+      const handoffEnd = Math.max(window.innerHeight * 0.92, 760)
+      const handoffProgress = reducedMotionQuery.matches
+        ? 0
+        : Math.min(1, Math.max(0, (window.scrollY - handoffStart) / (handoffEnd - handoffStart)))
+      const rootStyle = document.documentElement.style
+      rootStyle.setProperty("--hero-portrait-opacity", `${1 - handoffProgress * 0.46}`)
+      rootStyle.setProperty("--hero-portrait-scale", `${1 - handoffProgress * 0.22}`)
+      rootStyle.setProperty("--hero-portrait-x", `${handoffProgress * -0.4}rem`)
+      rootStyle.setProperty("--hero-portrait-y", `${handoffProgress * 1}rem`)
+      rootStyle.setProperty("--about-portrait-opacity", `${0.62 + handoffProgress * 0.38}`)
+      rootStyle.setProperty("--about-portrait-scale", `${0.9 + handoffProgress * 0.1}`)
+      rootStyle.setProperty("--about-portrait-y", `${(1 - handoffProgress) * -0.35}rem`)
       setNavTransparent(!pastHero)
       setBrandVisible(pastHero)
       setShowBackToTop(window.scrollY > 2200)
@@ -48,6 +62,13 @@ function PortfolioPage() {
     return () => {
       window.removeEventListener("scroll", onScroll)
       window.clearInterval(syncInterval)
+      document.documentElement.style.removeProperty("--hero-portrait-opacity")
+      document.documentElement.style.removeProperty("--hero-portrait-scale")
+      document.documentElement.style.removeProperty("--hero-portrait-x")
+      document.documentElement.style.removeProperty("--hero-portrait-y")
+      document.documentElement.style.removeProperty("--about-portrait-opacity")
+      document.documentElement.style.removeProperty("--about-portrait-scale")
+      document.documentElement.style.removeProperty("--about-portrait-y")
       if (timer) clearTimeout(timer)
     }
   }, [splashComplete])

@@ -314,20 +314,31 @@ export function AutoSliderBanner() {
 
 			<div className="relative z-20 mx-auto flex min-h-screen w-full max-w-[92rem] flex-col justify-center px-4 pb-16 pt-28 md:px-8">
 				<div className="grid gap-8 lg:grid-cols-[minmax(0,0.96fr)_minmax(30rem,0.84fr)] lg:items-center xl:gap-12">
-					<div className="max-w-3xl">
-						<div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center md:gap-5">
-							<ProfilePortrait size="hero" data-hero-portrait />
-							<h1 className="max-w-4xl text-[2.15rem] font-semibold leading-none text-white sm:text-[2.75rem] md:text-[3.25rem] xl:text-[3.55rem]">
-								John Carroll
-							</h1>
+					<div className="max-w-3xl lg:max-w-[46rem]">
+						<div className="mb-6 flex flex-col gap-5 sm:flex-row sm:items-center md:gap-6">
+							<ProfilePortrait
+								size="heroFeature"
+								className="hero-portrait-handoff"
+								imageClassName="object-[54%_43%]"
+								data-hero-portrait
+							/>
+							<div className="min-w-0">
+								<h1 className="max-w-4xl text-[2.75rem] font-semibold leading-none text-white sm:text-[3.6rem] md:text-[4.25rem] xl:text-[5rem]">
+									John Carroll
+								</h1>
+								<p className="mt-4 max-w-full text-sm font-medium leading-6 text-cyan-200 sm:max-w-2xl sm:text-base md:text-lg md:leading-7">
+									<span>Forward Deployed AI Engineer</span>
+									<span className="hidden sm:inline"> · </span>
+									<span className="block sm:inline">Agentic Systems Architect</span>
+									<span className="hidden sm:inline"> · </span>
+									<span className="block sm:inline">Full-Stack Builder</span>
+								</p>
+							</div>
 						</div>
-						<p className="mb-5 max-w-2xl text-sm font-medium leading-6 text-cyan-200 sm:text-base md:text-lg md:leading-7">
-							Forward Deployed AI Engineer · Agentic Systems Architect · Full-Stack Builder
-						</p>
-						<h2 className="max-w-[44rem] text-[2rem] font-semibold leading-[1.06] text-white sm:text-[2.85rem] md:text-[3.25rem] xl:text-[3.45rem]">
+						<h2 className="max-w-full text-[1.95rem] font-semibold leading-[1.06] text-white sm:max-w-[44rem] sm:text-[2.65rem] md:text-[3.05rem] xl:text-[3.35rem]">
 							I build AI systems from prototype to production.
 						</h2>
-						<p className="mt-5 max-w-2xl text-base leading-7 text-slate-200 md:text-lg md:leading-8">
+						<p className="mt-5 max-w-full text-base leading-7 text-slate-200 sm:max-w-2xl md:text-lg md:leading-8">
 							For teams turning high-value workflows into shipped AI products:
 							enterprise RAG, agentic automation, multimodal field tools, and
 							cloud-native full-stack platforms.
