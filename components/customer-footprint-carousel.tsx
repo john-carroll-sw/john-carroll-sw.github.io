@@ -53,12 +53,13 @@ const footprintRows: FootprintRow[] = [
     ],
   },
   {
-    label: "Manufacturing / Tech",
+    label: "Aerospace / Manufacturing / Tech",
     direction: "left",
     items: [
       { name: "AMD", domain: "amd.com" },
       { name: "Analog Devices", domain: "analog.com" },
       { name: "Boeing", domain: "boeing.com" },
+      { name: "NASA", domain: "nasa.gov" },
       { name: "Caterpillar", domain: "caterpillar.com" },
       { name: "Cisco", domain: "cisco.com" },
       { name: "Copeland / Emerson", domain: "copeland.com" },
