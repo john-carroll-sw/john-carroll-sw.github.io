@@ -353,7 +353,7 @@ function ExperienceTimeline() {
                 <p className="mt-1 text-sm leading-5 text-cyan-200">{item.role}</p>
               </div>
               {hasLogoMark ? (
-                <div className="-mx-4 flex min-h-11 items-center justify-start border-y border-cyan-200/10 bg-slate-950/25 px-4 py-2 md:mx-0 md:min-h-12 md:w-full md:border-0 md:bg-transparent md:px-0 md:py-0 xl:w-56 xl:justify-end">
+                <div className="order-first -mx-4 -mt-4 flex min-h-11 items-center justify-start border-b border-cyan-200/10 bg-slate-950/25 px-4 py-2 md:order-none md:mx-0 md:mt-0 md:min-h-12 md:w-full md:border-0 md:bg-transparent md:px-0 md:py-0 xl:w-56 xl:justify-end">
                   <BrandProofMark label={logoLabel} className="justify-start md:justify-center xl:justify-end" />
                 </div>
               ) : null}
