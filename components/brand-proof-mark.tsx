@@ -94,7 +94,7 @@ export function BrandProofMark({
       <div
         className={cn(
           "flex w-full min-w-0 max-w-full items-center justify-center drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]",
-          large ? "h-14 max-w-[19.5rem] gap-1.5 px-1 sm:max-w-[22rem] sm:gap-2 sm:px-2" : "h-11 max-w-[14.75rem] gap-1 px-0",
+          large ? "h-14 max-w-[19.5rem] gap-1.5 px-1 sm:max-w-[17.25rem] sm:gap-2 sm:px-2" : "h-11 max-w-[14.75rem] gap-1 px-0",
           className,
         )}
       >
@@ -102,7 +102,7 @@ export function BrandProofMark({
           <img
             src="/logos/cigna-group-reverse.png"
             alt="The Cigna Group"
-            className={cn("w-auto min-w-0 object-contain", large ? "h-[2.15rem] sm:h-[2.7rem]" : "h-[1.9rem]")}
+            className={cn("w-auto min-w-0 object-contain", large ? "h-[2.15rem] sm:h-[2.05rem]" : "h-[1.9rem]")}
           />
         </LogoLink>
         <span className="shrink-0 translate-y-[1px] font-mono text-[10px] uppercase tracking-[0.08em] text-cyan-100/60">
@@ -112,7 +112,7 @@ export function BrandProofMark({
           <img
             src="/logos/evernorth-white-trimmed.png"
             alt="Evernorth Health Services"
-            className={cn("w-auto min-w-0 object-contain", large ? "h-[1.95rem] sm:h-[2.35rem]" : "h-[1.6rem]")}
+            className={cn("w-auto min-w-0 object-contain", large ? "h-[1.95rem] sm:h-[1.8rem]" : "h-[1.6rem]")}
           />
         </LogoLink>
       </div>
