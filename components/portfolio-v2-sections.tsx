@@ -403,10 +403,15 @@ export function ExperienceSection() {
               <div className="space-y-4">
                 {education.map(({ institution, date, meta, detail, logo }) => (
                   <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-5">
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
+                        <h3 className="mt-2 font-semibold text-white">{institution}</h3>
+                        <p className="mt-1 text-sm text-cyan-200">{meta}</p>
+                      </div>
                       <a
                         aria-label={`Visit ${institution} website`}
-                        className="flex min-h-16 items-center justify-start border border-cyan-300/20 bg-slate-950/35 px-4 py-3 transition duration-200 hover:border-cyan-300/35 hover:bg-cyan-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70"
+                        className="flex min-h-10 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:justify-end"
                         href={logo.href}
                         rel="noreferrer"
                         target="_blank"
@@ -420,11 +425,6 @@ export function ExperienceSection() {
                           )}
                         />
                       </a>
-                      <div>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
-                        <h3 className="mt-2 font-semibold text-white">{institution}</h3>
-                        <p className="mt-1 text-sm text-cyan-200">{meta}</p>
-                      </div>
                     </div>
                     <p className="mt-4 text-sm leading-6 text-slate-300">{detail}</p>
                   </article>
