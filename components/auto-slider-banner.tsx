@@ -373,7 +373,6 @@ export function AutoSliderBanner() {
 
 					<div className="relative hidden min-h-[36.5rem] lg:block xl:min-h-[37.5rem]">
 						<div data-hero-portrait-shell className="absolute right-2 top-0 h-72 w-72">
-							<div data-hero-portrait-orbit className="pointer-events-none absolute -inset-16 rounded-full border border-cyan-300/10" aria-hidden="true" />
 							<div className="relative h-full w-full overflow-hidden rounded-full border border-cyan-200/25 bg-slate-950/35 shadow-[0_32px_110px_rgba(0,0,0,0.55)]">
 								<img
 									src="/JohnCarrollProfilePic.png"
