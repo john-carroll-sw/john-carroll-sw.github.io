@@ -69,6 +69,7 @@ const footprintRows: FootprintRow[] = [
       { name: "John Deere", domain: "deere.com" },
       { name: "Meta", domain: "meta.com" },
       { name: "NVIDIA", domain: "nvidia.com" },
+      { name: "Otis", domain: "otis.com" },
       { name: "Qualcomm", domain: "qualcomm.com" },
       { name: "RTX", domain: "rtx.com" },
       { name: "Sage", domain: "sage.com" },
@@ -181,7 +182,8 @@ export function CustomerFootprintCarousel() {
         </div>
         <p className="max-w-3xl text-sm leading-6 text-slate-300 md:text-base md:leading-7">
           A representative set of organizations I supported, advised, partnered
-          with, or engaged through Microsoft AI GBB and enterprise AI work.
+          with, or engaged through Microsoft AI GBB and enterprise AI work,
+          plus state and local public-sector teams.
         </p>
       </div>
 
