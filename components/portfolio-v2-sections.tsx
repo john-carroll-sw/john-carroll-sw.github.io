@@ -364,7 +364,7 @@ export function ExperienceSection() {
           foundations that shaped how I build.
         </SectionHeading>
 
-        <div className="grid gap-10 xl:grid-cols-[1.42fr_0.58fr] xl:items-start">
+        <div className="grid gap-10 lg:grid-cols-[1.38fr_0.62fr] lg:items-start">
           <div id="experience-work">
             <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
@@ -380,7 +380,7 @@ export function ExperienceSection() {
             <ExperienceTimeline />
           </div>
 
-          <div className="xl:sticky xl:top-24">
+          <div className="lg:sticky lg:top-24">
             <div id="experience-recognition">
               <div className="mb-4">
                 <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
@@ -407,7 +407,7 @@ export function ExperienceSection() {
           </div>
         </div>
 
-        <div id="experience-education" className="mt-16 border-t border-cyan-300/10 pt-12">
+        <div id="experience-education" className="mt-14 border-t border-cyan-300/10 pt-10">
           <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
@@ -424,25 +424,25 @@ export function ExperienceSection() {
             </p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-3 xl:grid-cols-1">
+          <div className="grid gap-4 lg:grid-cols-1">
             {education.map(({ institution, date, meta, detail, logo }) => (
-              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-5 sm:p-6 xl:p-0">
-                <div className="grid min-h-0 gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start xl:min-h-40 xl:grid-cols-[15rem_minmax(0,1.05fr)_minmax(0,1fr)] xl:items-stretch xl:gap-0">
-                  <div className="min-w-0 sm:col-start-1 xl:col-start-2 xl:row-start-1 xl:flex xl:min-h-40 xl:flex-col xl:justify-center xl:p-6">
+              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-5 sm:p-6 lg:p-0">
+                <div className="grid min-h-0 gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start lg:min-h-40 lg:grid-cols-[14rem_minmax(0,1.05fr)_minmax(0,1fr)] lg:items-stretch lg:gap-0 xl:grid-cols-[15rem_minmax(0,1.05fr)_minmax(0,1fr)]">
+                  <div className="min-w-0 sm:col-start-1 lg:col-start-2 lg:row-start-1 lg:flex lg:min-h-40 lg:flex-col lg:justify-center lg:p-6">
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
                       <p className="border border-cyan-300/20 bg-cyan-300/5 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-300/80">
                         {educationStatusLabels[institution]}
                       </p>
                     </div>
-                    <h3 className="mt-5 text-2xl font-semibold leading-tight text-white lg:text-[1.55rem]">
+                    <h3 className="mt-5 text-2xl font-semibold leading-tight text-white lg:text-[1.6rem]">
                       {institution}
                     </h3>
                     <p className="mt-3 text-base leading-6 text-cyan-200">{meta}</p>
                   </div>
                   <a
                     aria-label={`Visit ${institution} website`}
-                    className="flex min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:col-start-2 sm:justify-end lg:justify-start xl:col-start-1 xl:row-start-1 xl:min-h-40 xl:border-r xl:border-cyan-200/10 xl:px-6 xl:justify-center"
+                    className="flex min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:col-start-2 sm:justify-end lg:col-start-1 lg:row-start-1 lg:min-h-40 lg:justify-center lg:border-r lg:border-cyan-200/10 lg:px-6"
                     href={logo.href}
                     rel="noreferrer"
                     target="_blank"
@@ -456,7 +456,7 @@ export function ExperienceSection() {
                       )}
                     />
                   </a>
-                  <p className="text-sm leading-6 text-slate-300 sm:col-span-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:flex xl:min-h-40 xl:items-center xl:border-l xl:border-cyan-200/10 xl:p-6">
+                  <p className="text-sm leading-6 text-slate-300 sm:col-span-2 lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:flex lg:min-h-40 lg:items-center lg:border-l lg:border-cyan-200/10 lg:p-6">
                     {detail}
                   </p>
                 </div>
