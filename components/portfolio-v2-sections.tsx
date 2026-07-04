@@ -82,9 +82,9 @@ const experienceLogoLabels: Record<string, string> = {
 }
 
 const educationLogoClassNames: Record<string, string> = {
-  "Auburn University": "max-h-8 max-w-[12.5rem] xl:max-h-12 xl:max-w-[13.5rem]",
-  "Georgia Institute of Technology": "max-h-14 max-w-[13rem] xl:max-h-16 xl:max-w-[12.5rem]",
-  "Quantic School of Business and Technology": "max-h-11 max-w-[13rem] brightness-0 invert xl:max-h-12 xl:max-w-[13rem]",
+  "Auburn University": "max-h-6 max-w-[9rem] sm:max-h-7 sm:max-w-[11rem] lg:max-h-8 lg:max-w-[12.5rem] xl:max-h-12 xl:max-w-[13.5rem]",
+  "Georgia Institute of Technology": "max-h-9 max-w-[7.75rem] sm:max-h-11 sm:max-w-[10rem] lg:max-h-14 lg:max-w-[13rem] xl:max-h-16 xl:max-w-[12.5rem]",
+  "Quantic School of Business and Technology": "max-h-7 max-w-[8rem] brightness-0 invert sm:max-h-9 sm:max-w-[10rem] lg:max-h-11 lg:max-w-[13rem] xl:max-h-12 xl:max-w-[13rem]",
 }
 
 const educationStatusLabels: Record<string, string> = {
@@ -337,24 +337,31 @@ export function TechnicalSystemsMap() {
 function ExperienceTimeline() {
   return (
     <div className="relative space-y-4 before:absolute before:left-0 before:top-0 before:hidden before:h-full before:w-px before:bg-cyan-300/20 md:pl-6 md:before:block">
-      {experienceHighlights.map((item, index) => (
-        <article key={item.organization} className="relative border border-cyan-200/10 bg-white/[0.025] p-5 md:p-6">
-          <span className="absolute -left-[1.875rem] top-7 z-10 hidden h-3 w-3 border border-cyan-300/50 bg-[#07111d] md:block" />
-          <div className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
-            <div className="min-w-0">
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-slate-500">
-                {String(index + 1).padStart(2, "0")} / {item.timeframe}
-              </p>
-              <h3 className="mt-2 text-xl font-semibold text-white">{item.organization}</h3>
-              <p className="mt-1 text-sm text-cyan-200">{item.role}</p>
+      {experienceHighlights.map((item, index) => {
+        const logoLabel = experienceLogoLabels[item.organization] ?? item.organization
+        const hasLogoMark = logoLabel !== "Independent Consultant"
+
+        return (
+          <article key={item.organization} className="relative overflow-hidden border border-cyan-200/10 bg-white/[0.025] p-4 md:p-6">
+            <span className="absolute -left-[1.875rem] top-7 z-10 hidden h-3 w-3 border border-cyan-300/50 bg-[#07111d] md:block" />
+            <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
+              <div className="min-w-0">
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500 md:text-[11px] md:tracking-[0.22em]">
+                  {String(index + 1).padStart(2, "0")} / {item.timeframe}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold leading-tight text-white md:mt-2 md:text-xl">{item.organization}</h3>
+                <p className="mt-1 text-sm leading-5 text-cyan-200">{item.role}</p>
+              </div>
+              {hasLogoMark ? (
+                <div className="-mx-4 flex min-h-11 items-center justify-start border-y border-cyan-200/10 bg-slate-950/25 px-4 py-2 md:mx-0 md:min-h-12 md:w-full md:border-0 md:bg-transparent md:px-0 md:py-0 xl:w-56 xl:justify-end">
+                  <BrandProofMark label={logoLabel} className="justify-start md:justify-center xl:justify-end" />
+                </div>
+              ) : null}
             </div>
-            <div className="flex min-h-12 w-full items-center justify-start xl:w-56 xl:justify-end">
-              <BrandProofMark label={experienceLogoLabels[item.organization] ?? item.organization} />
-            </div>
-          </div>
-          <p className="mt-4 text-sm leading-6 text-slate-300">{item.impact}</p>
-        </article>
-      ))}
+            <p className={cn("text-sm leading-6 text-slate-300", hasLogoMark ? "mt-4" : "mt-5")}>{item.impact}</p>
+          </article>
+        )
+      })}
     </div>
   )
 }
@@ -429,25 +436,45 @@ export function ExperienceSection() {
             </p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-1">
+          <div className="grid gap-3 lg:grid-cols-1 lg:gap-4">
             {education.map(({ institution, date, meta, detail, logo }) => (
-              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-5 sm:p-6 lg:p-0">
-                <div className="grid min-h-0 gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start lg:min-h-40 lg:grid-cols-[13rem_minmax(28rem,1.36fr)_minmax(0,0.9fr)] lg:items-stretch lg:gap-0 xl:grid-cols-[14rem_minmax(32rem,1.34fr)_minmax(0,0.86fr)]">
-                  <div className="min-w-0 sm:col-start-1 lg:col-start-2 lg:row-start-1 lg:flex lg:min-h-40 lg:flex-col lg:justify-center lg:p-6 xl:p-7">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
-                      <p className="border border-cyan-300/20 bg-cyan-300/5 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-300/80">
-                        {educationStatusLabels[institution]}
-                      </p>
+              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-4 sm:p-5 lg:p-0">
+                <div className="grid min-h-0 gap-4 lg:min-h-40 lg:grid-cols-[13rem_minmax(28rem,1.36fr)_minmax(0,0.9fr)] lg:items-stretch lg:gap-0 xl:grid-cols-[14rem_minmax(32rem,1.34fr)_minmax(0,0.86fr)]">
+                  <div className="min-w-0 lg:col-start-2 lg:row-start-1 lg:flex lg:min-h-40 lg:flex-col lg:justify-center lg:p-6 xl:p-7">
+                    <div className="flex items-start justify-between gap-4 lg:block">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500 sm:text-[10px] sm:tracking-[0.18em]">{date}</p>
+                          <p className="border border-cyan-300/20 bg-cyan-300/5 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-300/80 sm:text-[10px] sm:tracking-[0.2em]">
+                            {educationStatusLabels[institution]}
+                          </p>
+                        </div>
+                      </div>
+                      <a
+                        aria-label={`Visit ${institution} website`}
+                        className="flex min-h-10 shrink-0 items-start justify-end opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 lg:hidden"
+                        href={logo.href}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          className={cn(
+                            "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
+                            educationLogoClassNames[institution],
+                          )}
+                        />
+                      </a>
                     </div>
-                    <h3 className="mt-5 text-2xl font-semibold leading-tight text-white lg:whitespace-nowrap lg:text-[1.35rem] xl:text-[1.45rem] 2xl:text-[1.6rem]">
+                    <h3 className="mt-4 text-xl font-semibold leading-tight text-white sm:text-2xl lg:mt-5 lg:whitespace-nowrap lg:text-[1.35rem] xl:text-[1.45rem] 2xl:text-[1.6rem]">
                       {institution}
                     </h3>
-                    <p className="mt-3 text-base leading-6 text-cyan-200">{meta}</p>
+                    <p className="mt-2 text-sm leading-6 text-cyan-200 sm:text-base lg:mt-3">{meta}</p>
                   </div>
                   <a
                     aria-label={`Visit ${institution} website`}
-                    className="flex min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:col-start-2 sm:justify-end lg:col-start-1 lg:row-start-1 lg:min-h-40 lg:justify-center lg:border-r lg:border-cyan-200/10 lg:px-6"
+                    className="hidden min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 lg:col-start-1 lg:row-start-1 lg:flex lg:min-h-40 lg:justify-center lg:border-r lg:border-cyan-200/10 lg:px-6"
                     href={logo.href}
                     rel="noreferrer"
                     target="_blank"
@@ -461,7 +488,7 @@ export function ExperienceSection() {
                       )}
                     />
                   </a>
-                  <p className="text-sm leading-6 text-slate-300 sm:col-span-2 lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:flex lg:min-h-40 lg:items-center lg:border-l lg:border-cyan-200/10 lg:p-6">
+                  <p className="border-t border-cyan-200/10 pt-4 text-sm leading-6 text-slate-300 lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:flex lg:min-h-40 lg:items-center lg:border-l lg:border-t-0 lg:border-cyan-200/10 lg:p-6">
                     {detail}
                   </p>
                 </div>
