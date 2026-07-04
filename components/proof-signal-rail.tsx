@@ -106,7 +106,7 @@ export function ProofSignalRail({ variant = "hero" }: { variant?: "hero" | "prof
           ? "grid-cols-2 xl:grid-cols-6"
           : heroHasMetrics
             ? "hidden max-w-[56rem] grid-cols-6 lg:grid 2xl:grid-cols-[1.08fr_1.08fr_1.32fr_minmax(7.5rem,0.95fr)_minmax(7.5rem,0.95fr)]"
-            : "hidden max-w-3xl grid-cols-3 lg:grid",
+            : "hidden max-w-3xl grid-cols-[0.94fr_0.94fr_1.12fr] lg:grid",
       )}
     >
       {items.map((item) => (
@@ -117,6 +117,7 @@ export function ProofSignalRail({ variant = "hero" }: { variant?: "hero" | "prof
             profile ? "min-h-[5.75rem] px-4 py-4 md:px-5 xl:min-h-[6.25rem] xl:px-7" : "min-h-14 px-3 py-2 xl:min-h-16",
             profile && (item.type === "metric" ? "col-span-2 justify-start xl:col-span-3" : "xl:col-span-2"),
             heroHasMetrics && (item.type === "metric" ? "col-span-3 2xl:col-span-1" : "col-span-2 2xl:col-span-1"),
+            !profile && item.type === "logo" && item.label === "Cigna / Evernorth" && "px-1",
           )}
         >
           {item.type === "metric" ? (

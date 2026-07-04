@@ -93,27 +93,26 @@ export function BrandProofMark({
     return (
       <div
         className={cn(
-          "grid w-full min-w-0 max-w-full items-center drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]",
-          large ? "h-14 max-w-[19.5rem] gap-x-0.5" : "h-11 max-w-[13.75rem] gap-x-0.5",
+          "flex w-full min-w-0 max-w-full items-center justify-center drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]",
+          large ? "h-14 max-w-[22rem] gap-2 px-2" : "h-11 max-w-[14.75rem] gap-1 px-0",
           className,
         )}
-        style={{
-          gridTemplateColumns: large ? "minmax(3.75rem, 0.82fr) auto minmax(6.75rem, 1.18fr)" : "minmax(3.2rem, 0.82fr) auto minmax(5.75rem, 1.18fr)",
-        }}
       >
-        <LogoLink ariaLabel="Visit The Cigna Group website" className="w-full" href={logoLinks.cigna}>
+        <LogoLink ariaLabel="Visit The Cigna Group website" className="shrink-0" href={logoLinks.cigna}>
           <img
             src="/logos/cigna-group-reverse.png"
             alt="The Cigna Group"
-            className={cn("min-w-0 object-contain", large ? "max-h-[2.65rem] max-w-[6.35rem]" : "max-h-8 max-w-[4.45rem]")}
+            className={cn("w-auto min-w-0 object-contain", large ? "h-[2.7rem]" : "h-[1.9rem]")}
           />
         </LogoLink>
-        <span className="justify-self-center font-mono text-[10px] uppercase tracking-[0.12em] text-cyan-100/60">x</span>
-        <LogoLink ariaLabel="Visit Evernorth website" className="w-full justify-start" href={logoLinks.evernorth}>
+        <span className="shrink-0 translate-y-[1px] font-mono text-[10px] uppercase tracking-[0.08em] text-cyan-100/60">
+          x
+        </span>
+        <LogoLink ariaLabel="Visit Evernorth website" className="shrink-0" href={logoLinks.evernorth}>
           <img
             src="/logos/evernorth-white-trimmed.png"
             alt="Evernorth Health Services"
-            className={cn("w-full min-w-0 object-contain", large ? "max-h-[3.05rem] max-w-[10.5rem]" : "max-h-[2.45rem] max-w-[7.5rem]")}
+            className={cn("w-auto min-w-0 object-contain", large ? "h-[2.35rem]" : "h-[1.6rem]")}
           />
         </LogoLink>
       </div>
