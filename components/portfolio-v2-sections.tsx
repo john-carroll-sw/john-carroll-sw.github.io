@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button"
 import { BrandProofMark } from "@/components/brand-proof-mark"
 import ContactForm from "@/components/contact-form"
 import { CustomerFootprintCarousel } from "@/components/customer-footprint-carousel"
+import { ProfilePortrait } from "@/components/profile-portrait"
 import { ProjectGallery } from "@/components/project-gallery"
 import { ProofSignalRail } from "@/components/proof-signal-rail"
 import {
@@ -99,11 +100,7 @@ export function ProfileDossier() {
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-start xl:grid-cols-[0.82fr_1.42fr]">
         <aside className="border border-cyan-200/15 bg-[#0b111d]/82 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur md:sticky md:top-24 md:max-h-[calc(100vh-7rem)] md:overflow-y-auto">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center md:flex-col md:items-start xl:flex-row xl:items-center">
-            <img
-              src="/JohnCarrollProfilePic.png"
-              alt="John Carroll"
-              className="h-24 w-24 rounded-full border border-cyan-200/20 object-cover xl:h-28 xl:w-28"
-            />
+            <ProfilePortrait />
             <div>
               <h2 className="text-2xl font-semibold text-white xl:text-3xl">John Carroll</h2>
               <p className="mt-2 font-mono text-sm text-cyan-300">
