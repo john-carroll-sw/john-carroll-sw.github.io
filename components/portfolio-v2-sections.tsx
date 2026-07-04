@@ -113,7 +113,7 @@ export function ProfileDossier() {
             </div>
             <div className="bg-slate-950/45 p-4">
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">Mode</p>
-              <p className="mt-2 text-sm font-semibold text-white">Builder / Architect</p>
+              <p className="mt-2 text-sm font-semibold text-white">Builder / Architect / Operator</p>
             </div>
           </div>
           <div className="mt-6 space-y-2">

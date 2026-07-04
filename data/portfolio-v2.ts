@@ -8,7 +8,6 @@ import {
   Gauge,
   GitBranch,
   GraduationCap,
-  MapPinned,
   Medal,
   Mic2,
   Network,
@@ -22,24 +21,28 @@ import {
 
 export const dossier = [
   {
-    icon: MapPinned,
-    label: "Location",
-    value: "Atlanta, GA",
-  },
-  {
     icon: BrainCircuit,
-    label: "Focus",
-    value: "Agentic AI, RAG, enterprise platforms",
+    label: "AI Lane",
+    value:
+      "Agentic AI, RAG, enterprise search, multimodal assistants, and AI platforms for production workflows.",
   },
   {
-    icon: Gauge,
-    label: "Strength",
-    value: "Prototype to production",
+    icon: Network,
+    label: "Domains",
+    value:
+      "Healthcare, retail, manufacturing, aerospace, public safety, industrial systems, and enterprise operations.",
+  },
+  {
+    icon: CloudCog,
+    label: "Delivery Range",
+    value:
+      "Strategy, architecture, prototypes, production systems, cloud platforms, full-stack apps, and engineering mentorship.",
   },
   {
     icon: Workflow,
-    label: "Operating Mode",
-    value: "Discover the workflow, prototype quickly, harden what proves useful",
+    label: "Operating Model",
+    value:
+      "Scope the workflow, align stakeholders, prototype against real data, validate outputs, then harden what proves useful.",
   },
 ]
 
