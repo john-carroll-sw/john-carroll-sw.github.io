@@ -81,9 +81,9 @@ const experienceLogoLabels: Record<string, string> = {
 }
 
 const educationLogoClassNames: Record<string, string> = {
-  "Auburn University": "max-h-8 max-w-[12.5rem]",
-  "Georgia Institute of Technology": "max-h-14 max-w-[13rem]",
-  "Quantic School of Business and Technology": "max-h-11 max-w-[13rem] brightness-0 invert",
+  "Auburn University": "max-h-8 max-w-[12.5rem] xl:max-h-12 xl:max-w-[13.5rem]",
+  "Georgia Institute of Technology": "max-h-14 max-w-[13rem] xl:max-h-16 xl:max-w-[11.5rem]",
+  "Quantic School of Business and Technology": "max-h-11 max-w-[13rem] brightness-0 invert xl:max-h-12 xl:max-w-[11.5rem]",
 }
 
 const educationStatusLabels: Record<string, string> = {
@@ -427,21 +427,25 @@ export function ExperienceSection() {
             </p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-3">
+          <div className="grid gap-4 lg:grid-cols-3 xl:grid-cols-1">
             {education.map(({ institution, date, meta, detail, logo }) => (
-              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-6">
-                <div className="flex min-h-20 flex-col gap-5 sm:flex-row sm:items-start sm:justify-between lg:flex-col xl:flex-row">
-                  <div>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
-                    <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-300/80">
-                      {educationStatusLabels[institution]}
-                    </p>
-                    <h3 className="mt-3 text-xl font-semibold leading-snug text-white">{institution}</h3>
-                    <p className="mt-2 text-sm text-cyan-200">{meta}</p>
+              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-5 sm:p-6 xl:p-0">
+                <div className="grid min-h-0 gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start xl:min-h-40 xl:grid-cols-[15rem_minmax(0,1.05fr)_minmax(0,1fr)] xl:items-stretch xl:gap-0">
+                  <div className="min-w-0 sm:col-start-1 xl:col-start-2 xl:row-start-1 xl:flex xl:min-h-40 xl:flex-col xl:justify-center xl:p-6">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
+                      <p className="border border-cyan-300/20 bg-cyan-300/5 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-300/80">
+                        {educationStatusLabels[institution]}
+                      </p>
+                    </div>
+                    <h3 className="mt-5 text-2xl font-semibold leading-tight text-white lg:text-[1.55rem]">
+                      {institution}
+                    </h3>
+                    <p className="mt-3 text-base leading-6 text-cyan-200">{meta}</p>
                   </div>
                   <a
                     aria-label={`Visit ${institution} website`}
-                    className="flex min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:justify-end lg:justify-start xl:justify-end"
+                    className="flex min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:col-start-2 sm:justify-end lg:justify-start xl:col-start-1 xl:row-start-1 xl:min-h-40 xl:border-r xl:border-cyan-200/10 xl:px-6 xl:justify-center"
                     href={logo.href}
                     rel="noreferrer"
                     target="_blank"
@@ -455,8 +459,10 @@ export function ExperienceSection() {
                       )}
                     />
                   </a>
+                  <p className="text-sm leading-6 text-slate-300 sm:col-span-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:flex xl:min-h-40 xl:items-center xl:border-l xl:border-cyan-200/10 xl:p-6">
+                    {detail}
+                  </p>
                 </div>
-                <p className="mt-6 text-sm leading-6 text-slate-300">{detail}</p>
               </article>
             ))}
           </div>
