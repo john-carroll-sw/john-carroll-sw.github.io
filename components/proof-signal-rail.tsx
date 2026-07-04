@@ -62,7 +62,7 @@ function ProofMetric({
 
   return (
     <div className={cn("w-full", profile ? "text-left" : "text-center")}>
-      <div className={cn(profile && "space-y-4")}>
+      <div className={cn(profile && "flex flex-col justify-start")}>
         <div>
           <div
             className={cn(
@@ -76,7 +76,7 @@ function ProofMetric({
             className={cn(
               "mt-2 font-mono uppercase text-slate-400",
               profile
-                ? "text-[11px] leading-5 tracking-[0.22em]"
+                ? "min-h-5 text-[11px] leading-5 tracking-[0.22em]"
                 : "whitespace-nowrap text-[9px] tracking-[0.14em] xl:text-[10px] xl:tracking-[0.18em]",
             )}
           >
@@ -85,7 +85,7 @@ function ProofMetric({
         </div>
 
         {profile && detail ? (
-          <div className="border-t border-cyan-200/15 pt-4">
+          <div className="mt-5 border-t border-cyan-200/15 pt-4">
             {source ? <p className="text-sm font-semibold text-slate-100">{source}</p> : null}
             <p className="mt-2 text-sm leading-6 text-slate-300">{detail}</p>
           </div>
@@ -117,7 +117,7 @@ export function ProofSignalRail({ variant = "hero" }: { variant?: "hero" | "prof
           className={cn(
             "flex items-center justify-center bg-slate-950/45 backdrop-blur",
             profile ? "min-h-[5.75rem] px-4 py-4 md:px-5 xl:min-h-[6.25rem] xl:px-7" : "min-h-14 px-3 py-2 xl:min-h-16",
-            profile && item.type === "metric" && "col-span-2 justify-start",
+            profile && item.type === "metric" && "col-span-2 items-start justify-start",
             profile && item.type === "logo" && wideLogoPairs.has(item.label) && "col-span-2 px-2 sm:px-4 xl:px-7",
             heroHasMetrics && (item.type === "metric" ? "col-span-3 2xl:col-span-1" : "col-span-2 2xl:col-span-1"),
             !profile && item.type === "logo" && item.label === "Cigna / Evernorth" && "px-1",
