@@ -43,6 +43,8 @@ const heroProofItems: ProofSignalItem[] = [
   { type: "logo", label: "Cigna / Evernorth" },
 ]
 
+const wideLogoPairs = new Set(["Cigna / Evernorth", "Hexagon / Intergraph"])
+
 function ProofMetric({
   caption,
   detail,
@@ -116,6 +118,7 @@ export function ProofSignalRail({ variant = "hero" }: { variant?: "hero" | "prof
             "flex items-center justify-center bg-slate-950/45 backdrop-blur",
             profile ? "min-h-[5.75rem] px-4 py-4 md:px-5 xl:min-h-[6.25rem] xl:px-7" : "min-h-14 px-3 py-2 xl:min-h-16",
             profile && (item.type === "metric" ? "col-span-2 justify-start xl:col-span-3" : "xl:col-span-2"),
+            profile && item.type === "logo" && wideLogoPairs.has(item.label) && "col-span-2 px-2 sm:px-4 xl:px-7",
             heroHasMetrics && (item.type === "metric" ? "col-span-3 2xl:col-span-1" : "col-span-2 2xl:col-span-1"),
             !profile && item.type === "logo" && item.label === "Cigna / Evernorth" && "px-1",
           )}
