@@ -241,7 +241,6 @@ export function ServicesSection() {
           <h2 className="text-4xl font-semibold leading-tight text-white md:text-6xl">
             Services
           </h2>
-          <div className="mt-8 h-0.5 w-16 bg-cyan-300" />
         </div>
 
         <div className="grid gap-5 lg:grid-cols-3">
