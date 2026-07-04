@@ -156,7 +156,7 @@ function TerminalTranscript({ frame }: { frame: TerminalFrame }) {
 	return (
 		<div
 			ref={scrollRef}
-			className="h-[18.75rem] overflow-y-auto p-5 pr-4 font-mono text-sm leading-5 [scrollbar-color:rgba(103,232,249,0.45)_transparent] [scrollbar-width:thin] xl:h-[21rem]"
+			className="h-[clamp(22rem,43vh,28rem)] overflow-y-auto p-5 pr-4 font-mono text-sm leading-5 [scrollbar-color:rgba(103,232,249,0.45)_transparent] [scrollbar-width:thin] xl:h-[clamp(24rem,45vh,31rem)]"
 		>
 			<div className="space-y-1">
 				{frame.lines.map((line, index) => {
@@ -313,7 +313,7 @@ export function AutoSliderBanner() {
 			<div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-[#050912] to-transparent" />
 
 			<div className="relative z-20 mx-auto flex min-h-screen w-full max-w-[92rem] flex-col justify-center px-4 pb-16 pt-28 md:px-8">
-				<div className="grid gap-8 lg:grid-cols-[minmax(0,0.96fr)_minmax(30rem,0.84fr)] lg:items-center xl:gap-12">
+				<div className="grid gap-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(28rem,0.78fr)] lg:items-center xl:gap-12">
 					<div className="max-w-3xl lg:max-w-[46rem]">
 						<div className="mb-6 flex flex-col gap-5 sm:flex-row sm:items-center md:gap-6">
 							<ProfilePortrait
