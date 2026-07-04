@@ -77,9 +77,15 @@ const experienceLogoLabels: Record<string, string> = {
 }
 
 const educationLogoClassNames: Record<string, string> = {
-  "Auburn University": "max-h-7 max-w-[11rem]",
-  "Georgia Institute of Technology": "max-h-12 max-w-[12rem]",
-  "Quantic School of Business and Technology": "max-h-10 max-w-[12rem] brightness-0 invert",
+  "Auburn University": "max-h-8 max-w-[12.5rem]",
+  "Georgia Institute of Technology": "max-h-14 max-w-[13rem]",
+  "Quantic School of Business and Technology": "max-h-11 max-w-[13rem] brightness-0 invert",
+}
+
+const educationStatusLabels: Record<string, string> = {
+  "Auburn University": "Completed",
+  "Georgia Institute of Technology": "Incoming",
+  "Quantic School of Business and Technology": "In progress",
 }
 
 export function ProfileDossier() {
@@ -368,7 +374,7 @@ export function ExperienceSection() {
             <ExperienceTimeline />
           </div>
 
-          <div className="space-y-8 xl:sticky xl:top-24">
+          <div className="xl:sticky xl:top-24">
             <div id="experience-recognition">
               <div className="mb-4">
                 <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
@@ -392,45 +398,58 @@ export function ExperienceSection() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
 
-            <div id="experience-education">
-              <div className="mb-4">
-                <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
-                  Education
-                </p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">Formal foundations.</h3>
-              </div>
-              <div className="space-y-4">
-                {education.map(({ institution, date, meta, detail, logo }) => (
-                  <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-5">
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
-                        <h3 className="mt-2 font-semibold text-white">{institution}</h3>
-                        <p className="mt-1 text-sm text-cyan-200">{meta}</p>
-                      </div>
-                      <a
-                        aria-label={`Visit ${institution} website`}
-                        className="flex min-h-10 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:justify-end"
-                        href={logo.href}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <img
-                          src={logo.src}
-                          alt={logo.alt}
-                          className={cn(
-                            "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
-                            educationLogoClassNames[institution],
-                          )}
-                        />
-                      </a>
-                    </div>
-                    <p className="mt-4 text-sm leading-6 text-slate-300">{detail}</p>
-                  </article>
-                ))}
-              </div>
+        <div id="experience-education" className="mt-16 border-t border-cyan-300/10 pt-12">
+          <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
+                Education
+              </p>
+              <h3 className="mt-2 text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-4xl">
+                <span className="block sm:inline">Formal foundations,</span>{" "}
+                <span className="block sm:inline">still compounding.</span>
+              </h3>
             </div>
+            <p className="max-w-xl text-sm leading-6 text-slate-400 md:text-base">
+              One completed software engineering degree, one executive MBA nearing
+              completion, and one graduate AI specialization about to begin.
+            </p>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            {education.map(({ institution, date, meta, detail, logo }) => (
+              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-6">
+                <div className="flex min-h-20 flex-col gap-5 sm:flex-row sm:items-start sm:justify-between lg:flex-col xl:flex-row">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{date}</p>
+                    <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-300/80">
+                      {educationStatusLabels[institution]}
+                    </p>
+                    <h3 className="mt-3 text-xl font-semibold leading-snug text-white">{institution}</h3>
+                    <p className="mt-2 text-sm text-cyan-200">{meta}</p>
+                  </div>
+                  <a
+                    aria-label={`Visit ${institution} website`}
+                    className="flex min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:justify-end lg:justify-start xl:justify-end"
+                    href={logo.href}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className={cn(
+                        "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
+                        educationLogoClassNames[institution],
+                      )}
+                    />
+                  </a>
+                </div>
+                <p className="mt-6 text-sm leading-6 text-slate-300">{detail}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
