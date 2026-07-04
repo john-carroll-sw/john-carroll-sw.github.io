@@ -76,13 +76,11 @@ function PortfolioPage() {
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="group fixed bottom-24 right-8 z-50 hidden h-14 w-14 items-center justify-center overflow-hidden border border-cyan-300/25 bg-[#07111d]/85 text-cyan-100 shadow-[0_18px_55px_rgba(0,0,0,0.42),0_0_0_1px_rgba(103,232,249,0.07)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-cyan-300/12 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300/70 md:flex"
+          className="back-to-top-control group fixed bottom-24 right-8 z-50 hidden h-14 w-14 items-center justify-center overflow-hidden border border-cyan-300/25 bg-[#07111d]/85 text-cyan-100 shadow-[0_18px_55px_rgba(0,0,0,0.42),0_0_0_1px_rgba(103,232,249,0.07)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-cyan-300/12 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300/70 md:flex"
           aria-label="Back to top"
         >
-          <span className="absolute inset-1 border border-cyan-300/10 transition-colors duration-300 group-hover:border-cyan-200/40" />
-          <span className="absolute -left-1 top-3 h-px w-3 bg-cyan-300/60 transition-all duration-300 group-hover:w-5" />
-          <span className="absolute -right-1 bottom-3 h-px w-3 bg-cyan-300/60 transition-all duration-300 group-hover:w-5" />
-          <ArrowUp className="relative h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
+          <span className="pointer-events-none absolute inset-1 z-10 border border-cyan-300/10 transition-colors duration-300 group-hover:border-cyan-200/40" />
+          <ArrowUp className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
         </button>
       )}
       <Footer
