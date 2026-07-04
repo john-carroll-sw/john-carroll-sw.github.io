@@ -334,9 +334,9 @@ export function ExperienceSection() {
     <section id="experience" className="border-y border-cyan-300/10 bg-[#090f19] px-4 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeading kicker="Experience" title="Work history, education, and recognition.">
-          One place for the career arc: enterprise AI, aerospace analytics,
-          public safety SaaS, industrial systems, teaching foundations, and the
-          signals that shaped the builder underneath it.
+          The career arc behind the work: enterprise AI, aerospace analytics,
+          public safety SaaS, industrial systems, consulting, and the teaching
+          foundations that shaped how I build.
         </SectionHeading>
 
         <div className="grid gap-10 xl:grid-cols-[1.42fr_0.58fr] xl:items-start">
@@ -346,10 +346,10 @@ export function ExperienceSection() {
                 <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
                   Work History
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">The live resume behind the signal.</h3>
+                <h3 className="mt-2 text-2xl font-semibold text-white">Roles, systems, and outcomes.</h3>
               </div>
               <p className="max-w-md text-sm leading-6 text-slate-400">
-                Enterprise AI, aerospace analytics, public safety SaaS, industrial systems, and teaching foundations.
+                A timeline of the teams, products, and production systems behind the portfolio.
               </p>
             </div>
             <ExperienceTimeline />
