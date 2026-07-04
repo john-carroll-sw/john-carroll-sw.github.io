@@ -16,12 +16,121 @@
   animation: shimmer 2.5s linear infinite;
 }
 
+@keyframes customer-footprint-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes customer-footprint-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.customer-footprint-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.customer-footprint-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: customer-footprint-scroll-left 62s linear infinite;
+  will-change: transform;
+}
+
+.customer-footprint-track-reverse {
+  animation-name: customer-footprint-scroll-right;
+}
+
+.customer-footprint-row:hover .customer-footprint-track {
+  animation-play-state: paused;
+}
+
+.customer-footprint-item {
+  display: inline-flex;
+  min-width: max-content;
+  align-items: center;
+  gap: 0.65rem;
+  color: rgb(226 232 240 / 0.72);
+  opacity: 0.72;
+  transition: color 200ms ease, opacity 200ms ease, transform 200ms ease;
+}
+
+.customer-footprint-item:hover {
+  color: rgb(255 255 255);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.customer-footprint-logo {
+  height: 1.55rem;
+  width: 1.55rem;
+  border-radius: 0.25rem;
+  filter: grayscale(1) saturate(0) brightness(1.08);
+  opacity: 0.72;
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.customer-footprint-item:hover .customer-footprint-logo {
+  filter: none;
+  opacity: 1;
+}
+
+.customer-footprint-fallback {
+  display: inline-flex;
+  height: 1.55rem;
+  width: 1.55rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(103 232 249 / 0.22);
+  background: rgb(8 13 24 / 0.82);
+  color: rgb(165 243 252 / 0.78);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+}
+
+.customer-footprint-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-footprint-viewport {
+    mask-image: none;
+  }
+
+  .customer-footprint-track {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+}
+
 .text-coral-400 {
   color: #FF6F61;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: #050912;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: #ffffff;
 }
 
 .fixed-hero-video {
@@ -122,6 +231,17 @@ body {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Responsive height for rotating title container */
 .rotating-title-container {
   height: 50px !important;
@@ -215,6 +335,14 @@ body {
   100% {
     opacity: 0;
     transform: translateY(-24px) scaleX(0.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coffee-steam .steam {
+    animation: none;
+    opacity: 0.35;
+    transform: translateY(-8px) scaleX(0.9);
   }
 }
 

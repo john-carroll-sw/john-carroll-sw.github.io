@@ -75,7 +75,7 @@
     {
         "title": "Extract Content from Documents",
         "description": "Implements field extractors that convert PDF documents to JSON using OpenAI’s GPT-4 Vision Preview. Supports scanned and digital PDFs, batch processing, and schema-based extraction.",
-        "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/project-images/document-extraction-json.png",
         "link": "https://github.com/john-carroll-sw/pdf_to_json_extractor_gpt4vision",
         "tags": ["Python", "GPT-4 Vision", "OCR", "Document Extraction"]
     },
@@ -96,7 +96,7 @@
     {
         "title": "AI Tutor",
         "description": "AI Tutor POC that identifies the source of student misunderstanding, using quizzes and targeted review to help students master difficult concepts.",
-        "image": "https://images.unsplash.com/photo-1623458696277-a6f4bcd06c2f?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/project-images/ai-tutor-diagnosis.png",
         "link": "https://github.com/mgboot/ai-tutor",
         "tags": ["Python", "Jupyter Notebook", "AI", "Education"]
     },
@@ -117,14 +117,14 @@
     {
         "title": "Voice Assistant using GPT-4o Realtime",
         "description": "Voice Assistant using GPT-4o Realtime. Provides a hands-free, voice-driven experience for various use cases.",
-        "image": "https://plus.unsplash.com/premium_photo-1721830791498-ec809d9d94ec?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/project-images/voice-assistant-realtime.png",
         "link": "https://github.com/john-carroll-sw/voice-assistant",
         "tags": ["TypeScript", "Python", "OpenAI", "Voice", "AI"]
     },
     {
         "title": "OpenAI Console App with Logging per Image Processed",
         "description": "A console app that uses GPT-4o for object detection in images, logging each image processed, its response, and end-to-end request time.",
-        "image": "https://images.unsplash.com/photo-1580428354768-03a028646bc8?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image": "/project-images/openai-console-image-logging.png",
         "link": "https://github.com/john-carroll-sw/gpt-4o-object-detection-in-image-folder",
         "tags": ["Python", "OpenAI", "Object Detection", "Logging", "AI"]
     },
