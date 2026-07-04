@@ -2,7 +2,7 @@
 
 import { AutoSliderBanner } from "@/components/auto-slider-banner"
 import { useEffect, useState } from "react"
-import { useSplashComplete } from "@/components/splash-provider"
+import { AppProviders, useSplashComplete } from "@/components/splash-provider"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ChevronUp } from "lucide-react"
@@ -16,7 +16,7 @@ import {
   TechnicalSystemsMap,
 } from "@/components/portfolio-v2-sections"
 
-export default function Page() {
+function PortfolioPage() {
   const [navTransparent, setNavTransparent] = useState(true)
   const [brandVisible, setBrandVisible] = useState(false)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
@@ -89,5 +89,13 @@ export default function Page() {
         showPrivacy={showPrivacy}
       />
     </div>
+  )
+}
+
+export default function Page() {
+  return (
+    <AppProviders>
+      <PortfolioPage />
+    </AppProviders>
   )
 }
