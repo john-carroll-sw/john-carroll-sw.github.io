@@ -65,9 +65,9 @@ export default function Page() {
       <main className="relative z-10 -mt-16">
         <AutoSliderBanner />
         <ProfileDossier />
-        <ServicesSection />
-        <FeaturedSystems />
         <ExperienceSection />
+        <FeaturedSystems />
+        <ServicesSection />
         <CapabilitiesSection />
         <TechnicalSystemsMap />
         <ContactSection />
