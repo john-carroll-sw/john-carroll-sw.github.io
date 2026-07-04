@@ -356,10 +356,10 @@ export function AutoSliderBanner() {
 								variant="outline"
 								className="border-cyan-300/40 bg-slate-950/30 text-cyan-50 backdrop-blur hover:bg-cyan-300/10"
 							>
-								<Link href="/John_Carroll_Resume.pdf" target="_blank">
+								<a href="/John_Carroll_Resume.pdf" target="_blank" rel="noopener noreferrer">
 									<Download className="h-4 w-4" />
 									Download Resume
-								</Link>
+								</a>
 							</Button>
 							<Button
 								asChild

@@ -139,10 +139,10 @@ export function ProfileDossier() {
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild className="bg-cyan-300 text-slate-950 hover:bg-cyan-200">
-              <Link href="/John_Carroll_Resume.pdf" target="_blank">
+              <a href="/John_Carroll_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="h-4 w-4" />
                 Resume
-              </Link>
+              </a>
             </Button>
             <Button asChild variant="outline" className="border-cyan-300/30 bg-transparent text-cyan-100 hover:bg-cyan-300/10">
               <Link href="https://github.com/john-carroll-sw" target="_blank">

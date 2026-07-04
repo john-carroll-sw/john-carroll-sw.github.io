@@ -80,7 +80,7 @@ export function Navbar({ brandVisible, navTransparent, headerVisible, setMobileN
               </Link>
             ))}
           </nav>
-          <Link
+          <a
             href="/John_Carroll_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -94,7 +94,7 @@ export function Navbar({ brandVisible, navTransparent, headerVisible, setMobileN
               <Download className="h-4 w-4" />
               Resume
             </Button>
-          </Link>
+          </a>
         </div>
         <button
           className={`ml-auto flex items-center justify-center rounded p-2 transition duration-500 focus:outline-none focus:ring-2 focus:ring-cyan-300 md:hidden ${
@@ -160,7 +160,7 @@ export function Navbar({ brandVisible, navTransparent, headerVisible, setMobileN
               ))}
             </nav>
             <div className="mt-auto pt-8">
-              <Link
+              <a
                 href="/John_Carroll_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -172,7 +172,7 @@ export function Navbar({ brandVisible, navTransparent, headerVisible, setMobileN
                   <Download className="h-4 w-4" />
                   Download Resume
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
