@@ -94,11 +94,11 @@ export function BrandProofMark({
       <div
         className={cn(
           "grid w-full min-w-0 max-w-full items-center drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]",
-          large ? "h-14 max-w-[22.5rem] gap-x-0.5" : "h-11 max-w-[15.5rem] gap-x-0.5",
+          large ? "h-14 max-w-[19.5rem] gap-x-0.5" : "h-11 max-w-[13.75rem] gap-x-0.5",
           className,
         )}
         style={{
-          gridTemplateColumns: large ? "minmax(3.45rem, 0.62fr) auto minmax(8rem, 1.38fr)" : "minmax(3rem, 0.62fr) auto minmax(7rem, 1.38fr)",
+          gridTemplateColumns: large ? "minmax(3.75rem, 0.82fr) auto minmax(6.75rem, 1.18fr)" : "minmax(3.2rem, 0.82fr) auto minmax(5.75rem, 1.18fr)",
         }}
       >
         <LogoLink ariaLabel="Visit The Cigna Group website" className="w-full" href={logoLinks.cigna}>
@@ -113,7 +113,7 @@ export function BrandProofMark({
           <img
             src="/logos/evernorth-white-trimmed.png"
             alt="Evernorth Health Services"
-            className={cn("w-full min-w-0 object-contain", large ? "max-h-[3.05rem] max-w-[14rem]" : "max-h-[2.45rem] max-w-[9.5rem]")}
+            className={cn("w-full min-w-0 object-contain", large ? "max-h-[3.05rem] max-w-[10.5rem]" : "max-h-[2.45rem] max-w-[7.5rem]")}
           />
         </LogoLink>
       </div>
