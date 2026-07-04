@@ -235,7 +235,7 @@ export const experienceHighlights = [
     role: "Full-Stack Developer and Consultant",
     timeframe: "Jan 2011 - Present",
     impact:
-      "Partner with clients to design, build, and host scalable web applications; recently served as sole developer for a stealth startup, shipping two MVPs to production in two months and helping generate six-figure profits and new contracts.",
+      "Partner with clients to design, build, and host scalable web applications; recently served as sole developer for a stealth startup, shipping two MVPs to production in May 2025 after a two-month build and helping generate six-figure profits and new contracts.",
   },
   {
     organization: "Microsoft",
