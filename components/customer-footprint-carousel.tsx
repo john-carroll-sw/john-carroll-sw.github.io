@@ -103,7 +103,7 @@ const footprintRows: FootprintRow[] = [
 ]
 
 function faviconUrl(domain: string) {
-  return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`
 }
 
 function FootprintLogo({ item }: { item: FootprintItem }) {
