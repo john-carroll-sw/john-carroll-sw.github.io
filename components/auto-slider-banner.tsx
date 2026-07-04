@@ -156,7 +156,7 @@ function TerminalTranscript({ frame }: { frame: TerminalFrame }) {
 	return (
 		<div
 			ref={scrollRef}
-			className="h-[12.75rem] overflow-y-auto p-5 pr-4 font-mono text-sm leading-5 [scrollbar-color:rgba(103,232,249,0.45)_transparent] [scrollbar-width:thin]"
+			className="h-[18.75rem] overflow-y-auto p-5 pr-4 font-mono text-sm leading-5 [scrollbar-color:rgba(103,232,249,0.45)_transparent] [scrollbar-width:thin] xl:h-[21rem]"
 		>
 			<div className="space-y-1">
 				{frame.lines.map((line, index) => {
@@ -312,15 +312,15 @@ export function AutoSliderBanner() {
 			<div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_72%_22%,rgba(34,211,238,0.24),transparent_30%),linear-gradient(90deg,rgba(3,7,18,0.96)_0%,rgba(3,7,18,0.72)_44%,rgba(3,7,18,0.38)_100%)]" />
 			<div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-[#050912] to-transparent" />
 
-			<div className="relative z-20 mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center px-4 pb-16 pt-28 md:px-8">
-				<div className="grid gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
+			<div className="relative z-20 mx-auto flex min-h-screen w-full max-w-[92rem] flex-col justify-center px-4 pb-16 pt-28 md:px-8">
+				<div className="grid gap-8 lg:grid-cols-[minmax(0,0.96fr)_minmax(30rem,0.84fr)] lg:items-center xl:gap-12">
 					<div className="max-w-3xl">
-						<div className="mb-6 lg:hidden">
-							<ProfilePortrait size="small" data-hero-portrait />
+						<div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center md:gap-5">
+							<ProfilePortrait size="hero" data-hero-portrait />
+							<h1 className="max-w-4xl text-[2.15rem] font-semibold leading-none text-white sm:text-[2.75rem] md:text-[3.25rem] xl:text-[3.55rem]">
+								John Carroll
+							</h1>
 						</div>
-						<h1 className="mb-4 max-w-4xl text-[2.15rem] font-semibold leading-none text-white sm:text-5xl md:text-[3.8rem] xl:text-[4.25rem]">
-							John Carroll
-						</h1>
 						<p className="mb-5 max-w-2xl text-sm font-medium leading-6 text-cyan-200 sm:text-base md:text-lg md:leading-7">
 							Forward Deployed AI Engineer · Agentic Systems Architect · Full-Stack Builder
 						</p>
@@ -367,9 +367,8 @@ export function AutoSliderBanner() {
 						</div>
 					</div>
 
-					<div className="relative hidden min-h-[36.5rem] lg:block xl:min-h-[37.5rem]">
-						<ProfilePortrait data-hero-portrait data-hero-portrait-shell size="fill" className="absolute right-2 top-0 h-72 w-72" />
-						<div ref={terminalRef} data-hero-terminal className="absolute bottom-0 left-0 right-5 border border-cyan-200/20 bg-slate-950/58 shadow-[0_28px_100px_rgba(0,0,0,0.5)] backdrop-blur-md">
+					<div className="relative hidden min-h-[34rem] lg:flex lg:items-center xl:min-h-[35.5rem]">
+						<div ref={terminalRef} data-hero-terminal className="w-full border border-cyan-200/20 bg-slate-950/58 shadow-[0_28px_100px_rgba(0,0,0,0.5)] backdrop-blur-md">
 							<div className="flex items-center gap-2 border-b border-white/10 px-4 py-3 font-mono text-xs text-slate-400">
 								<Terminal className="h-4 w-4 text-cyan-300" />
 								john@portfolio — zsh

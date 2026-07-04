@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 
 const portraitSizes = {
   fill: "h-full w-full",
+  hero: "h-20 w-20 md:h-24 md:w-24 xl:h-28 xl:w-28",
   profile: "h-24 w-24 xl:h-28 xl:w-28",
   small: "h-24 w-24",
 }
@@ -28,10 +29,6 @@ export function ProfilePortrait({
       )}
       {...props}
     >
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -inset-2 rounded-full border border-cyan-200/10"
-      />
       <div className="relative h-full w-full overflow-hidden rounded-full bg-slate-950/80 p-[3px] ring-1 ring-cyan-100/20">
         <img
           src="/JohnCarrollProfilePic.png"
