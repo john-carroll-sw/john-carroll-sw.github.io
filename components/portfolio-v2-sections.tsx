@@ -31,11 +31,15 @@ function SectionHeading({
   align = "left",
   kicker,
   title,
+  titleClassName,
+  childrenClassName,
   children,
 }: {
   align?: "left" | "center"
   kicker: string
   title: string
+  titleClassName?: string
+  childrenClassName?: string
   children?: React.ReactNode
 }) {
   return (
@@ -43,9 +47,9 @@ function SectionHeading({
       <p className="mb-3 font-mono text-xs uppercase tracking-[0.28em] text-cyan-300/80">
         {kicker}
       </p>
-      <h2 className="text-3xl font-semibold leading-tight text-white md:text-5xl">{title}</h2>
+      <h2 className={cn("text-3xl font-semibold leading-tight text-white md:text-5xl", titleClassName)}>{title}</h2>
       {children ? (
-        <p className={cn("mt-4 text-base leading-7 text-slate-300 md:text-lg", align === "center" && "mx-auto max-w-2xl")}>
+        <p className={cn("mt-4 text-base leading-7 text-slate-300 md:text-lg", align === "center" && "mx-auto max-w-2xl", childrenClassName)}>
           {children}
         </p>
       ) : null}
@@ -153,9 +157,14 @@ export function ProfileDossier() {
         </aside>
 
         <div className="min-w-0">
-          <SectionHeading kicker="Operating Profile" title="I help organizations turn AI from experimentation into production.">
-            I work best where business ambiguity meets technical complexity, turning
-            workflows, data, and messy constraints into reliable software.
+          <SectionHeading
+            kicker="Operating Profile"
+            title="AI from experimentation to production."
+            titleClassName="max-w-3xl md:text-4xl xl:text-[2.8rem]"
+            childrenClassName="max-w-3xl"
+          >
+            I help organizations turn business ambiguity, workflows, data, and messy
+            constraints into reliable software.
           </SectionHeading>
 
           <div className="mb-8 border border-cyan-200/10 bg-white/[0.025] p-5 md:p-6">

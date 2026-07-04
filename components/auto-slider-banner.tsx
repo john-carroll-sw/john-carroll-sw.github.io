@@ -322,16 +322,16 @@ export function AutoSliderBanner() {
 								className="h-24 w-24 rounded-full border border-cyan-200/25 object-cover shadow-[0_18px_50px_rgba(0,0,0,0.42)]"
 							/>
 						</div>
-						<h1 className="mb-4 max-w-4xl text-[2.35rem] font-semibold leading-none text-white sm:text-5xl md:text-6xl xl:text-7xl">
+						<h1 className="mb-4 max-w-4xl text-[2.15rem] font-semibold leading-none text-white sm:text-5xl md:text-[3.8rem] xl:text-[4.25rem]">
 							John Carroll
 						</h1>
-						<p className="mb-5 max-w-2xl text-base font-medium leading-7 text-cyan-200 md:text-lg">
+						<p className="mb-5 max-w-2xl text-sm font-medium leading-6 text-cyan-200 sm:text-base md:text-lg md:leading-7">
 							Forward Deployed AI Engineer · Agentic Systems Architect · Full-Stack Builder
 						</p>
-						<h2 className="max-w-4xl text-[2.7rem] font-semibold leading-[0.95] text-white sm:text-5xl md:text-7xl">
-							I build AI systems that move from prototype to production.
+						<h2 className="max-w-[44rem] text-[2rem] font-semibold leading-[1.06] text-white sm:text-[2.85rem] md:text-[3.25rem] xl:text-[3.45rem]">
+							I build AI systems from prototype to production.
 						</h2>
-						<p className="mt-6 max-w-2xl text-base leading-7 text-slate-200 md:text-xl md:leading-8">
+						<p className="mt-5 max-w-2xl text-base leading-7 text-slate-200 md:text-lg md:leading-8">
 							For teams turning high-value workflows into shipped AI products:
 							enterprise RAG, agentic automation, multimodal field tools, and
 							cloud-native full-stack platforms.
