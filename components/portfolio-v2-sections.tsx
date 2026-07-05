@@ -93,6 +93,12 @@ const educationStatusLabels: Record<string, string> = {
   "Quantic School of Business and Technology": "In progress",
 }
 
+const educationMobileMarks: Record<string, string> = {
+  "Auburn University": "AU",
+  "Georgia Institute of Technology": "GT",
+  "Quantic School of Business and Technology": "Q",
+}
+
 export function ProfileDossier() {
   return (
     <section id="about" className="relative overflow-visible px-4 py-20 md:px-8 md:py-28">
@@ -440,22 +446,6 @@ export function ExperienceSection() {
             {education.map(({ institution, date, meta, detail, logo }) => (
               <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-4 sm:p-5 lg:p-0">
                 <div className="grid min-h-0 gap-4 lg:min-h-40 lg:grid-cols-[13rem_minmax(28rem,1.36fr)_minmax(0,0.9fr)] lg:items-stretch lg:gap-0 xl:grid-cols-[14rem_minmax(32rem,1.34fr)_minmax(0,0.86fr)]">
-                  <a
-                    aria-label={`Visit ${institution} website`}
-                    className="-mx-4 -mt-4 flex min-h-11 items-center justify-start border-b border-cyan-200/10 bg-slate-950/25 px-4 py-2 opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:-mx-5 sm:-mt-5 sm:px-5 lg:hidden"
-                    href={logo.href}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      className={cn(
-                        "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
-                        educationLogoClassNames[institution],
-                      )}
-                    />
-                  </a>
                   <div className="min-w-0 lg:col-start-2 lg:row-start-1 lg:flex lg:min-h-40 lg:flex-col lg:justify-center lg:p-6 xl:p-7">
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500 sm:text-[10px] sm:tracking-[0.18em]">{date}</p>
@@ -463,10 +453,23 @@ export function ExperienceSection() {
                         {educationStatusLabels[institution]}
                       </p>
                     </div>
-                    <h3 className="mt-4 text-xl font-semibold leading-tight text-white sm:text-2xl lg:mt-5 lg:whitespace-nowrap lg:text-[1.35rem] xl:text-[1.45rem] 2xl:text-[1.6rem]">
-                      {institution}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-cyan-200 sm:text-base lg:mt-3">{meta}</p>
+                    <div className="mt-5 flex min-w-0 items-start gap-3 sm:gap-4 lg:mt-5 lg:block">
+                      <a
+                        aria-label={`Visit ${institution} website`}
+                        className="education-mobile-mark flex h-12 w-12 shrink-0 items-center justify-center border border-cyan-300/25 bg-cyan-300/8 font-mono text-sm font-semibold uppercase tracking-[0.08em] text-cyan-100/90 shadow-[0_0_22px_rgba(34,211,238,0.07)] transition duration-200 hover:border-cyan-300/45 hover:bg-cyan-300/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:h-14 sm:w-14 sm:text-base lg:hidden"
+                        href={logo.href}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        {educationMobileMarks[institution]}
+                      </a>
+                      <div className="min-w-0">
+                        <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl lg:whitespace-nowrap lg:text-[1.35rem] xl:text-[1.45rem] 2xl:text-[1.6rem]">
+                          {institution}
+                        </h3>
+                        <p className="mt-2 text-sm leading-6 text-cyan-200 sm:text-base lg:mt-3">{meta}</p>
+                      </div>
+                    </div>
                   </div>
                   <a
                     aria-label={`Visit ${institution} website`}
