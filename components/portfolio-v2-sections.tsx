@@ -81,16 +81,10 @@ const experienceLogoLabels: Record<string, string> = {
   "Neptune Technology Group": "Neptune Technology Group",
 }
 
-const educationLogoClassNames: Record<string, string> = {
-  "Auburn University": "max-h-6 max-w-[9rem] sm:max-h-7 sm:max-w-[11rem] lg:max-h-8 lg:max-w-[12.5rem] xl:max-h-12 xl:max-w-[13.5rem]",
-  "Georgia Institute of Technology": "max-h-9 max-w-[7.75rem] sm:max-h-11 sm:max-w-[10rem] lg:max-h-14 lg:max-w-[13rem] xl:max-h-16 xl:max-w-[12.5rem]",
-  "Quantic School of Business and Technology": "max-h-7 max-w-[8rem] brightness-0 invert sm:max-h-9 sm:max-w-[10rem] lg:max-h-11 lg:max-w-[13rem] xl:max-h-12 xl:max-w-[13rem]",
-}
-
-const educationMobileLogoClassNames: Record<string, string> = {
-  "Auburn University": "max-h-8 max-w-[7.75rem]",
-  "Georgia Institute of Technology": "max-h-12 max-w-[7.25rem]",
-  "Quantic School of Business and Technology": "max-h-8 max-w-[7.5rem] brightness-0 invert",
+const educationListLogoClassNames: Record<string, string> = {
+  "Auburn University": "h-full w-full object-cover object-left",
+  "Georgia Institute of Technology": "max-h-14 max-w-full object-contain",
+  "Quantic School of Business and Technology": "max-h-11 max-w-full object-contain brightness-0 invert sm:max-h-12",
 }
 
 const educationStatusLabels: Record<string, string> = {
@@ -442,59 +436,41 @@ export function ExperienceSection() {
             </p>
           </div>
 
-          <div className="grid gap-3 lg:grid-cols-1 lg:gap-4">
-            {education.map(({ institution, date, meta, detail, logo }) => (
-              <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-4 sm:p-5 lg:p-0">
-                <div className="grid min-h-0 gap-4 lg:min-h-40 lg:grid-cols-[13rem_minmax(28rem,1.36fr)_minmax(0,0.9fr)] lg:items-stretch lg:gap-0 xl:grid-cols-[14rem_minmax(32rem,1.34fr)_minmax(0,0.86fr)]">
-                  <div className="min-w-0 lg:col-start-2 lg:row-start-1 lg:flex lg:min-h-40 lg:flex-col lg:justify-center lg:p-6 xl:p-7">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500 sm:text-[10px] sm:tracking-[0.18em]">{date}</p>
-                      <p className="border border-cyan-300/20 bg-cyan-300/5 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-300/80 sm:text-[10px] sm:tracking-[0.2em]">
-                        {educationStatusLabels[institution]}
-                      </p>
-                    </div>
-                    <div className="mt-5 flex min-w-0 items-start gap-3 sm:gap-4 lg:mt-5 lg:block">
-                      <a
-                        aria-label={`Visit ${institution} website`}
-                        className="education-mobile-mark flex h-16 w-32 shrink-0 items-center justify-center border border-cyan-300/20 bg-slate-950/25 p-2.5 shadow-[0_0_22px_rgba(34,211,238,0.06)] transition duration-200 hover:border-cyan-300/45 hover:bg-cyan-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:w-36 lg:hidden"
-                        href={logo.href}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <img
-                          src={logo.src}
-                          alt={logo.alt}
-                          className={cn(
-                            "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
-                            educationMobileLogoClassNames[institution],
-                          )}
-                        />
-                      </a>
-                      <div className="min-w-0">
-                        <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl lg:whitespace-nowrap lg:text-[1.35rem] xl:text-[1.45rem] 2xl:text-[1.6rem]">
-                          {institution}
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-cyan-200 sm:text-base lg:mt-3">{meta}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    aria-label={`Visit ${institution} website`}
-                    className="hidden min-h-12 shrink-0 items-center justify-start opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 lg:col-start-1 lg:row-start-1 lg:flex lg:min-h-40 lg:justify-center lg:border-r lg:border-cyan-200/10 lg:px-6"
-                    href={logo.href}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      className={cn(
-                        "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
-                        educationLogoClassNames[institution],
-                      )}
-                    />
-                  </a>
-                  <p className="border-t border-cyan-200/10 pt-4 text-sm leading-6 text-slate-300 lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:flex lg:min-h-40 lg:items-center lg:border-l lg:border-t-0 lg:border-cyan-200/10 lg:p-6">
+          <div className="overflow-hidden border border-cyan-200/10 bg-white/[0.025]">
+            {education.map(({ institution, date, meta, detail, logo }, index) => (
+              <article
+                key={institution}
+                className={cn(
+                  "grid grid-cols-[5.25rem_minmax(0,1fr)] gap-4 p-5 sm:grid-cols-[5.75rem_minmax(0,1fr)] sm:gap-5 sm:p-6 lg:grid-cols-[6rem_minmax(0,1fr)] lg:gap-6 lg:p-7",
+                  index > 0 && "border-t border-cyan-200/10",
+                )}
+              >
+                <a
+                  aria-label={`Visit ${institution} website`}
+                  className="education-logo-tile flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden border border-cyan-300/20 bg-slate-950/35 p-1.5 shadow-[0_0_22px_rgba(34,211,238,0.06)] transition duration-200 hover:border-cyan-300/45 hover:bg-cyan-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:h-20 sm:w-20"
+                  href={logo.href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={cn(
+                      "min-w-0 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
+                      educationListLogoClassNames[institution],
+                    )}
+                  />
+                </a>
+                <div className="min-w-0">
+                  <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl lg:text-[1.45rem]">
+                    {institution}
+                  </h3>
+                  <p className="mt-1 text-sm leading-6 text-cyan-200 sm:text-base">{meta}</p>
+                  <p className="mt-1 text-sm leading-6 text-slate-400">
+                    {date}
+                    <span className="text-cyan-300/70"> / {educationStatusLabels[institution]}</span>
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-slate-300 lg:max-w-3xl">
                     {detail}
                   </p>
                 </div>
