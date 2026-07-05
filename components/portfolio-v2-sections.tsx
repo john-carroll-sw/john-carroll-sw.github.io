@@ -87,16 +87,16 @@ const educationLogoClassNames: Record<string, string> = {
   "Quantic School of Business and Technology": "max-h-7 max-w-[8rem] brightness-0 invert sm:max-h-9 sm:max-w-[10rem] lg:max-h-11 lg:max-w-[13rem] xl:max-h-12 xl:max-w-[13rem]",
 }
 
+const educationMobileLogoClassNames: Record<string, string> = {
+  "Auburn University": "max-h-8 max-w-[7.75rem]",
+  "Georgia Institute of Technology": "max-h-12 max-w-[7.25rem]",
+  "Quantic School of Business and Technology": "max-h-8 max-w-[7.5rem] brightness-0 invert",
+}
+
 const educationStatusLabels: Record<string, string> = {
   "Auburn University": "Completed",
   "Georgia Institute of Technology": "Incoming",
   "Quantic School of Business and Technology": "In progress",
-}
-
-const educationMobileMarks: Record<string, string> = {
-  "Auburn University": "AU",
-  "Georgia Institute of Technology": "GT",
-  "Quantic School of Business and Technology": "Q",
 }
 
 export function ProfileDossier() {
@@ -456,12 +456,19 @@ export function ExperienceSection() {
                     <div className="mt-5 flex min-w-0 items-start gap-3 sm:gap-4 lg:mt-5 lg:block">
                       <a
                         aria-label={`Visit ${institution} website`}
-                        className="education-mobile-mark flex h-12 w-12 shrink-0 items-center justify-center border border-cyan-300/25 bg-cyan-300/8 font-mono text-sm font-semibold uppercase tracking-[0.08em] text-cyan-100/90 shadow-[0_0_22px_rgba(34,211,238,0.07)] transition duration-200 hover:border-cyan-300/45 hover:bg-cyan-300/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:h-14 sm:w-14 sm:text-base lg:hidden"
+                        className="education-mobile-mark flex h-16 w-32 shrink-0 items-center justify-center border border-cyan-300/20 bg-slate-950/25 p-2.5 shadow-[0_0_22px_rgba(34,211,238,0.06)] transition duration-200 hover:border-cyan-300/45 hover:bg-cyan-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:w-36 lg:hidden"
                         href={logo.href}
                         rel="noreferrer"
                         target="_blank"
                       >
-                        {educationMobileMarks[institution]}
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          className={cn(
+                            "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
+                            educationMobileLogoClassNames[institution],
+                          )}
+                        />
                       </a>
                       <div className="min-w-0">
                         <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl lg:whitespace-nowrap lg:text-[1.35rem] xl:text-[1.45rem] 2xl:text-[1.6rem]">
