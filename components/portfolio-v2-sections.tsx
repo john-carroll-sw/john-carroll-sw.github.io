@@ -440,32 +440,28 @@ export function ExperienceSection() {
             {education.map(({ institution, date, meta, detail, logo }) => (
               <article key={institution} className="border border-cyan-200/10 bg-white/[0.025] p-4 sm:p-5 lg:p-0">
                 <div className="grid min-h-0 gap-4 lg:min-h-40 lg:grid-cols-[13rem_minmax(28rem,1.36fr)_minmax(0,0.9fr)] lg:items-stretch lg:gap-0 xl:grid-cols-[14rem_minmax(32rem,1.34fr)_minmax(0,0.86fr)]">
+                  <a
+                    aria-label={`Visit ${institution} website`}
+                    className="-mx-4 -mt-4 flex min-h-11 items-center justify-start border-b border-cyan-200/10 bg-slate-950/25 px-4 py-2 opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:-mx-5 sm:-mt-5 sm:px-5 lg:hidden"
+                    href={logo.href}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className={cn(
+                        "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
+                        educationLogoClassNames[institution],
+                      )}
+                    />
+                  </a>
                   <div className="min-w-0 lg:col-start-2 lg:row-start-1 lg:flex lg:min-h-40 lg:flex-col lg:justify-center lg:p-6 xl:p-7">
-                    <div className="flex items-start justify-between gap-4 lg:block">
-                      <div className="min-w-0">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500 sm:text-[10px] sm:tracking-[0.18em]">{date}</p>
-                          <p className="border border-cyan-300/20 bg-cyan-300/5 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-300/80 sm:text-[10px] sm:tracking-[0.2em]">
-                            {educationStatusLabels[institution]}
-                          </p>
-                        </div>
-                      </div>
-                      <a
-                        aria-label={`Visit ${institution} website`}
-                        className="flex min-h-10 shrink-0 items-start justify-end opacity-90 transition duration-200 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 lg:hidden"
-                        href={logo.href}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <img
-                          src={logo.src}
-                          alt={logo.alt}
-                          className={cn(
-                            "min-w-0 object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
-                            educationLogoClassNames[institution],
-                          )}
-                        />
-                      </a>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500 sm:text-[10px] sm:tracking-[0.18em]">{date}</p>
+                      <p className="border border-cyan-300/20 bg-cyan-300/5 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-300/80 sm:text-[10px] sm:tracking-[0.2em]">
+                        {educationStatusLabels[institution]}
+                      </p>
                     </div>
                     <h3 className="mt-4 text-xl font-semibold leading-tight text-white sm:text-2xl lg:mt-5 lg:whitespace-nowrap lg:text-[1.35rem] xl:text-[1.45rem] 2xl:text-[1.6rem]">
                       {institution}
