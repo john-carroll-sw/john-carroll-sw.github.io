@@ -329,10 +329,10 @@ export const education = [
       "Business, strategy, and operating-model context for translating technical systems into useful outcomes.",
     logo: {
       alt: "Quantic School of Business and Technology",
-      compactSrc: "/logos/quantic.png",
+      compactSrc: "/logos/quantic-icon.png",
       href: "https://quantic.edu/",
       src: "/logos/quantic.png",
-      wideSrc: "/logos/quantic.png",
+      wideSrc: "/logos/quantic-wordmark-cropped.png",
     },
   },
   {
@@ -343,7 +343,7 @@ export const education = [
       "Undergraduate technical foundation plus hands-on computer science teaching experience.",
     logo: {
       alt: "Auburn University",
-      compactSrc: "/logos/auburn-white-orange.png",
+      compactSrc: "/logos/auburn-icon.png",
       href: "https://www.auburn.edu/",
       src: "/logos/auburn-white-orange.png",
       wideSrc: "/logos/auburn.svg",
