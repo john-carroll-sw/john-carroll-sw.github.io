@@ -315,8 +315,10 @@ export const education = [
       "Graduate computer science study connected to applied AI systems and production engineering.",
     logo: {
       alt: "Georgia Tech",
+      compactSrc: "/logos/georgia-tech-compact.png",
       href: "https://omscs.gatech.edu/",
       src: "/logos/georgia-tech.svg",
+      wideSrc: "/logos/georgia-tech.svg",
     },
   },
   {
@@ -327,8 +329,10 @@ export const education = [
       "Business, strategy, and operating-model context for translating technical systems into useful outcomes.",
     logo: {
       alt: "Quantic School of Business and Technology",
+      compactSrc: "/logos/quantic.png",
       href: "https://quantic.edu/",
       src: "/logos/quantic.png",
+      wideSrc: "/logos/quantic.png",
     },
   },
   {
@@ -339,8 +343,10 @@ export const education = [
       "Undergraduate technical foundation plus hands-on computer science teaching experience.",
     logo: {
       alt: "Auburn University",
+      compactSrc: "/logos/auburn-white-orange.png",
       href: "https://www.auburn.edu/",
       src: "/logos/auburn-white-orange.png",
+      wideSrc: "/logos/auburn.svg",
     },
   },
 ]

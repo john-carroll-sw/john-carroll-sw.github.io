@@ -81,10 +81,22 @@ const experienceLogoLabels: Record<string, string> = {
   "Neptune Technology Group": "Neptune Technology Group",
 }
 
-const educationListLogoClassNames: Record<string, string> = {
+const educationCompactLogoClassNames: Record<string, string> = {
   "Auburn University": "h-full w-full object-cover object-left",
-  "Georgia Institute of Technology": "max-h-14 max-w-full object-contain",
-  "Quantic School of Business and Technology": "max-h-11 max-w-full object-contain brightness-0 invert sm:max-h-12",
+  "Georgia Institute of Technology": "h-full w-full scale-[1.12] object-contain",
+  "Quantic School of Business and Technology": "h-full w-full origin-left scale-[1.32] object-cover object-left",
+}
+
+const educationLogoTileClassNames: Record<string, string> = {
+  "Auburn University": "bg-white p-0.5",
+  "Georgia Institute of Technology": "bg-slate-950/35 p-1",
+  "Quantic School of Business and Technology": "bg-white p-0",
+}
+
+const educationWideLogoClassNames: Record<string, string> = {
+  "Auburn University": "max-h-9 w-full object-contain object-left",
+  "Georgia Institute of Technology": "max-h-11 w-full object-contain object-left",
+  "Quantic School of Business and Technology": "max-h-9 w-full object-contain object-left",
 }
 
 const educationStatusLabels: Record<string, string> = {
@@ -441,23 +453,35 @@ export function ExperienceSection() {
               <article
                 key={institution}
                 className={cn(
-                  "grid grid-cols-[5.25rem_minmax(0,1fr)] gap-4 p-5 sm:grid-cols-[5.75rem_minmax(0,1fr)] sm:gap-5 sm:p-6 lg:grid-cols-[6rem_minmax(0,1fr)] lg:gap-6 lg:p-7",
+                  "grid grid-cols-[5.25rem_minmax(0,1fr)] gap-4 p-5 sm:gap-5 sm:p-6 md:grid-cols-[13rem_minmax(0,1fr)] lg:gap-7 lg:p-7",
                   index > 0 && "border-t border-cyan-200/10",
                 )}
               >
                 <a
                   aria-label={`Visit ${institution} website`}
-                  className="education-logo-tile flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden border border-cyan-300/20 bg-slate-950/35 p-1.5 shadow-[0_0_22px_rgba(34,211,238,0.06)] transition duration-200 hover:border-cyan-300/45 hover:bg-cyan-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:h-20 sm:w-20"
+                  className={cn(
+                    "education-logo-tile flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden border border-cyan-300/20 bg-slate-950/35 p-1.5 shadow-[0_0_22px_rgba(34,211,238,0.06)] transition duration-200 hover:border-cyan-300/45 hover:bg-cyan-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 md:h-20 md:w-48 md:px-4 md:py-3",
+                    educationLogoTileClassNames[institution],
+                  )}
                   href={logo.href}
                   rel="noreferrer"
                   target="_blank"
                 >
                   <img
-                    src={logo.src}
+                    src={logo.compactSrc ?? logo.src}
                     alt={logo.alt}
                     className={cn(
-                      "min-w-0 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]",
-                      educationListLogoClassNames[institution],
+                      "min-w-0 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)] md:hidden",
+                      educationCompactLogoClassNames[institution],
+                    )}
+                  />
+                  <img
+                    src={logo.wideSrc ?? logo.src}
+                    alt=""
+                    aria-hidden="true"
+                    className={cn(
+                      "hidden min-w-0 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)] md:block",
+                      educationWideLogoClassNames[institution],
                     )}
                   />
                 </a>
