@@ -221,9 +221,6 @@ export function AskJohnAgent() {
                 <h2 className="mt-1 text-base font-semibold text-white">
                   Portfolio assistant
                 </h2>
-                <p className="mt-1 text-xs leading-5 text-slate-400">
-                  Grounded on John's site. Backend-ready.
-                </p>
               </div>
             </div>
             <button
