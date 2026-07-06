@@ -1,6 +1,7 @@
 "use client"
 
 import { AutoSliderBanner } from "@/components/auto-slider-banner"
+import { AskJohnAgent } from "@/components/ask-john-agent"
 import { useEffect, useState } from "react"
 import { AppProviders, useSplashComplete } from "@/components/splash-provider"
 import { Navbar } from "@/components/navbar"
@@ -110,6 +111,7 @@ function PortfolioPage() {
         showTOS={showTOS}
         showPrivacy={showPrivacy}
       />
+      <AskJohnAgent />
     </div>
   )
 }
