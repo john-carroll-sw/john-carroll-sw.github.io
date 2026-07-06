@@ -344,14 +344,14 @@ export const education = [
     date: "Expected Start: August 2026",
     meta: "Master of Science in Computer Science, AI Specialization",
     detail:
-      "Graduate computer science study connected to applied AI systems and production engineering.",
+      "Incoming graduate computer science study at a top-30 global CS program and No. 9 U.S. public university, connected to applied AI systems and production engineering.",
     logo: {
       alt: "Georgia Tech",
       compactSrc: "/logos/georgia-tech-compact.png",
       href: "https://omscs.gatech.edu/",
-      inverseWideSrc: "/logos/georgia-tech-wordmark-inverse.png",
-      src: "/logos/georgia-tech-wordmark.png",
-      wideSrc: "/logos/georgia-tech-wordmark.png",
+      inverseWideSrc: "/logos/georgia-tech-wordmark-gold-crisp.png",
+      src: "/logos/georgia-tech-wordmark-blue-crisp.png",
+      wideSrc: "/logos/georgia-tech-wordmark-blue-crisp.png",
     },
   },
   {
@@ -359,7 +359,7 @@ export const education = [
     date: "March 2025 - Expected July 2026",
     meta: "Executive Master of Business Administration",
     detail:
-      "Business, strategy, and operating-model context for translating technical systems into useful outcomes.",
+      "Selective executive business program for experienced professionals, with Quantic reporting a 12% blended MBA/EMBA acceptance rate. Strategy and operating-model context for translating technical systems into useful outcomes.",
     logo: {
       alt: "Quantic School of Business and Technology",
       compactSrc: "/logos/quantic-icon.png",
@@ -374,7 +374,7 @@ export const education = [
     date: "August 2011 - May 2016",
     meta: "Bachelor of Science in Software Engineering",
     detail:
-      "Undergraduate technical foundation plus hands-on computer science teaching experience.",
+      "ABET-accredited software engineering foundation, including a one-year co-op program, hands-on CS teaching experience, and coursework in complex software systems.",
     logo: {
       alt: "Auburn University",
       compactSrc: "/logos/auburn-icon.png",
