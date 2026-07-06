@@ -197,7 +197,7 @@ export function AskJohnAgent() {
   }
 
   return (
-    <div className="fixed bottom-5 right-4 z-[75] flex flex-col items-end gap-3 md:bottom-6 md:right-6">
+    <div className="pointer-events-none fixed bottom-5 right-4 z-[75] flex flex-col items-end gap-3 md:bottom-6 md:right-6">
       <div
         id="ask-john-agent"
         className={cn(
@@ -326,7 +326,7 @@ export function AskJohnAgent() {
 
       <button
         type="button"
-        className="group flex h-14 items-center gap-3 overflow-hidden border border-cyan-300/30 bg-[#07111d]/90 px-4 text-cyan-100 shadow-[0_18px_55px_rgba(0,0,0,0.44),0_0_0_1px_rgba(103,232,249,0.06)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-cyan-300/12 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
+        className="pointer-events-auto group flex h-14 items-center gap-3 overflow-hidden border border-cyan-300/30 bg-[#07111d]/90 px-4 text-cyan-100 shadow-[0_18px_55px_rgba(0,0,0,0.44),0_0_0_1px_rgba(103,232,249,0.06)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-cyan-200/70 hover:bg-cyan-300/12 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
         aria-expanded={open}
         aria-controls="ask-john-agent"
         onClick={() => setOpen((current) => !current)}
