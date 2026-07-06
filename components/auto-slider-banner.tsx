@@ -327,21 +327,21 @@ export function AutoSliderBanner() {
 									John Carroll
 								</h1>
 								<p className="mt-4 max-w-full text-sm font-medium leading-6 text-cyan-200 sm:max-w-2xl sm:text-base md:text-lg md:leading-7">
-									<span>Forward Deployed AI Engineer</span>
+									<span>Forward-Deployed AI</span>
 									<span className="hidden sm:inline"> · </span>
-									<span className="block sm:inline">Agentic Systems Architect</span>
+									<span className="block sm:inline">Agentic Systems</span>
 									<span className="hidden sm:inline"> · </span>
-									<span className="block sm:inline">Full-Stack Builder</span>
+									<span className="block sm:inline">Team Builder</span>
 								</p>
 							</div>
 						</div>
 						<h2 className="max-w-full text-[1.95rem] font-semibold leading-[1.06] text-white sm:max-w-[44rem] sm:text-[2.65rem] md:text-[3.05rem] xl:text-[3.35rem]">
-							I build AI systems from prototype to production.
+							I build AI systems and teams from prototype to production.
 						</h2>
 						<p className="mt-5 max-w-full text-base leading-7 text-slate-200 sm:max-w-2xl md:text-lg md:leading-8">
-							For teams turning high-value workflows into shipped AI products:
-							enterprise RAG, agentic automation, multimodal field tools, and
-							cloud-native full-stack platforms.
+							For organizations turning high-value workflows into shipped AI
+							products: forward-deployed engineering, enterprise RAG, agentic
+							automation, multimodal field tools, and cloud-native platforms.
 						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
 							<Button asChild size="lg" className="bg-cyan-300 text-slate-950 hover:bg-cyan-200">

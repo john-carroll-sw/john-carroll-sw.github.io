@@ -111,7 +111,7 @@
 .customer-footprint-track {
   display: flex;
   width: max-content;
-  gap: 1.1rem;
+  gap: 1.25rem;
   animation: customer-footprint-scroll-left 62s linear infinite;
   will-change: transform;
 }
@@ -128,7 +128,7 @@
   display: inline-flex;
   min-width: max-content;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.8rem;
   color: rgb(248 250 252 / 0.95);
   opacity: 1;
   transition: color 200ms ease, opacity 200ms ease, transform 200ms ease;
@@ -141,37 +141,92 @@
 }
 
 .customer-footprint-logo {
-  height: 2.25rem;
-  width: 2.25rem;
-  border-radius: 0.25rem;
-  filter: grayscale(0.08) saturate(1.12) brightness(1.1) contrast(1.12);
+  height: 1.9rem;
+  width: 1.9rem;
+  border-radius: 0.22rem;
+  object-fit: contain;
+  filter: saturate(1.08) brightness(1.08) contrast(1.12);
   opacity: 1;
   transition: filter 200ms ease, opacity 200ms ease;
 }
 
 .customer-footprint-item:hover .customer-footprint-logo {
-  filter: none;
+  filter: saturate(1.15) brightness(1.12) contrast(1.14);
   opacity: 1;
 }
 
-.customer-footprint-fallback {
+.customer-footprint-logo-shell {
   display: inline-flex;
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 2.45rem;
+  min-width: 2.45rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(103 232 249 / 0.22);
-  background: rgb(8 13 24 / 0.82);
+  border: 1px solid rgb(103 232 249 / 0.14);
+  border-radius: 0.45rem;
+  background: rgb(255 255 255 / 0.045);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.015);
+}
+
+.customer-footprint-logo-shell-bare {
+  min-width: 2.55rem;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.customer-footprint-logo-shell-light {
+  border-color: rgb(255 255 255 / 0.62);
+  background: rgb(248 250 252 / 0.94);
+  box-shadow:
+    0 0.5rem 1.25rem rgb(0 0 0 / 0.18),
+    inset 0 0 0 1px rgb(255 255 255 / 0.5);
+}
+
+.customer-footprint-logo-vector {
+  height: 2.15rem;
+  width: 2.15rem;
+  filter: drop-shadow(0 1px 5px rgb(0 0 0 / 0.48));
+}
+
+.customer-footprint-logo-shell-light .customer-footprint-logo {
+  filter: saturate(1.05) brightness(0.98) contrast(1.14);
+}
+
+.customer-footprint-logo-shell-light + .customer-footprint-name {
+  color: rgb(248 250 252 / 0.98);
+}
+
+.customer-footprint-fallback {
   color: rgb(165 243 252 / 0.9);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
+.customer-footprint-logo-mark {
+  color: rgb(7 12 22 / 0.92);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.customer-footprint-logo-shell-bare .customer-footprint-logo-mark {
+  color: rgb(248 250 252 / 0.96);
+}
+
+.customer-footprint-logo-shell-light .customer-footprint-fallback {
+  color: rgb(8 13 24 / 0.88);
+}
+
 .customer-footprint-name {
-  font-size: 0.96rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 750;
   letter-spacing: 0.01em;
+  color: rgb(248 250 252 / 0.96);
+  text-shadow: 0 1px 10px rgb(0 0 0 / 0.45);
   white-space: nowrap;
 }
 

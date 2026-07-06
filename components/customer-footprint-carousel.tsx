@@ -15,6 +15,43 @@ type FootprintRow = {
   label: string
 }
 
+type LogoOverride = {
+  className?: string
+  kind?: "image" | "mark"
+  shell?: "bare" | "default" | "light"
+  src?: string
+  text?: string
+}
+
+const localLogo = (slug: string) => `/logos/customer-footprint/${slug}.svg`
+
+const logoOverrides: Record<string, LogoOverride> = {
+  AMD: { src: localLogo("amd"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Boeing: { src: localLogo("boeing"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Chase: { src: localLogo("chase"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Cisco: { src: localLogo("cisco"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Dell: { src: localLogo("dell"), shell: "bare", className: "customer-footprint-logo-vector" },
+  FedEx: { src: localLogo("fedex"), shell: "bare", className: "customer-footprint-logo-vector" },
+  "Goldman Sachs": { src: localLogo("goldmansachs"), shell: "bare", className: "customer-footprint-logo-vector" },
+  HP: { src: localLogo("hp"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Intel: { src: localLogo("intel"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Meta: { src: localLogo("meta"), shell: "bare", className: "customer-footprint-logo-vector" },
+  NASA: { src: localLogo("nasa"), shell: "bare", className: "customer-footprint-logo-vector" },
+  NVIDIA: { src: localLogo("nvidia"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Qualcomm: { src: localLogo("qualcomm"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Sage: { src: localLogo("sage"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Starbucks: { src: localLogo("starbucks"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Target: { src: localLogo("target"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Toyota: { src: localLogo("toyota"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Uber: { src: localLogo("uber"), shell: "bare", className: "customer-footprint-logo-vector" },
+  Visa: { src: localLogo("visa"), shell: "bare", className: "customer-footprint-logo-vector" },
+  "Analog Devices": { kind: "mark", shell: "light", text: "ADI" },
+  "Itaú Bank": { kind: "mark", shell: "light", text: "Itaú" },
+  Otis: { kind: "mark", shell: "light", text: "OTIS" },
+  RTX: { kind: "mark", shell: "light", text: "RTX" },
+  SAS: { kind: "mark", shell: "light", text: "SAS" },
+}
+
 const footprintRows: FootprintRow[] = [
   {
     label: "Retail / Consumer",
@@ -109,6 +146,9 @@ function faviconUrl(domain: string) {
 
 function FootprintLogo({ item }: { item: FootprintItem }) {
   const [imageFailed, setImageFailed] = useState(false)
+  const logoOverride = logoOverrides[item.name]
+  const shell = logoOverride?.shell ?? "default"
+  const logoSrc = logoOverride?.src ?? faviconUrl(item.domain)
 
   return (
     <a
@@ -118,20 +158,29 @@ function FootprintLogo({ item }: { item: FootprintItem }) {
       rel="noreferrer"
       target="_blank"
     >
-      {imageFailed ? (
-        <span className="customer-footprint-fallback" aria-hidden="true">
-          {item.name.slice(0, 2)}
-        </span>
-      ) : (
-        <img
-          alt=""
-          className="customer-footprint-logo"
-          loading="lazy"
-          onError={() => setImageFailed(true)}
-          referrerPolicy="no-referrer"
-          src={faviconUrl(item.domain)}
-        />
-      )}
+      <span
+        className={cn(
+          "customer-footprint-logo-shell",
+          shell === "bare" && "customer-footprint-logo-shell-bare",
+          shell === "light" && "customer-footprint-logo-shell-light",
+        )}
+        aria-hidden="true"
+      >
+        {logoOverride?.kind === "mark" ? (
+          <span className="customer-footprint-logo-mark">{logoOverride.text}</span>
+        ) : imageFailed ? (
+          <span className="customer-footprint-fallback">{item.name.slice(0, 2)}</span>
+        ) : (
+          <img
+            alt=""
+            className={cn("customer-footprint-logo", logoOverride?.className)}
+            loading="lazy"
+            onError={() => setImageFailed(true)}
+            referrerPolicy="no-referrer"
+            src={logoSrc}
+          />
+        )}
+      </span>
       <span className="customer-footprint-name">{item.name}</span>
     </a>
   )

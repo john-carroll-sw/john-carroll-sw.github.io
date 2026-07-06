@@ -23,6 +23,7 @@ import {
   experienceHighlights,
   operatingPrinciples,
   recognition,
+  scaleLeadership,
   services,
   systemMap,
 } from "@/data/portfolio-v2"
@@ -59,16 +60,19 @@ function SectionHeading({
 }
 
 const profileModes = [
-  "Forward deployed AI",
-  "Enterprise RAG",
-  "Agentic workflows",
-  "Full-stack delivery",
+  "Prototype to platform",
+  "Forward-deployed delivery",
+  "Adoption-led AI",
+  "Fortune 500 AI adoption",
+  "Enterprise RAG / agents / platforms",
+  "Healthcare / retail / aerospace / public safety",
 ]
 
 const aboutNarrative = [
   "Over the past decade, I've designed and delivered AI and software systems across healthcare, retail, manufacturing, aerospace, and public safety. My work focuses on agentic AI, RAG, enterprise search, AI platforms, cloud architecture, and modern software engineering, with an emphasis on secure, governed, reliable systems at scale.",
+  "The main reason AI work fails is adoption. I push the needle by building close to real workflows, aligning stakeholders, staffing the right delivery model, and making sure the system fits how people actually operate.",
   "My background started in software and electrical engineering, from embedded systems and industrial technology to cloud platforms and enterprise software. That foundation shapes how I approach AI today: as an engineering discipline grounded in reliability, scalability, and measurable business outcomes.",
-  "I like operating at the intersection of strategy and execution: shaping technical direction, building platforms, mentoring engineers, and helping teams turn emerging AI capabilities into useful products.",
+  "I like operating at the intersection of strategy and execution: shaping technical direction, building platforms, mentoring engineers, advising leaders, and helping teams turn emerging AI capabilities into useful products.",
 ]
 
 const experienceLogoLabels: Record<string, string> = {
@@ -88,15 +92,21 @@ const educationCompactLogoClassNames: Record<string, string> = {
 }
 
 const educationLogoTileClassNames: Record<string, string> = {
-  "Auburn University": "bg-white p-1.5 md:bg-slate-50/90 md:p-3",
-  "Georgia Institute of Technology": "bg-transparent p-0 md:bg-slate-950/35 md:p-4",
-  "Quantic School of Business and Technology": "bg-white p-1.5 md:bg-slate-50/90 md:p-3",
+  "Auburn University": "p-0 md:p-4",
+  "Georgia Institute of Technology": "p-0 md:p-4",
+  "Quantic School of Business and Technology": "p-0 md:p-4",
 }
 
 const educationWideLogoClassNames: Record<string, string> = {
-  "Auburn University": "max-h-10 max-w-[90%] object-contain object-center",
-  "Georgia Institute of Technology": "max-h-12 max-w-[86%] object-contain object-center",
-  "Quantic School of Business and Technology": "max-h-10 max-w-[82%] translate-x-2 object-contain object-center",
+  "Auburn University": "w-[90%] max-w-none object-contain object-center",
+  "Georgia Institute of Technology": "w-[84%] max-w-none object-contain object-center",
+  "Quantic School of Business and Technology": "w-[74%] max-w-none object-contain object-center",
+}
+
+const educationInverseWideLogoClassNames: Record<string, string> = {
+  "Auburn University": "w-[90%] max-w-none object-contain object-center",
+  "Georgia Institute of Technology": "w-[84%] max-w-none object-contain object-center",
+  "Quantic School of Business and Technology": "w-[74%] max-w-none object-contain object-center",
 }
 
 const educationStatusLabels: Record<string, string> = {
@@ -109,8 +119,8 @@ export function ProfileDossier() {
   return (
     <section id="about" className="relative overflow-visible px-4 py-20 md:px-8 md:py-28">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent" />
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-start xl:grid-cols-[0.82fr_1.42fr]">
-        <aside className="border border-cyan-200/15 bg-[#0b111d]/82 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur md:sticky md:top-24 md:max-h-[calc(100vh-7rem)] md:overflow-y-auto">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start xl:grid-cols-[0.82fr_1.42fr]">
+        <aside className="border border-cyan-200/15 bg-[#0b111d]/82 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
           <div className="flex items-center gap-4">
             <ProfilePortrait
               size="dossier"
@@ -118,51 +128,46 @@ export function ProfileDossier() {
               imageClassName="object-[54%_43%]"
             />
             <div className="min-w-0">
-              <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-cyan-300/80">
-                Operator dossier
-              </p>
-              <h2 className="mt-2 text-xl font-semibold text-white xl:text-2xl">John Carroll</h2>
+              <h2 className="text-xl font-semibold text-white xl:text-2xl">John Carroll</h2>
               <p className="mt-2 font-mono text-xs leading-5 text-cyan-300">
-                // builder / architect / operator
+                // AI systems architect and builder
+              </p>
+              <p className="mt-3 inline-flex items-center gap-2 border border-cyan-200/15 bg-cyan-300/[0.04] px-2.5 py-1.5 text-xs font-medium text-slate-300">
+                <MapPin className="h-3.5 w-3.5 text-cyan-300" />
+                Atlanta, GA
               </p>
             </div>
           </div>
           <p className="mt-6 text-sm leading-6 text-slate-300">
-            A compact read on how I operate: scope the workflow, align the people,
-            prototype against real constraints, and harden what proves useful.
+            I build AI systems that move from prototype to production. My edge
+            is making the work usable: finding the workflow, earning adoption,
+            and shaping the team around the system.
           </p>
-          <div className="mt-6 grid grid-cols-2 gap-px border border-cyan-200/10 bg-cyan-200/10">
-            <div className="bg-slate-950/45 p-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">Base</p>
-              <p className="mt-2 text-sm font-semibold text-white">Atlanta, GA</p>
-            </div>
-            <div className="bg-slate-950/45 p-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">Mode</p>
-              <p className="mt-2 text-sm font-semibold text-white">Builder / Architect / Operator</p>
-            </div>
-          </div>
-          <div className="mt-6 space-y-2">
+          <div className="mt-6 flex max-w-[30rem] flex-wrap gap-2">
             {profileModes.map((mode) => (
-              <div key={mode} className="flex items-center justify-between gap-3 border border-white/10 bg-white/[0.025] px-3 py-2">
-                <span className="text-sm text-slate-200">{mode}</span>
+              <span
+                key={mode}
+                className="inline-flex items-center gap-2 border border-cyan-200/15 bg-white/[0.025] px-3 py-1.5 text-xs font-medium text-slate-200"
+              >
                 <span className="h-1.5 w-1.5 bg-cyan-300" />
-              </div>
+                {mode}
+              </span>
             ))}
           </div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild className="bg-cyan-300 text-slate-950 hover:bg-cyan-200">
+          <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
+            <Button asChild className="h-11 w-full gap-1.5 px-2 text-[0.8rem] bg-cyan-300 text-slate-950 hover:bg-cyan-200 sm:gap-2 sm:text-sm">
               <a href="/John_Carroll_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="h-4 w-4" />
                 Resume
               </a>
             </Button>
-            <Button asChild variant="outline" className="border-cyan-300/30 bg-transparent text-cyan-100 hover:bg-cyan-300/10">
+            <Button asChild variant="outline" className="h-11 w-full gap-1.5 px-2 text-[0.8rem] border-cyan-300/30 bg-transparent text-cyan-100 hover:bg-cyan-300/10 sm:gap-2 sm:text-sm">
               <Link href="https://github.com/john-carroll-sw" target="_blank">
                 <Github className="h-4 w-4" />
                 GitHub
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-cyan-300/30 bg-transparent text-cyan-100 hover:bg-cyan-300/10">
+            <Button asChild variant="outline" className="h-11 w-full gap-1.5 px-2 text-[0.8rem] border-cyan-300/30 bg-transparent text-cyan-100 hover:bg-cyan-300/10 sm:gap-2 sm:text-sm">
               <Link href="https://www.linkedin.com/in/jcc-sw/" target="_blank">
                 <Linkedin className="h-4 w-4" />
                 LinkedIn
@@ -173,13 +178,13 @@ export function ProfileDossier() {
 
         <div className="min-w-0">
           <SectionHeading
-            kicker="Operating Profile"
-            title="AI from experimentation to production."
+            kicker="How I Operate"
+            title="AI from prototype to adoption."
             titleClassName="max-w-3xl md:text-4xl xl:text-[2.8rem]"
             childrenClassName="max-w-3xl"
           >
-            I help organizations turn business ambiguity, workflows, data, and messy
-            constraints into reliable software.
+            I help organizations turn high-value workflows into AI systems that
+            people can trust, adopt, and keep using in production.
           </SectionHeading>
 
           <div className="mb-8 border border-cyan-200/10 bg-white/[0.025] p-5 md:p-6">
@@ -204,6 +209,35 @@ export function ProfileDossier() {
 
           <div className="mb-8">
             <ProofSignalRail variant="profile" />
+          </div>
+
+          <div className="mb-8">
+            <div className="mb-5 grid gap-4 lg:grid-cols-[0.72fr_1fr] lg:items-end">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
+                  Adoption & Operating Leadership
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold leading-tight text-white md:text-3xl">
+                  Adoption is the operating model.
+                </h3>
+              </div>
+              <p className="max-w-2xl text-sm leading-6 text-slate-400 md:text-base">
+                The work is not only building the prototype. It is shaping the
+                team, stakeholder loop, workflow fit, enablement path, and
+                production model that make people actually use it.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {scaleLeadership.map(({ icon: Icon, title, description }) => (
+                <article key={title} className="border border-cyan-200/10 bg-white/[0.025] p-5">
+                  <div className="mb-5 flex h-10 w-10 items-center justify-center border border-cyan-300/25 bg-cyan-300/10 text-cyan-200">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-base font-semibold leading-snug text-white">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{description}</p>
+                </article>
+              ))}
+            </div>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -261,19 +295,19 @@ export function ServicesSection() {
           </h2>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {services.map(({ icon: Icon, title, description }) => (
             <article
               key={title}
-              className="group flex min-h-[22rem] flex-col border border-cyan-200/10 bg-[#0b0f1d]/82 p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-[#0d1424] md:p-8"
+              className="group flex min-h-[21rem] flex-col border border-cyan-200/10 bg-[#0b0f1d]/82 p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-[#0d1424] md:p-8 xl:p-7"
             >
-              <div className="mb-10 flex h-16 w-16 items-center justify-center border border-cyan-300/25 bg-cyan-300/10 text-cyan-200 shadow-[0_0_28px_rgba(34,211,238,0.08)] transition duration-300 group-hover:border-cyan-300/45 group-hover:bg-cyan-300/15">
+              <div className="mb-8 flex h-14 w-14 items-center justify-center border border-cyan-300/25 bg-cyan-300/10 text-cyan-200 shadow-[0_0_28px_rgba(34,211,238,0.08)] transition duration-300 group-hover:border-cyan-300/45 group-hover:bg-cyan-300/15">
                 <Icon className="h-7 w-7" />
               </div>
-              <h3 className="text-xl font-semibold leading-snug text-white md:text-2xl">
+              <h3 className="text-xl font-semibold leading-snug text-white">
                 {title}
               </h3>
-              <p className="mt-6 text-base leading-8 text-slate-300">
+              <p className="mt-5 text-sm leading-7 text-slate-300 md:text-base xl:text-sm">
                 {description}
               </p>
             </article>
@@ -289,8 +323,8 @@ export function CapabilitiesSection() {
     <section id="capabilities" className="border-y border-cyan-300/10 bg-[#090f19] px-4 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeading align="center" kicker="What I Build" title="Practical AI systems for messy workflows.">
-          Strategy is useful when it turns into working software. These are the system
-          shapes I keep coming back to.
+          Strategy is useful when it turns into working software, repeatable teams,
+          and operating models that can survive production.
         </SectionHeading>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {capabilities.map(({ icon: Icon, title, description }) => (
@@ -348,13 +382,21 @@ export function TechnicalSystemsMap() {
 
 function ExperienceTimeline() {
   return (
-    <div className="relative space-y-4 before:absolute before:left-0 before:top-0 before:hidden before:h-full before:w-px before:bg-cyan-300/20 md:pl-6 md:before:block">
+    <div className="relative space-y-4 md:pl-6">
       {experienceHighlights.map((item, index) => {
         const logoLabel = experienceLogoLabels[item.organization] ?? item.organization
         const hasLogoMark = logoLabel !== "Independent Consultant"
+        const hasNextItem = index < experienceHighlights.length - 1
 
         return (
-          <article key={item.organization} className="relative overflow-hidden border border-cyan-200/10 bg-white/[0.025] p-4 md:p-6">
+          <article key={item.organization} className="relative border border-cyan-200/10 bg-white/[0.025] p-4 md:p-6">
+            {hasNextItem ? (
+              <span
+                aria-hidden="true"
+                className="absolute -left-6 top-[2.125rem] z-0 hidden w-px bg-cyan-300/20 md:block"
+                style={{ height: "calc(100% + 1rem + 2px)" }}
+              />
+            ) : null}
             <span className="absolute -left-[1.875rem] top-7 z-10 hidden h-3 w-3 border border-cyan-300/50 bg-[#07111d] md:block" />
             <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
               <div className="min-w-0">
@@ -383,9 +425,9 @@ export function ExperienceSection() {
     <section id="experience" className="border-y border-cyan-300/10 bg-[#090f19] px-4 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeading kicker="Experience" title="Work history, education, and recognition.">
-          The career arc behind the work: enterprise AI, aerospace analytics,
-          public safety SaaS, industrial systems, consulting, and the teaching
-          foundations that shaped how I build.
+          The career arc behind the work: enterprise AI, forward-deployed teams,
+          aerospace analytics, public safety SaaS, industrial systems, consulting,
+          and the teaching foundations that shaped how I build.
         </SectionHeading>
 
         <div className="grid gap-10 lg:grid-cols-[1.38fr_0.62fr] lg:items-start">
@@ -398,7 +440,7 @@ export function ExperienceSection() {
                 <h3 className="mt-2 text-2xl font-semibold text-white">Roles, systems, and outcomes.</h3>
               </div>
               <p className="max-w-md text-sm leading-6 text-slate-400">
-                A timeline of the teams, products, and production systems behind the portfolio.
+                A timeline of the teams, products, operating models, and production systems behind the portfolio.
               </p>
             </div>
             <ExperienceTimeline />
@@ -410,7 +452,7 @@ export function ExperienceSection() {
                 <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-300/80">
                   Recognition
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">Signals worth scanning.</h3>
+                <h3 className="mt-2 text-2xl font-semibold text-white">Work that got noticed.</h3>
               </div>
               <div className="space-y-4">
                 {recognition.map(({ icon: Icon, title, date, meta, detail }) => (
@@ -453,14 +495,14 @@ export function ExperienceSection() {
               <article
                 key={institution}
                 className={cn(
-                  "grid grid-cols-[4.25rem_minmax(0,1fr)] gap-3 p-4 sm:grid-cols-[4.75rem_minmax(0,1fr)] sm:gap-4 sm:p-5 md:grid-cols-[12.5rem_minmax(0,1fr)] md:gap-6 md:p-6 lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:gap-7 lg:p-7",
+                  "grid grid-cols-[4.25rem_minmax(0,1fr)] gap-3 p-4 sm:grid-cols-[4.75rem_minmax(0,1fr)] sm:gap-4 sm:p-5 md:grid-cols-[17rem_minmax(0,1fr)] md:gap-7 md:p-6 lg:grid-cols-[19.5rem_minmax(0,1fr)] lg:gap-8 lg:p-7 xl:grid-cols-[21rem_minmax(0,1fr)]",
                   index > 0 && "border-t border-cyan-200/10",
                 )}
               >
                 <a
                   aria-label={`Visit ${institution} website`}
                   className={cn(
-                    "education-logo-tile flex h-14 w-14 shrink-0 items-center justify-center justify-self-center overflow-hidden rounded-xl border border-transparent bg-slate-950/35 transition duration-200 hover:bg-slate-800/45 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:h-[3.75rem] sm:w-[3.75rem] md:h-[4.75rem] md:w-44 md:rounded-none md:border-cyan-300/20 md:bg-slate-950/35 md:shadow-[0_0_22px_rgba(34,211,238,0.06)] md:hover:border-cyan-300/45 md:hover:bg-cyan-300/10 lg:h-20 lg:w-48",
+                    "group education-logo-tile relative flex h-14 w-14 shrink-0 items-center justify-center justify-self-center overflow-hidden rounded-xl border border-transparent bg-transparent shadow-none transition duration-300 hover:border-cyan-200/35 hover:bg-transparent hover:shadow-none focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 sm:h-[3.75rem] sm:w-[3.75rem] md:h-24 md:w-64 md:rounded-none md:border-cyan-300/25 md:bg-[#07111d] md:shadow-[inset_0_1px_0_rgba(103,232,249,0.12),0_18px_44px_rgba(0,0,0,0.32)] md:hover:border-slate-100/70 md:hover:bg-[#eef3f5] md:hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.92),0_16px_36px_rgba(0,0,0,0.2)] lg:h-28 lg:w-72 xl:w-80",
                     educationLogoTileClassNames[institution],
                   )}
                   href={logo.href}
@@ -476,11 +518,20 @@ export function ExperienceSection() {
                     )}
                   />
                   <img
+                    src={logo.inverseWideSrc ?? logo.wideSrc ?? logo.src}
+                    alt=""
+                    aria-hidden="true"
+                    className={cn(
+                      "absolute left-1/2 top-1/2 hidden h-auto min-w-0 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 transition duration-300 ease-out group-hover:scale-[0.97] group-hover:opacity-0 md:block",
+                      educationInverseWideLogoClassNames[institution],
+                    )}
+                  />
+                  <img
                     src={logo.wideSrc ?? logo.src}
                     alt=""
                     aria-hidden="true"
                     className={cn(
-                      "hidden h-auto min-w-0 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)] md:block",
+                      "absolute left-1/2 top-1/2 hidden h-auto min-w-0 -translate-x-1/2 -translate-y-1/2 scale-[1.03] opacity-0 transition duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 md:block",
                       educationWideLogoClassNames[institution],
                     )}
                   />

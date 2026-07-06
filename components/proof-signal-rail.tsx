@@ -35,6 +35,13 @@ const fullProofItems: ProofSignalItem[] = [
     source: "Boeing",
     detail: "Built analytics and value-stream systems tied to recurring operational savings across major aerospace programs.",
   },
+  {
+    type: "metric",
+    label: "50+",
+    caption: "AI talent hired / staffed",
+    source: "Forward-deployed team building",
+    detail: "Built and staffed AI delivery capacity across engineers, data scientists, TPMs, and ontologists, including forward-deployed pods and playbooks.",
+  },
 ]
 
 const heroProofItems: ProofSignalItem[] = [
@@ -105,7 +112,7 @@ export function ProofSignalRail({ variant = "hero" }: { variant?: "hero" | "prof
       className={cn(
         "grid gap-px overflow-hidden border border-cyan-200/10 bg-cyan-200/10",
         profile
-          ? "grid-cols-2 xl:grid-cols-4"
+          ? "grid-cols-2 xl:grid-cols-6"
           : heroHasMetrics
             ? "hidden max-w-[56rem] grid-cols-6 lg:grid 2xl:grid-cols-[1.08fr_1.08fr_1.32fr_minmax(7.5rem,0.95fr)_minmax(7.5rem,0.95fr)]"
             : "hidden max-w-3xl grid-cols-[0.94fr_0.94fr_1.12fr] lg:grid",
@@ -118,6 +125,7 @@ export function ProofSignalRail({ variant = "hero" }: { variant?: "hero" | "prof
             "flex items-center justify-center bg-slate-950/45 backdrop-blur",
             profile ? "min-h-[5.75rem] px-4 py-4 md:px-5 xl:min-h-[6.25rem] xl:px-7" : "min-h-14 px-3 py-2 xl:min-h-16",
             profile && item.type === "metric" && "col-span-2 items-start justify-start",
+            profile && item.type === "logo" && "xl:col-span-2",
             profile && item.type === "logo" && wideLogoPairs.has(item.label) && "col-span-2 px-2 sm:px-4 xl:px-7",
             heroHasMetrics && (item.type === "metric" ? "col-span-3 2xl:col-span-1" : "col-span-2 2xl:col-span-1"),
             !profile && item.type === "logo" && item.label === "Cigna / Evernorth" && "px-1",

@@ -13,7 +13,6 @@ import {
   Network,
   ScanSearch,
   ShieldCheck,
-  Sparkles,
   Trophy,
   Video,
   Workflow,
@@ -24,7 +23,7 @@ export const dossier = [
     icon: BrainCircuit,
     label: "AI Lane",
     value:
-      "Agentic AI, RAG, enterprise search, multimodal assistants, and AI platforms for production workflows.",
+      "Agentic AI, RAG, enterprise search, multimodal assistants, and AI platforms for production workflows at scale.",
   },
   {
     icon: Network,
@@ -36,21 +35,21 @@ export const dossier = [
     icon: CloudCog,
     label: "Delivery Range",
     value:
-      "Strategy, architecture, prototypes, production systems, cloud platforms, full-stack apps, and engineering mentorship.",
+      "Strategy, staffing, architecture, prototypes, production systems, cloud platforms, full-stack apps, and engineering mentorship.",
   },
   {
     icon: Workflow,
     label: "Operating Model",
     value:
-      "Scope the workflow, align stakeholders, prototype against real data, validate outputs, then harden what proves useful.",
+      "FDE pods, playbooks, stakeholder loops, evaluation, governance, and production delivery that teams can repeat.",
   },
 ]
 
 export const operatingPrinciples = [
   {
-    title: "Find the operating loop",
+    title: "Find the adoption loop",
     description:
-      "Start with the workflow, decision points, data constraints, and the business moment where AI can actually move the outcome.",
+      "Start with the workflow, decision points, data constraints, owners, and the behavior change needed for AI to move the outcome.",
     icon: ScanSearch,
   },
   {
@@ -63,6 +62,33 @@ export const operatingPrinciples = [
     title: "Make it production-minded",
     description:
       "Harden retrieval, evaluation, guardrails, observability, cost, latency, and deployment until the system can be trusted.",
+    icon: ShieldCheck,
+  },
+]
+
+export const scaleLeadership = [
+  {
+    title: "Build the team",
+    description:
+      "Hiring, staffing, onboarding, role definition, and engineering standards for forward-deployed AI work.",
+    icon: Network,
+  },
+  {
+    title: "Shape the adoption model",
+    description:
+      "FDE playbooks, delivery structure, stakeholder rhythms, intake patterns, enablement paths, and repeatable production delivery.",
+    icon: Workflow,
+  },
+  {
+    title: "Advise the business",
+    description:
+      "Leadership advisory, AI platform direction, build-vs-buy decisions, governance needs, and executive-facing demos.",
+    icon: BrainCircuit,
+  },
+  {
+    title: "Ship production AI",
+    description:
+      "Evaluation, monitoring, security, reliability, cost, latency, deployment, and operational readiness for systems people can trust.",
     icon: ShieldCheck,
   },
 ]
@@ -154,10 +180,10 @@ export const capabilities = [
     icon: Mic2,
   },
   {
-    title: "AI Automation Prototypes",
+    title: "AI Team & Operating Model Design",
     description:
-      "Rapid prototypes that prove business value quickly, then harden into secure, scalable, maintainable platforms.",
-    icon: Sparkles,
+      "FDE pod design, hiring guidance, delivery playbooks, stakeholder rhythms, governance, and engineering standards for production AI.",
+    icon: Network,
   },
   {
     title: "Evaluation and Guardrails",
@@ -177,19 +203,25 @@ export const services = [
   {
     title: "AI Workflow Automation",
     description:
-      "Got a repetitive process eating up your team's time? I will find the automation opportunity, scope the solution, and build it. Document processing, data extraction, and integrations between your existing tools, delivered in days, not months.",
+      "I find the workflow, scope the automation opportunity, and build the useful system: document processing, data extraction, tool integration, and production-minded internal apps.",
     icon: Cog,
   },
   {
-    title: "AI Solutions Consulting",
+    title: "AI Operating Model Advisory",
     description:
-      "Not sure where to start? I will look at how your business actually runs, identify the highest-value automation opportunities, and give you a clear, honest roadmap. No jargon, no vague promises, just a practical plan for what to build and why.",
+      "I help teams decide how AI work should actually run: intake, staffing, governance, platform choices, delivery rhythms, evaluation, and production ownership.",
     icon: BrainCircuit,
+  },
+  {
+    title: "Forward-Deployed AI Team Design",
+    description:
+      "I help organizations design and staff forward-deployed AI pods that can move from ambiguous business problems to working systems without getting trapped in demo land.",
+    icon: Network,
   },
   {
     title: "AI Coaching & Enablement",
     description:
-      "Want to get your team using AI effectively? Hands-on coaching for non-technical founders and operators: how to use AI tools well, what to look for in vendors, and how to spot real value versus hype. Learn what's actually possible for a business like yours.",
+      "Practical enablement for leaders and teams adopting AI tools, agentic workflows, RAG systems, and production-minded engineering patterns.",
     icon: GraduationCap,
   },
 ]
@@ -228,7 +260,7 @@ export const experienceHighlights = [
     role: "Senior Principal Architect",
     timeframe: "Nov 2025 - Present",
     impact:
-      "Lead applied AI architecture and forward deployed engineering for enterprise workflows, prototypes, and production systems.",
+      "Lead applied AI architecture and forward-deployed engineering in the AI Enablement Office, helping establish the FDE model, delivery playbooks, hiring guidance, and production AI operating structure.",
   },
   {
     organization: "Freelance",
@@ -242,7 +274,7 @@ export const experienceHighlights = [
     role: "Senior Solution Engineer",
     timeframe: "Sep 2023 - Nov 2025",
     impact:
-      "Shaped enterprise AI adoption, built agentic systems, and influenced $200M+ in AI-related revenue across Fortune 500 customers.",
+      "Trusted advisor and architect for Fortune 500 AI adoption, influencing $200M+ in AI-related revenue through technical strategy, production-grade agentic systems, reusable accelerators, and scalable deployment patterns.",
   },
   {
     organization: "Boeing",
@@ -310,27 +342,29 @@ export const education = [
   {
     institution: "Georgia Institute of Technology",
     date: "Expected Start: August 2026",
-    meta: "M.S. Computer Science, AI Specialization",
+    meta: "Master of Science in Computer Science, AI Specialization",
     detail:
       "Graduate computer science study connected to applied AI systems and production engineering.",
     logo: {
       alt: "Georgia Tech",
       compactSrc: "/logos/georgia-tech-compact.png",
       href: "https://omscs.gatech.edu/",
-      src: "/logos/georgia-tech.svg",
-      wideSrc: "/logos/georgia-tech.svg",
+      inverseWideSrc: "/logos/georgia-tech-wordmark-inverse.png",
+      src: "/logos/georgia-tech-wordmark.png",
+      wideSrc: "/logos/georgia-tech-wordmark.png",
     },
   },
   {
     institution: "Quantic School of Business and Technology",
     date: "March 2025 - Expected July 2026",
-    meta: "Executive MBA",
+    meta: "Executive Master of Business Administration",
     detail:
       "Business, strategy, and operating-model context for translating technical systems into useful outcomes.",
     logo: {
       alt: "Quantic School of Business and Technology",
       compactSrc: "/logos/quantic-icon.png",
       href: "https://quantic.edu/",
+      inverseWideSrc: "/logos/quantic-wordmark-inverse.png",
       src: "/logos/quantic.png",
       wideSrc: "/logos/quantic-wordmark-cropped.png",
     },
@@ -338,13 +372,14 @@ export const education = [
   {
     institution: "Auburn University",
     date: "August 2011 - May 2016",
-    meta: "B.S. Software Engineering",
+    meta: "Bachelor of Science in Software Engineering",
     detail:
       "Undergraduate technical foundation plus hands-on computer science teaching experience.",
     logo: {
       alt: "Auburn University",
       compactSrc: "/logos/auburn-icon.png",
       href: "https://www.auburn.edu/",
+      inverseWideSrc: "/logos/auburn-white-orange.png",
       src: "/logos/auburn-white-orange.png",
       wideSrc: "/logos/auburn.svg",
     },
