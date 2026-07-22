@@ -91,7 +91,7 @@ export function answerFromPortfolio(question: string): AskJohnAnswer {
   if (hasAny(normalized, ["project", "system", "demo", "github", "portfolio", "built", "build"])) {
     return {
       answer: [
-        "John's portfolio emphasizes demo-rich AI systems: supply chain reasoning, field technician assistance, realtime voice assistants, video analysis, planogram inspection, and document extraction to JSON.",
+        "John's portfolio emphasizes demo-rich AI systems: HelixGuard for clinical AI governance and decision support, supply chain reasoning, field technician assistance, realtime voice assistants, video analysis, planogram inspection, and document extraction to JSON.",
         "The pattern is not just demos. The systems are framed around workflows, grounding, multimodal input, evaluation, and production delivery.",
       ].join("\n\n"),
       sources: [sources.systems, sources.capabilities, sources.resume],
@@ -141,7 +141,8 @@ export function answerFromPortfolio(question: string): AskJohnAnswer {
   if (hasAny(normalized, ["education", "degree", "school", "georgia tech", "gatech", "quantic", "auburn", "mba", "masters", "master", "bachelor"])) {
     return {
       answer: [
-        "John's education includes an incoming Master of Science in Computer Science with AI specialization at Georgia Tech, an Executive Master of Business Administration at Quantic, and a Bachelor of Science in Software Engineering from Auburn University.",
+        "John completed an Executive Master of Business Administration at Quantic in July 2026 and a Bachelor of Science in Software Engineering at Auburn University. He is also an incoming Master of Science in Computer Science student with an AI specialization at Georgia Tech.",
+        "His Quantic capstone was HelixGuard, a clinical AI governance and decision-support platform for clinicians, healthcare leaders, and compliance teams.",
         "That mix is pretty on-brand for him: deep software foundations, AI specialization, and operating-model/business context for making technical systems useful.",
       ].join("\n\n"),
       sources: [sources.experience, sources.resume],

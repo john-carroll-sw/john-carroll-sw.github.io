@@ -95,6 +95,17 @@ export const scaleLeadership = [
 
 export const featuredSystems = [
   {
+    title: "HelixGuard (formerly ClinicalOS)",
+    summary:
+      "Clinical AI governance and decision support across purpose-built clinician, leadership, and compliance surfaces backed by a shared audit layer.",
+    outcome: "Govern → Embed → Measure",
+    image:
+      "https://github.com/john-carroll-sw/capstone-clinical-os/raw/main/docs/images/readme/hero-demo-index.png",
+    link: "https://github.com/john-carroll-sw/capstone-clinical-os",
+    tags: ["React", "TypeScript", "MUI", "Clinical AI", "Governance"],
+    icon: ShieldCheck,
+  },
+  {
     title: "Supply Chain Reasoning Engine",
     summary:
       "Adaptive reasoning workflows for disruption response, scenario planning, and resilient supply chain decisions.",
@@ -137,16 +148,6 @@ export const featuredSystems = [
     link: "https://github.com/john-carroll-sw/video-analysis-with-gpt-4o",
     tags: ["Python", "Streamlit", "Vision", "FFmpeg"],
     icon: Video,
-  },
-  {
-    title: "Planogram Analysis",
-    summary:
-      "Multimodal auditor for retail shelf compliance, product placement, and visual planogram inspection.",
-    outcome: "Shelf compliance at a glance",
-    image: "/PlanogramCompliance.png",
-    link: "https://github.com/SidneyPhoon/azure-openai-planogram-analysis",
-    tags: ["Python", "Azure OpenAI", "Vision", "Retail"],
-    icon: Network,
   },
   {
     title: "Document Extraction to JSON",
@@ -356,10 +357,10 @@ export const education = [
   },
   {
     institution: "Quantic School of Business and Technology",
-    date: "March 2025 - Expected July 2026",
+    date: "March 2025 - July 2026",
     meta: "Executive Master of Business Administration",
     detail:
-      "Selective executive business program for experienced professionals, with Quantic reporting a 12% blended MBA/EMBA acceptance rate. Strategy and operating-model context for translating technical systems into useful outcomes.",
+      "Completed the Executive MBA with HelixGuard, a clinical AI governance and decision-support platform, as the 2026 capstone project. The program strengthened the strategy and operating-model context behind translating technical systems into useful outcomes.",
     logo: {
       alt: "Quantic School of Business and Technology",
       compactSrc: "/logos/quantic-icon.png",

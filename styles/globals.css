@@ -188,6 +188,13 @@
   filter: drop-shadow(0 1px 5px rgb(0 0 0 / 0.48));
 }
 
+.customer-footprint-logo-wordmark {
+  height: 1.35rem;
+  width: 7rem;
+  border-radius: 0;
+  filter: drop-shadow(0 1px 5px rgb(0 0 0 / 0.48));
+}
+
 .customer-footprint-logo-shell-light .customer-footprint-logo {
   filter: saturate(1.05) brightness(0.98) contrast(1.14);
 }

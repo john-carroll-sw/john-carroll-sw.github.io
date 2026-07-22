@@ -112,7 +112,7 @@ const educationInverseWideLogoClassNames: Record<string, string> = {
 const educationStatusLabels: Record<string, string> = {
   "Auburn University": "Completed",
   "Georgia Institute of Technology": "Incoming",
-  "Quantic School of Business and Technology": "In progress",
+  "Quantic School of Business and Technology": "Completed",
 }
 
 export function ProfileDossier() {
@@ -266,8 +266,8 @@ export function FeaturedSystems() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <SectionHeading kicker="Featured Systems" title="Demo-rich AI work, framed by outcomes.">
-            A curated set of systems that show the range: agentic reasoning, RAG,
-            realtime voice, video understanding, visual inspection, and document automation.
+            A curated set of systems spanning clinical AI governance, agentic reasoning,
+            RAG, realtime voice, video understanding, and document automation.
           </SectionHeading>
           <Button asChild variant="outline" className="mb-10 w-fit border-cyan-300/30 bg-transparent text-cyan-100 hover:bg-cyan-300/10">
             <Link href="https://github.com/john-carroll-sw" target="_blank">
@@ -485,8 +485,8 @@ export function ExperienceSection() {
               </h3>
             </div>
             <p className="max-w-xl text-sm leading-6 text-slate-400 md:text-base">
-              One completed software engineering degree, one executive MBA nearing
-              completion, and one graduate AI specialization about to begin.
+              Two completed degrees in software engineering and executive business,
+              plus a graduate AI specialization about to begin.
             </p>
           </div>
 
